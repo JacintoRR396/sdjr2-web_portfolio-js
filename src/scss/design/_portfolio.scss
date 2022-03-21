@@ -1,0 +1,33 @@
+@use "base/variables" as var;
+@use "base/mixins" as mix;
+
+/*! ============ SKILLS ============ */
+.portfolio {
+  &__container {
+    display: grid;
+    grid-template-columns: repeat(3, 25rem);
+    column-gap: 2rem;
+    @include mix.scrollHorizontal;
+  }
+
+  &__content {
+    padding: 0 1.5rem 1rem;
+  }
+  &__img {
+    width: 256px;
+    border-radius: .5rem;
+    justify-self: center;
+  }
+  &__title {
+    font-size: var.$fs-h3;
+    margin-bottom: calc(var.$padding / 4);
+  }
+  &__description {
+    margin-bottom: calc(var.$padding / 3);
+  }
+  &__button{
+    &:hover .button__icon{
+      transform: translateX(0.25rem);
+    }
+  }
+}

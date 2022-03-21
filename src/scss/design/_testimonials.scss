@@ -1,0 +1,37 @@
+@use "base/variables" as var;
+@use "base/mixins" as mix;
+
+/*! ============ SKILLS ============ */
+.testimonials {
+  &__data {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: calc(var.$padding / 2);
+  }
+
+  &__header {
+    display: flex;
+  }
+  &__img {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    margin-right: calc(var.$padding / 3);
+  }
+  &__name {
+    font-size: var.$fs-h3;
+    font-weight: var.$fw-medium;
+  }
+  &__type {
+    color: var.$gray;
+    font-size: var.$fs-small;
+  }
+
+  &__icon-star {
+    color: var.$secondary;
+  }
+
+  &__description {
+    margin-bottom: var.$padding;
+  }
+}

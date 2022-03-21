@@ -1,0 +1,119 @@
+@use "base/variables" as var;
+@use "base/mixins" as mix;
+
+/*! ============ SKILLS ============ */
+.skills {
+  &__container {
+    row-gap: 0;
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    margin-bottom: calc(var.$padding * (3 / 4));
+    padding: 0.25rem;
+    cursor: pointer;
+    transition: .3s;
+    &:hover {
+      background-color: var.$gray-light;
+    }
+  }
+  &__icon,
+  &__arrow {
+    color: var.$primary;
+    font-size: var.$fs-big;
+  }
+  &__icon {
+    margin-right: 0.75rem;
+  }
+  &__title {
+    margin-bottom: calc(var.$padding / 4);
+    font-size: var.$fs-h3;
+  }
+  &__subtitle {
+    color: var.$gray;
+    font-size: var.$fs-small;
+  }
+  &__arrow {
+    margin-left: auto;
+    transition: 0.4s;
+  }
+
+  &__list {
+    transition: 0.5s;
+  }
+  &__titles {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: calc(var.$padding / 8);
+  }
+  &__name {
+    font-size: var.$fs-normal;
+    font-weight: var.$fw-normal;
+  }
+
+  &__bar,
+  &__percentage {
+    height: 0.5rem;
+    border-radius: 0.25rem;
+  }
+  &__bar {
+    background-color: var.$primary-light;
+  }
+  &__percentage {
+    display: block;
+    background-color: var.$primary-dark;
+  }
+  &__html {
+    width: 85%;
+  }
+  &__css {
+    width: 90%;
+  }
+  &__js {
+    width: 75%;
+  }
+  &__ang {
+    width: 60%;
+  }
+  &__java {
+    width: 75%;
+  }
+  &__spboot {
+    width: 60%;
+  }
+  &__node {
+    width: 20%;
+  }
+  &__fibase {
+    width: 15%;
+  }
+  &__figma {
+    width: 10%;
+  }
+  &__sketch {
+    width: 80%;
+  }
+  &__gimp {
+    width: 85%;
+  }
+}
+
+// Utilities
+.skills__open {
+  .skills__list {
+    height: max-content;
+    margin-bottom: var.$padding;
+    opacity: 1;
+  }
+  .skills__arrow {
+    transform: rotate(-180deg);
+  }
+}
+.skills__close {
+ .skills__list {
+    height: 0;
+    overflow: hidden;
+    opacity: 0;
+  }
+}

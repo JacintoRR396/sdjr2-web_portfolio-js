@@ -1,0 +1,124 @@
+@use "variables" as var;
+@use "base/mixins" as mix;
+
+/*! ============ GLOBALS ============ */
+/** Imports **/
+@font-face {
+  font-family: "Material Icons";
+  font-style: normal;
+  font-weight: var.$fw-normal;
+  src: url(build/fonts/MaterialIcons-Regular.eot); /* For IE6-8 */
+  src: local("Material Icons"), local("MaterialIcons-Regular"),
+    url(build/fonts/MaterialIcons-Regular.woff2) format("woff2"),
+    url(build/fonts/MaterialIcons-Regular.woff) format("woff"),
+    url(build/fonts/MaterialIcons-Regular.ttf) format("truetype");
+}
+
+/** Tags **/
+html {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0 0 var.$header-height;
+  min-width: var.$mobile-xs;
+  color: var.$body-pri-color;
+  background-color: var.$body-pri-bgcolor;
+  font-family: var.$font-primary;
+  font-size: var.$fs-normal;
+}
+
+p {
+  color: var.$body-pri-color;
+  font-size: var.$fs-normal;
+  line-height: 1.25rem;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0 0 calc(var.$padding / 2) 0;
+  color: var.$secondary;
+  font-family: var.$font-secondary;
+  font-weight: var.$fw-medium;
+}
+h1 {
+  color: var.$secondary-dark;
+  font-size: var.$fs-h1;
+  font-weight: var.$fw-bold;
+}
+h2 {
+  font-size: var.$fs-h2;
+}
+h3 {
+  font-size: var.$fs-h3;
+}
+
+strong {
+  color: var.$secondary-dark;
+  font-family: var.$font-secondary;
+  font-weight: var.$fw-medium;
+}
+
+span.material-icons {
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  color: var.$black;
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/** Classes **/
+.container, *[class*="__container"] {
+  width: 95%;
+  max-width: var.$tablet;
+  margin: 0 auto;
+}
+
+.grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.section {
+  padding: var.$padding 0 calc(var.$padding * 2);
+}
+.section__title {
+  @include mix.headingGradient(right, var.$secondary-dark, var.$primary);
+  font-size: var.$fs-h1;
+  margin-bottom: calc(var.$padding / 3);
+}
+.section__subtitle {
+  display: block;
+  color: var.$secondary;
+  font-size: var.$fs-normal;
+  font-weight: var.$fw-medium;
+  margin-bottom: var.$padding;
+}
+.section__title,
+.section__subtitle {
+  text-align: center;
+}

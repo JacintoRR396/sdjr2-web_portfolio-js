@@ -1,0 +1,79 @@
+@use "base/variables" as var;
+@use "base/mixins" as mix;
+
+/*! ============ SKILLS ============ */
+.qualification {
+  &__tabs {
+    @include mix.flexRow(space-evenly, 0);
+    margin-bottom: calc(var.$padding * (3 / 4));
+  }
+  &__button {
+    width: 50%;
+    justify-content: center;
+    color: var.$primary;
+    font-size: var.$fs-h3;
+    font-weight: var.$fw-medium;
+    padding: 0.25rem;
+    cursor: pointer;
+    transition: .3s;
+    &:hover {
+      background-color: var.$gray-light;
+    }
+    &.qualification__active {
+      font-style: italic;
+    }
+  }
+  &__icon {
+    font-size: 1.8rem;
+    margin-right: 0.5rem;
+  }
+
+  &__content[data-content] {
+    display: none;
+  }
+  &__active[data-content] {
+    display: block;
+  }
+  &__data {
+    display: grid;
+    grid-template-columns: 1fr max-content 1fr;
+    column-gap: 1.5rem;
+  }
+  &__title {
+    font-size: var.$fs-normal;
+    font-weight: var.$fw-medium;
+    margin-bottom: 0.5rem;
+  }
+  &__subtitle {
+    display: inline-block;
+    font-size: var.$fs-small;
+    margin-bottom: 1rem;
+  }
+  &__calendar {
+    display: flex;
+    align-items: center;
+    color: var.$gray;
+    font-size: var.$fs-smaller;
+  }
+  &__rounder {
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+    background-color: var.$primary;
+    border-radius: 50%;
+  }
+  &__line {
+    display: block;
+    width: 2px;
+    height: 100%;
+    background-color: var.$primary;
+    transform: translate(7px, -7px);
+    &--final{
+      display: block;
+      width: 2px;
+      height: 50%;
+      background-color: var.$secondary;
+      transform: translate(7px, -4px);
+    }
+  }
+}

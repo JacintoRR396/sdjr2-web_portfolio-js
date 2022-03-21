@@ -1,0 +1,88 @@
+@use "base/variables" as var;
+@use "base/mixins" as mix;
+
+/*! ============ SKILLS ============ */
+.services {
+  &__container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  &__content {
+    position: relative;
+    background-color: var.$gray-light;
+    padding: 2.5rem 0.5rem 1.25rem 1.5rem;
+    border-radius: 0.25rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+    transition: 0.3s;
+
+    &:hover {
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+    }
+  }
+
+  &__icon {
+    display: block;
+    color: var.$primary;
+    font-size: var.$fs-big;
+    margin-bottom: calc(var.$padding / 2);
+  }
+  &__title {
+    font-size: var.$fs-h3;
+    font-weight: var.$fw-medium;
+    margin-bottom: calc(var.$padding / 2);
+  }
+
+  &__button {
+    font-size: var.$fs-small;
+    cursor: pointer;
+
+    &:hover .button__icon {
+      transform: translateX(0.25rem);
+    }
+  }
+
+  &__modal {
+    @include mix.modal();
+    visibility: hidden;
+    opacity: 0;
+
+    &-content {
+      position: relative;
+      background-color: var.$gray-light;
+      padding: 1.5rem;
+      border-radius: 0.5rem;
+    }
+
+    &-title {
+      font-size: var.$fs-h3;
+      font-weight: var.$fw-medium;
+      margin-bottom: calc(var.$padding * (3 / 4));
+    }
+    &-close {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      color: var.$primary;
+      font-size: var.$fs-h2;
+      font-weight: var.$fw-medium;
+      cursor: pointer;
+    }
+
+    &-list {
+      row-gap: 1rem;
+    }
+    &-item {
+      @include mix.flexRow(flex-start, 0);
+    }
+    &-icon {
+      color: var.$green;
+      margin-right: 0.5rem;
+    }
+  }
+
+  // Utilities
+  .active-modal {
+    visibility: visible;
+    opacity: 1;
+  }
+}

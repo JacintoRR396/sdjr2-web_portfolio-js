@@ -1,0 +1,42 @@
+@use "base/variables" as var;
+@use "base/mixins" as mix;
+
+/*! ============ ABOUT ============ */
+.about {
+  &__img {
+    width: 280px;
+    justify-self: center;
+    align-self: center;
+    @include mix.imgBorderAndShadow(var.$secondary-dark);
+  }
+
+  &__description {
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+
+  &__info {
+    @include mix.flexRow(space-evenly, 0);
+    margin-bottom: 2.5rem;
+
+    &-title,
+    &-name {
+      display: block;
+      text-align: center;
+    }
+
+    &-title {
+      color: var.$secondary;
+      font-size: var.$fs-h2;
+      font-weight: var.$fw-medium;
+    }
+
+    &-name {
+      font-size: var.$fs-smaller;
+    }
+  }
+
+  &__buttons {
+    @include mix.flexRow(center, 0);
+  }
+}

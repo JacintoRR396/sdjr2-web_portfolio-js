@@ -1,0 +1,126 @@
+@use "base/variables" as var;
+@use "base/mixins" as mix;
+
+/*! ============ HEADER ============ */
+.header {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: var.$body-sec-bgcolor;
+  z-index: var.$z-fixed;
+
+  &-scroll {
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.15);
+  }
+}
+
+.nav {
+  @include mix.flexRow(space-between, 0);
+  max-width: var.$desktop;
+  height: var.$header-height;
+
+  &__logo,
+  &__theme,
+  &__toogle {
+    color: var.$title-color;
+    font-weight: var.$fw-medium;
+    cursor: pointer;
+    transition: 0.3s;
+
+    &:hover {
+      color: var.$title-hover-color;
+    }
+  }
+
+  &__menu {
+    position: fixed;
+    left: 0;
+    bottom: -100%;
+    width: 100%;
+    padding: 2rem 1.5rem 3rem;
+    background-color: var.$body-sec-bgcolor;
+    border-radius: 1.5rem 1.5rem 0 0;
+    box-shadow: 0 -2.5px 2px rgba(0, 0, 0, 0.15);
+    transition: 0.3s;
+
+    @include mix.tablet {
+      position: static;
+      box-shadow: unset;
+      border-radius: unset;
+    }
+  }
+
+  &__btns {
+    @include mix.flexRow(flex-start, 0);
+  }
+  &__theme {
+    font-size: var.$fs-h2;
+    margin-right: calc(var.$padding / 2);
+  }
+  &__toogle {
+    font-size: 1.1rem;
+  }
+}
+
+//* Nav menu */
+.nav__list {
+  @include mix.gridColumns(3, 1.5rem);
+  &::after {
+    grid-column: 1 / 4;
+    content: "";
+    width: 100%;
+    height: 0.15rem;
+    background-color: var.$primary-dark;
+    border-radius: 50%;
+  }
+}
+
+.nav__item {
+  text-align: center;
+}
+
+.nav__link {
+  @include mix.flexColumn(flex-start, 0.5rem);
+  display: inline-flex;
+  width: 50%;
+  min-width: 5rem;
+  color: var.$link-color;
+  font-size: var.$fs-small;
+  font-weight: var.$fw-medium;
+  border-left: 2px solid var.$gray-light;
+  border-right: 2px solid var.$gray-light;
+  border-radius: 5px;
+  padding: 0.25rem;
+  transition: 0.3s;
+
+  &:hover,
+  &-active {
+    background-color: var.$white;
+    border-left-color: var.$gray;
+    border-right-color: var.$gray;
+  }
+}
+
+.nav__icon {
+  font-size: 1.5rem;
+}
+
+.nav__close {
+  position: absolute;
+  right: 1.3rem;
+  bottom: 0.75rem;
+  color: var.$secondary;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: 0.3s;
+
+  &:hover {
+    transform: scale(1.2);
+  }
+}
+
+// Utilities
+.show-menu {
+  bottom: 0;
+}

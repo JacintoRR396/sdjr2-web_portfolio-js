@@ -1,0 +1,49 @@
+@use "base/variables" as var;
+@use "base/mixins" as mix;
+
+/*! ============ SKILLS ============ */
+.contact {
+  &__container {
+    row-gap: var.$padding;
+  }
+
+  &__info {
+    display: flex;
+    margin-bottom: calc(var.$padding * (3 / 4));
+  }
+  &__icon {
+    color: var.$primary;
+    font-size: var.$fs-big;
+    margin-right: calc(var.$padding / 3);
+  }
+  &__title {
+    font-size: var.$fs-h3;
+    font-weight: var.$fw-medium;
+    margin-bottom: calc(var.$padding / 4);
+  }
+  &__subtitle {
+    color: var.$gray;
+    font-size: var.$fs-small;
+  }
+
+  &__content {
+    background-color: var.$input-color;
+    border-radius: 0.5rem;
+    padding: 0.75rem 1rem 0.25rem;
+  }
+  &__label {
+    color: var.$title-color;
+    font-size: var.$fs-small;
+    font-weight: var.$fw-bold;
+  }
+  &__input {
+    width: 100%;
+    background-color: var.$input-color;
+    color: var.$body-sec-color;
+    font-family: var.$font-primary;
+    font-size: var.$fs-normal;
+    border: none;
+    outline: none;
+    padding: 0.25rem 0.5rem 0.5rem 0;
+  }
+}

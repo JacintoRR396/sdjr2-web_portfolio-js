@@ -1,0 +1,146 @@
+@use "variables" as var;
+@use "base/mixins" as mix;
+
+/*! ============ UTILITIES ============ */
+/** Material Icons **/
+.material-icons {
+  display: inline-block;
+  font-family: "Material Icons";
+  font-weight: normal;
+  font-style: normal;
+  font-size: var.$icon-size-sm;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+  /* Support for IE. */
+  font-feature-settings: "liga";
+  @include mix.desktop {
+    font-size: var.$icon-size-lg;
+  }
+}
+
+.material-icons.md-18 {
+  font-size: 18px;
+}
+.material-icons.md-24 {
+  font-size: 24px;
+}
+.material-icons.md-36 {
+  font-size: 36px;
+}
+.material-icons.md-48 {
+  font-size: 48px;
+}
+
+.material-icons.md-dark {
+  color: rgba(0, 0, 0, 0.54);
+}
+.material-icons.md-dark.md-inactive {
+  color: rgba(0, 0, 0, 0.26);
+}
+
+.material-icons.md-light {
+  color: rgba(255, 255, 255, 1);
+}
+.material-icons.md-light.md-inactive {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+/** Text **/
+.text-center {
+  text-align: center;
+}
+
+/** Buttons **/
+.button {
+  display: inline-block;
+  background-color: var.$primary;
+  color: var.$white;
+  padding: 1rem;
+  border-bottom: 0.15rem solid var.$secondary-dark;
+  border-radius: 0.5rem;
+  font-weight: var.$fw-medium;
+  transition: 0.3s;
+
+  &:hover {
+    background-color: var.$primary-dark;
+  }
+
+  &--flex {
+    display: inline-flex;
+    align-items: center;
+  }
+
+  &--small {
+    padding: 0.75rem 1rem;
+  }
+
+  &--link {
+    padding: 0;
+    background-color: transparent;
+    color: var.$link-color;
+    border: none;
+    transition: 0.3s;
+
+    &:hover {
+      background-color: transparent;
+      color: var.$link-hover-color;
+    }
+  }
+
+  &__icon {
+    font-size: 1.25rem;
+    margin-left: 0.5rem;
+    transition: 0.3s;
+  }
+}
+
+/** Scroll **/
+.scrollup {
+  position: fixed;
+  right: calc(var.$padding / 2);
+  bottom: -20%;
+  background-color: var.$link-color;
+  padding: 0 0.3rem;
+  border-radius: 0.4rem;
+  opacity: 0.8;
+  z-index: var.$z-tootlip;
+  transition: 0.4s;
+
+  &:hover {
+    background-color: var.$link-hover-color;
+  }
+
+  &-show {
+    bottom: 5rem;
+  }
+
+  &__icon {
+    color: var.$white;
+    font-size: var.$fs-h1;
+    padding: 0.5rem 0.25rem;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 0.6rem;
+  background-color: var.$scroll-bar-color;
+  border-radius: 0.5rem;
+}
+::-webkit-scrollbar-thumb {
+  background-color: var.$scroll-bar-thumb-color;
+  border-radius: 0.5rem;
+  &:hover {
+    background-color: var.$scroll-bar-thumb-hover-color;
+  }
+}

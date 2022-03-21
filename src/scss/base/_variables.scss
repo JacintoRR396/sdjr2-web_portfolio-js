@@ -1,0 +1,94 @@
+/*! ============ VARIABLES ============ */
+
+/** Media Queries **/
+$mobile-xs: 320px;
+$mobile: 576px;
+$tablet: 768px;
+$desktop: 992px;
+$desktop-lg: 1200px;
+
+/** Sizes **/
+$header-height: 3rem;
+$padding: 2rem;
+@media screen and (min-width: $desktop) {
+  $header-height: 5rem;
+  $padding: 3rem;
+}
+
+/** Fonts and typographies **/
+$font-primary: "Roboto", sans-serif;
+$font-secondary: "Poppins", sans-serif;
+$font-italic: "Bona Nova", serif;
+
+$fs-bigger: 2.5rem;
+$fs-big: 2rem;
+$fs-h1: 1.5rem;
+$fs-h2: 1.25rem;
+$fs-h3: 1.15rem;
+$fs-normal: 0.938rem;
+$fs-small: 0.813rem;
+$fs-smaller: 0.75rem;
+@media screen and (min-width: $desktop) {
+  $fs-bigger: 4.5rem;
+  $fs-big: 3rem;
+  $fs-h1: 2.25rem;
+  $fs-h2: 1.5rem;
+  $fs-h3: 1.25rem;
+  $fs-normal: 1rem;
+  $fs-small: 0.875rem;
+  $fs-smaller: 0.813rem;
+}
+
+$fw-normal: 400;
+$fw-medium: 700;
+$fw-bold: 900;
+
+/** Colors **/
+$black: #1f1e1e;
+$white: #fff;
+$gray: #a5a9ab;
+$gray-light: #eceeef;
+$gray-dark: #3b3b3b;
+$red: #e22331;
+$green: #00833e;
+$blue: #197acb;
+$yellow: #fccb00;
+
+$primary: $red;
+$primary-lighter: lighten($primary, 20%);
+$primary-light: lighten($primary, 10%);
+$primary-dark: darken($primary, 10%);
+$primary-darker: darken($primary, 20%);
+$secondary: #455a64;
+$secondary-lighter: lighten($secondary, 20%);
+$secondary-light: lighten($secondary, 10%);
+$secondary-dark: darken($secondary, 10%);
+$secondary-darker: darken($secondary, 20%);
+
+$body-pri-color: $black;
+$body-sec-color: $white;
+$body-third-color: $white;
+$body-pri-bgcolor: $white;
+$body-sec-bgcolor: $gray-light;
+$body-third-bgcolor: $primary-light;
+
+$title-color: $secondary;
+$title-hover-color: $secondary-dark;
+
+$link-color: $primary;
+$link-hover-color: $primary-dark;
+
+$input-color: $primary-lighter;
+
+$scroll-bar-color: $primary-lighter;
+$scroll-bar-thumb-color: $primary;
+$scroll-bar-thumb-hover-color: $primary-dark;
+
+/** Icons **/
+$icon-size-sm: 24px; //accept » 18, 24, 36 or 48px
+$icon-size-lg: 36px; //accept » 18, 24, 36 or 48px
+
+/** Z-Index **/
+$z-tootlip: 10;
+$z-fixed: 100;
+$z-modal: 1000;

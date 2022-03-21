@@ -1,0 +1,156 @@
+@use "variables" as var;
+
+/*! ============ MIXINS ============ */
+/** Media Queries **/
+@mixin mobile {
+  @media (min-width: var.$mobile) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: var.$tablet) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: var.$desktop) {
+    @content;
+  }
+}
+
+@mixin desktop-lg {
+  @media (min-width: var.$desktop-lg) {
+    @content;
+  }
+}
+
+/** Blocks **/
+@mixin flexRow($justContent, $gap) {
+  display: flex;
+  flex-direction: row;
+  justify-content: $justContent;
+  align-items: center;
+  gap: $gap;
+}
+
+@mixin flexColumn($justContent, $gap) {
+  display: flex;
+  flex-direction: column;
+  justify-content: $justContent;
+  align-items: center;
+  gap: $gap;
+}
+
+@mixin gridColumns($numColumns, $gap) {
+  display: grid;
+  grid-template-columns: repeat($numColumns, 1fr);
+  gap: $gap;
+}
+
+@mixin modal() {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  @include flexRow(center, 0);
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 0 calc(var.$padding / 2);
+  z-index: var.$z-modal;
+  transform: .3s;
+}
+
+/** Text **/
+@mixin headingGradient($dir, $fromColor, $toColor) {
+  color: transparent;
+  background: linear-gradient(to $dir, $fromColor 20%, $toColor 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+@mixin headingBorder($colorLine) {
+  &::after {
+    content: "";
+    display: block;
+    width: calc(100% + 0.5rem);
+    height: 1rem;
+    margin: -0.5rem 0 0 0.15rem;
+    background-color: $colorLine;
+    border-radius: 1px;
+  }
+}
+
+/** Images **/
+@mixin imgBorderAndShadow($color) {
+  border-left: 0.15rem solid $color;
+  border-right: 0.2rem solid $color;
+  border-radius: 0.5rem;
+  box-shadow: 2px 0px 5px;
+}
+
+@mixin bgImage($url, $colorGradient) {
+  background-image: linear-gradient($colorGradient 0%, $colorGradient 100%),
+    url($url);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top center;
+}
+
+@mixin bgIcono($url) {
+  background-image: url($url);
+  background-repeat: no-repeat;
+  background-size: 10rem;
+  background-position: 50% 2rem;
+}
+
+@mixin bgIconoBefore($url) {
+  &::before {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 5rem;
+    height: 5rem;
+    background-image: url($url);
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+}
+
+/** Buttons **/
+@mixin button($bgColor, $color) {
+  display: block;
+  width: 100%;
+  padding: 0.8rem 2rem;
+  background-color: $bgColor;
+  color: $color;
+  font-weight: var.$fw-medium;
+  font-size: 1.2rem;
+  text-align: center;
+  text-decoration: none;
+  border: none;
+  border-radius: 0.75rem;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: darken($bgColor, 10);
+    cursor: pointer;
+  }
+
+  @include tablet {
+    width: auto;
+    display: inline-block;
+  }
+}
+
+/** Others **/
+@mixin scrollHorizontal {
+  overflow-y: hidden;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+
+  > * {
+      scroll-snap-align: center;
+  }
+}
