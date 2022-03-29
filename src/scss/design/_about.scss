@@ -7,7 +7,10 @@
     width: 280px;
     justify-self: center;
     align-self: center;
-    @include mix.imgBorderAndShadow(var.$secondary-dark);
+    border-left: 0.15rem solid var.$secondary-dark;
+    border-right: 0.2rem solid var.$secondary-dark;
+    border-radius: 0.5rem;
+    box-shadow: 2px 0px 5px;
   }
 
   &__description {

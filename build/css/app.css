@@ -345,10 +345,56 @@ template {
 /** Colors **/
 /** Icons **/
 /** Z-Index **/
-/*! ============ MIXINS ============ */
+/*! ============================== MIXINS ============================== *\
+*                                                                        *
+*       ---  MEDIA QUERIES ---                                           *
+* 1. mobile                                                              *
+* 2. tablet                                                              *
+* 3. desktop                                                             *
+* 4. desktop-lg                                                          *
+*                                                                        *
+*       --- BLOCKS ---                                                   *
+* 1. modal                                                               *
+* 2. sectionBgOblique($colorFirst, $colorSecond, $size)                  *
+* 3. sectionBgCollapse($size)                                            *
+* 4. sectionGridTextImage($padding, $colorGrad, $url)                    *
+*                                                                        *
+* 2. flexRow($justContent: "flex-start", $gap: 0)                        *
+* 3. flexColumn($justContent: "flex-start", $gap: 0)                     *
+* 4. gridColumns($numColumns: 2, $gap: 0)                                *
+* 5. gridRows($numRows: 2, $gap: 0)                                      *
+*                                                                        *
+*       --- HEADING / TEXT ---                                           *
+* 1. headingLinearGradient($dir, $fromColor, $toColor)                   *
+* 2. headingUnderline($colorLine)                                        *
+* 3. headingUnderlineBicolor(                                            *
+*      $colorFirst, $colorSecond, $width: 15rem, $isBreak: false)        *
+* 4. textWrapImage($url)                                                 *
+* 5. textAccessible                                                      *
+* 6. textEllipsis($lines, $fs)                                           *
+*                                                                        *
+*       --- IMAGES ---                                                   *
+* 1. imagesGallery()                                                     *
+* 2. imageObjectFit($height, $width: 100%)                               *
+* 3. imageBgiHoverLg($url, $colorGradient)                               *
+* 4. imageBgiHoverLgTransp($url, $colorGradient)                         *
+* 5. imageMask                                                           *
+* 6. imageParallax($url)                                                 *
+* 7. iconBgi($url, $size, $margin)                                       *
+* 8. iconBgiBefore($url, $size)                                          *
+* 9. iconTextBefore($text, $top, $fs)                                    *
+*                                                                        *
+*       --- BUTTONS ---                                                  *
+* 1. button($bgColor, $color)                                            *
+*                                                                        *
+*       --- OTHERS ---                                                   *
+* 1. scrollHorizontal                                                    *
+* 2. marginBottom($size)                                                 *
+*                                                                        *
+\* ===================================================================== */
 /** Media Queries **/
 /** Blocks **/
-/** Text **/
+/** Heading / Text **/
 /** Images **/
 /** Buttons **/
 /** Others **/
@@ -629,7 +675,7 @@ img {
   left: 0;
   bottom: 0;
   width: 100%;
-  background-color: #eceeef;
+  background-color: #f8f8f8;
   z-index: 100;
 }
 .header-scroll {
@@ -660,7 +706,7 @@ img {
   bottom: -100%;
   width: 100%;
   padding: 2rem 1.5rem 3rem;
-  background-color: #eceeef;
+  background-color: #f8f8f8;
   border-radius: 1.5rem 1.5rem 0 0;
   box-shadow: 0 -2.5px 2px rgba(0, 0, 0, 0.15);
   transition: 0.3s;
@@ -717,8 +763,8 @@ img {
   color: #e22331;
   font-size: 0.813rem;
   font-weight: 700;
-  border-left: 2px solid #eceeef;
-  border-right: 2px solid #eceeef;
+  border-left: 2px solid #f8f8f8;
+  border-right: 2px solid #f8f8f8;
   border-radius: 5px;
   padding: 0.25rem;
   transition: 0.3s;
@@ -887,7 +933,7 @@ img {
   transition: 0.3s;
 }
 .skills__header:hover {
-  background-color: #eceeef;
+  background-color: #f8f8f8;
 }
 .skills__icon, .skills__arrow {
   color: #e22331;
@@ -1003,7 +1049,7 @@ img {
   transition: 0.3s;
 }
 .qualification__button:hover {
-  background-color: #eceeef;
+  background-color: #f8f8f8;
 }
 .qualification__button.qualification__active {
   font-style: italic;
@@ -1072,7 +1118,7 @@ img {
 }
 .services__content {
   position: relative;
-  background-color: #eceeef;
+  background-color: #f8f8f8;
   padding: 2.5rem 0.5rem 1.25rem 1.5rem;
   border-radius: 0.25rem;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
@@ -1121,7 +1167,7 @@ img {
 }
 .services__modal-content {
   position: relative;
-  background-color: #eceeef;
+  background-color: #f8f8f8;
   padding: 1.5rem;
   border-radius: 0.5rem;
 }
@@ -1258,7 +1304,7 @@ img {
 .contact__input {
   width: 100%;
   background-color: #ee7d85;
-  color: #fff;
+  color: #5a7582;
   font-family: "Roboto", sans-serif;
   font-size: 0.938rem;
   border: none;
@@ -1272,7 +1318,7 @@ img {
 }
 .footer__bg {
   padding: 2rem 0;
-  background-color: #e8505b;
+  background-color: #455a64;
 }
 .footer__container {
   row-gap: 2rem;
@@ -1295,7 +1341,7 @@ img {
   align-items: flex-start;
 }
 .footer__link:hover {
-  color: #eceeef;
+  color: #f8f8f8;
 }
 .footer__socials {
   display: flex;
@@ -1309,7 +1355,7 @@ img {
   margin-right: 1.5rem;
 }
 .footer__social:hover {
-  color: #eceeef;
+  color: #f8f8f8;
 }
 .footer__social img {
   width: 24px;
@@ -1320,6 +1366,6 @@ img {
   margin-top: 2rem;
 }
 .footer__title, .footer__link, .footer__social {
-  color: #fff;
+  color: #5a7582;
 }
 /*# sourceMappingURL=app.css.map */

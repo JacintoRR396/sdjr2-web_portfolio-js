@@ -46,31 +46,39 @@ $fw-bold: 900;
 /** Colors **/
 $black: #1f1e1e;
 $white: #fff;
+$gray-light: #f8f8f8;
 $gray: #a5a9ab;
-$gray-light: #eceeef;
 $gray-dark: #3b3b3b;
 $red: #e22331;
 $green: #00833e;
+$greenish: #068d9d;
+$greenish-gray: #455a64;
 $blue: #197acb;
+$blue-nay: #3b4862;
 $yellow: #fccb00;
+$mustard: #c7c57d;
+$orange: #ff8015;
+$orange-metalic: #e99401;
+$salmon: #f46669;
 
 $primary: $red;
 $primary-lighter: lighten($primary, 20%);
 $primary-light: lighten($primary, 10%);
 $primary-dark: darken($primary, 10%);
 $primary-darker: darken($primary, 20%);
-$secondary: #455a64;
+$secondary: $greenish-gray;
 $secondary-lighter: lighten($secondary, 20%);
 $secondary-light: lighten($secondary, 10%);
 $secondary-dark: darken($secondary, 10%);
 $secondary-darker: darken($secondary, 20%);
 
 $body-pri-color: $black;
-$body-sec-color: $white;
+$body-sec-color: $secondary-light;
 $body-third-color: $white;
+
 $body-pri-bgcolor: $white;
 $body-sec-bgcolor: $gray-light;
-$body-third-bgcolor: $primary-light;
+$body-third-bgcolor: $secondary;
 
 $title-color: $secondary;
 $title-hover-color: $secondary-dark;
@@ -85,8 +93,11 @@ $scroll-bar-thumb-color: $primary;
 $scroll-bar-thumb-hover-color: $primary-dark;
 
 /** Icons **/
-$icon-size-sm: 24px; //accept » 18, 24, 36 or 48px
-$icon-size-lg: 36px; //accept » 18, 24, 36 or 48px
+//accept » 18, 24, 36 or 48px
+$icon-size-sm: px;
+$icon-size-md: 24px;
+$icon-size-lg: 36px;
+$icon-size-xl: px;
 
 /** Z-Index **/
 $z-tootlip: 10;
