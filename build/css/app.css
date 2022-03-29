@@ -347,47 +347,51 @@ template {
 /** Z-Index **/
 /*! ============================== MIXINS ============================== *\
 *                                                                        *
-*         MEDIA QUERIES                                                  *
+*       ---  MEDIA QUERIES ---                                           *
 * 1. mobile                                                              *
 * 2. tablet                                                              *
 * 3. desktop                                                             *
 * 4. desktop-lg                                                          *
 *                                                                        *
-*         BLOCKS                                                         *
+*       --- BLOCKS ---                                                   *
 * 1. modal                                                               *
-* 2. sectionOblique($colorFirst, $colorSecond, $size)                    *
-* 3. sectionCollapse($size)                                              *
+* 2. sectionBgOblique($colorFirst, $colorSecond, $size)                  *
+* 3. sectionBgCollapse($size)                                            *
 * 4. sectionGridTextImage($padding, $colorGrad, $url)                    *
-*
+*                                                                        *
 * 2. flexRow($justContent: "flex-start", $gap: 0)                        *
 * 3. flexColumn($justContent: "flex-start", $gap: 0)                     *
 * 4. gridColumns($numColumns: 2, $gap: 0)                                *
 * 5. gridRows($numRows: 2, $gap: 0)                                      *
 *                                                                        *
-*         HEADING / TEXT                                                 *
+*       --- HEADING / TEXT ---                                           *
 * 1. headingLinearGradient($dir, $fromColor, $toColor)                   *
 * 2. headingUnderline($colorLine)                                        *
 * 3. headingUnderlineBicolor(                                            *
 *      $colorFirst, $colorSecond, $width: 15rem, $isBreak: false)        *
 * 4. textWrapImage($url)                                                 *
-* 5. 
-* 
-*       IMAGES
-* 1. imagesGallery()
-* x. 
-* x. imageObjectFit($height, $width: 100%)
-* x. imageBgiHoverLg($url, $colorGradient)
-* x. imageBgiHoverLgTransp($url, $colorGradient)
-* x. iconBgi($url, $size, $margin)
-* x. iconBgiBefore($url, $size)
-* x. iconTextBefore($text, $top, $fs)
-*
-*
-*       OTHERS
-* 1. scrollHorizontal
-*
-*
-\* ==================================================================== */
+* 5. textAccessible                                                      *
+* 6. textEllipsis($lines, $fs)                                           *
+*                                                                        *
+*       --- IMAGES ---                                                   *
+* 1. imagesGallery()                                                     *
+* 2. imageObjectFit($height, $width: 100%)                               *
+* 3. imageBgiHoverLg($url, $colorGradient)                               *
+* 4. imageBgiHoverLgTransp($url, $colorGradient)                         *
+* 5. imageMask                                                           *
+* 6. imageParallax($url)                                                 *
+* 7. iconBgi($url, $size, $margin)                                       *
+* 8. iconBgiBefore($url, $size)                                          *
+* 9. iconTextBefore($text, $top, $fs)                                    *
+*                                                                        *
+*       --- BUTTONS ---                                                  *
+* 1. button($bgColor, $color)                                            *
+*                                                                        *
+*       --- OTHERS ---                                                   *
+* 1. scrollHorizontal                                                    *
+* 2. marginBottom($size)                                                 *
+*                                                                        *
+\* ===================================================================== */
 /** Media Queries **/
 /** Blocks **/
 /** Heading / Text **/
