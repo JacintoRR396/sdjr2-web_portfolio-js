@@ -39,8 +39,12 @@
 * 8. iconBgiBefore($url, $size)                                          *
 * 9. iconTextBefore($text, $top, $fs)                                    *
 *                                                                        *
+*       --- BUTTONS ---                                                  *
+* 1. button($bgColor, $color)                                            *
+*                                                                        *
 *       --- OTHERS ---                                                   *
 * 1. scrollHorizontal                                                    *
+* 2. marginBottom($size)                                                 *
 *                                                                        *
 \* ===================================================================== */
 
@@ -432,5 +436,17 @@
 
   > * {
     scroll-snap-align: center;
+  }
+}
+
+@mixin marginBottom($size) {
+  margin-bottom: $size;
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+
+  @include tablet {
+    margin-bottom: 0;
   }
 }
