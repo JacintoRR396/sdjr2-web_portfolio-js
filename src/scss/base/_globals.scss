@@ -107,7 +107,7 @@ img {
   padding: var.$padding 0 calc(var.$padding * 2);
 }
 .section__title {
-  @include mix.headingGradient(right, var.$secondary-dark, var.$primary);
+  @include mix.headingLinearGradient(right, var.$secondary-dark, var.$primary);
   font-size: var.$fs-h1;
   margin-bottom: calc(var.$padding / 3);
 }
