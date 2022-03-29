@@ -42,7 +42,7 @@
   }
 
   &__modal {
-    @include mix.modal();
+    @include mix.modal;
     visibility: hidden;
     opacity: 0;
 

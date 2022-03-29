@@ -1,6 +1,49 @@
 @use "variables" as var;
 
-/*! ============ MIXINS ============ */
+/*! ============================== MIXINS ============================== *\
+*                                                                        *
+*       ---  MEDIA QUERIES ---                                           *
+* 1. mobile                                                              *
+* 2. tablet                                                              *
+* 3. desktop                                                             *
+* 4. desktop-lg                                                          *
+*                                                                        *
+*       --- BLOCKS ---                                                   *
+* 1. modal                                                               *
+* 2. sectionBgOblique($colorFirst, $colorSecond, $size)                  *
+* 3. sectionBgCollapse($size)                                            *
+* 4. sectionGridTextImage($padding, $colorGrad, $url)                    *
+*                                                                        *
+* 2. flexRow($justContent: "flex-start", $gap: 0)                        *
+* 3. flexColumn($justContent: "flex-start", $gap: 0)                     *
+* 4. gridColumns($numColumns: 2, $gap: 0)                                *
+* 5. gridRows($numRows: 2, $gap: 0)                                      *
+*                                                                        *
+*       --- HEADING / TEXT ---                                           *
+* 1. headingLinearGradient($dir, $fromColor, $toColor)                   *
+* 2. headingUnderline($colorLine)                                        *
+* 3. headingUnderlineBicolor(                                            *
+*      $colorFirst, $colorSecond, $width: 15rem, $isBreak: false)        *
+* 4. textWrapImage($url)                                                 *
+* 5. textAccessible                                                      *
+* 6. textEllipsis($lines, $fs)                                           *
+*                                                                        *
+*       --- IMAGES ---                                                   *
+* 1. imagesGallery()                                                     *
+* 2. imageObjectFit($height, $width: 100%)                               *
+* 3. imageBgiHoverLg($url, $colorGradient)                               *
+* 4. imageBgiHoverLgTransp($url, $colorGradient)                         *
+* 5. imageMask                                                           *
+* 6. imageParallax($url)                                                 *
+* 7. iconBgi($url, $size, $margin)                                       *
+* 8. iconBgiBefore($url, $size)                                          *
+* 9. iconTextBefore($text, $top, $fs)                                    *
+*                                                                        *
+*       --- OTHERS ---                                                   *
+* 1. scrollHorizontal                                                    *
+*                                                                        *
+\* ===================================================================== */
+
 /** Media Queries **/
 @mixin mobile {
   @media (min-width: var.$mobile) {
@@ -27,29 +70,7 @@
 }
 
 /** Blocks **/
-@mixin flexRow($justContent, $gap) {
-  display: flex;
-  flex-direction: row;
-  justify-content: $justContent;
-  align-items: center;
-  gap: $gap;
-}
-
-@mixin flexColumn($justContent, $gap) {
-  display: flex;
-  flex-direction: column;
-  justify-content: $justContent;
-  align-items: center;
-  gap: $gap;
-}
-
-@mixin gridColumns($numColumns, $gap) {
-  display: grid;
-  grid-template-columns: repeat($numColumns, 1fr);
-  gap: $gap;
-}
-
-@mixin modal() {
+@mixin modal {
   position: fixed;
   top: 0;
   left: 0;
@@ -59,18 +80,120 @@
   background-color: rgba(0, 0, 0, 0.5);
   padding: 0 calc(var.$padding / 2);
   z-index: var.$z-modal;
-  transform: .3s;
+  transform: 0.3s;
 }
 
-/** Text **/
-@mixin headingGradient($dir, $fromColor, $toColor) {
+@mixin sectionBgOblique($colorFirst, $colorSecond, $size) {
+  background-color: $colorFirst;
+  padding: calc($size * 2) 0;
+  position: relative;
+  margin: $size 0;
+  overflow: hidden;
+
+  &::before,
+  &::after {
+    background-color: $colorSecond;
+    content: "";
+    height: calc($size * 2);
+    width: 120%;
+    position: absolute;
+  }
+  &::before {
+    top: -$size;
+    left: 0;
+    transform: rotate(3deg);
+  }
+  &::after {
+    top: -$size;
+    left: 0;
+    transform: rotate(-3deg);
+  }
+}
+
+@mixin sectionBgCollapse($size) {
+  margin-top: -$size;
+  padding-top: $size;
+}
+
+@mixin sectionGridTextImage($padding, $colorGrad, $url, $posImg) {
+  background-image: linear-gradient(
+      to bottom,
+      transparent 0%,
+      transparent 50%,
+      $colorGrad 50%,
+      $colorGrad 100%
+    ),
+    $url;
+  background-repeat: no-repeat;
+  background-size: 100%, cover;
+  background-position: center, -$posImg -calc($posImg / 2);
+  @include tablet {
+    background-image: linear-gradient(
+        to right,
+        transparent 0%,
+        transparent 50%,
+        $colorGrad 50%,
+        $colorGrad 100%
+      ),
+      $url;
+    background-position: center, -$posImg center;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    @include tablet {
+      grid-template-rows: unset;
+      @include gridColumns(2, 2rem);
+    }
+  }
+  &__content {
+    padding: $padding;
+    grid-row: 2 / 3;
+    @include tablet {
+      padding: calc($padding * 2) $padding;
+      grid-column: 2 / 3;
+    }
+  }
+}
+
+@mixin flexRow($justContent: "flex-start", $gap: 0) {
+  display: flex;
+  flex-direction: row;
+  justify-content: $justContent;
+  align-items: center;
+  gap: $gap;
+}
+
+@mixin flexColumn($justContent: "flex-start", $gap: 0) {
+  display: flex;
+  flex-direction: column;
+  justify-content: $justContent;
+  align-items: center;
+  gap: $gap;
+}
+
+@mixin gridColumns($numColumns: 2, $gap: 0) {
+  display: grid;
+  grid-template-columns: repeat($numColumns, 1fr);
+  gap: $gap;
+}
+
+@mixin gridRows($numRows: 2, $gap: 0) {
+  display: grid;
+  grid-template-rows: repeat($numRows, 1fr);
+  gap: $gap;
+}
+
+/** Heading / Text **/
+@mixin headingLinearGradient($dir, $fromColor, $toColor) {
   color: transparent;
   background: linear-gradient(to $dir, $fromColor 20%, $toColor 100%);
   -webkit-background-clip: text;
   background-clip: text;
 }
 
-@mixin headingBorder($colorLine) {
+@mixin headingUnderline($colorLine) {
   &::after {
     content: "";
     display: block;
@@ -82,15 +205,123 @@
   }
 }
 
-/** Images **/
-@mixin imgBorderAndShadow($color) {
-  border-left: 0.15rem solid $color;
-  border-right: 0.2rem solid $color;
-  border-radius: 0.5rem;
-  box-shadow: 2px 0px 5px;
+@mixin headingUnderlineBicolor(
+  $colorFirst,
+  $colorSecond,
+  $width: 15rem,
+  $isBreak: false
+) {
+  font-weight: var.$fw-normal;
+  span {
+    font-weight: var.$fw-medium;
+    @if ($isBreak) {
+      display: block;
+    }
+  }
+  &::after {
+    content: "";
+    display: block;
+    height: 1rem;
+    width: $width;
+    margin-top: 1rem;
+    background-image: linear-gradient(
+      to right,
+      $colorFirst 0%,
+      $colorFirst 50%,
+      $colorSecond 50%,
+      $colorSecond 100%
+    );
+  }
 }
 
-@mixin bgImage($url, $colorGradient) {
+@mixin textWrapImage($url, $bgColorText) {
+  @include flexRow();
+  background-image: url($url);
+  background-repeat: no-repeat;
+  background-position: bottom center;
+  @include tablet {
+    @include gridColumns(3, 0);
+  }
+
+  &__content {
+    background-color: $bgColorText;
+    padding: 5rem;
+    @include tablet {
+      grid-column: 2 / 4;
+    }
+  }
+
+  &__title,
+  &__desc {
+    margin-bottom: 1rem;
+  }
+}
+
+@mixin textAccessible {
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+  display: block;
+}
+
+@mixin textEllipsis($lines, $fs) {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: $lines;
+  overflow: hidden;
+  font-size: $fs;
+}
+
+/** Images **/
+@mixin imagesGallery() {
+  @include gridColumns(2, 2rem);
+  @include tablet {
+    @include gridColumns(3, 2rem);
+  }
+
+  img {
+    object-fit: cover;
+    height: 100%;
+  }
+
+  .img:nth-child(2) {
+    grid-column: 2 / 3;
+    grid-row: 1 / 3;
+    @include tablet {
+      grid-column: 1 / 2;
+      grid-row: 2 / 4;
+    }
+  }
+
+  .img:nth-child(3) {
+    grid-row: 3 / 5;
+    grid-column: 2 / 3;
+    @include tablet {
+      grid-column: 2 / 3;
+      grid-row: 1 / 2;
+    }
+  }
+
+  .img:nth-child(6) {
+    grid-row: 2 / 4;
+    @include tablet {
+      grid-column: 3 / 4;
+      grid-row: 1 / 3;
+    }
+  }
+}
+
+@mixin imageObjectFit($height, $width: 100%) {
+  width: $width;
+  height: $height;
+  object-fit: cover;
+}
+
+@mixin imageBgiHoverLg($url, $colorGradient) {
   background-image: linear-gradient($colorGradient 0%, $colorGradient 100%),
     url($url);
   background-repeat: no-repeat;
@@ -98,23 +329,72 @@
   background-position: top center;
 }
 
-@mixin bgIcono($url) {
-  background-image: url($url);
+@mixin imageBgiHoverLgTransp($url, $colorGradient) {
+  background-image: linear-gradient(
+      to right,
+      transparentize($colorGradient, 0.1) 0%,
+      transparentize($colorGradient, 0.1) 100%
+    ),
+    url($url);
   background-repeat: no-repeat;
-  background-size: 10rem;
-  background-position: 50% 2rem;
+  background-size: cover;
+  background-position: center;
 }
 
-@mixin bgIconoBefore($url) {
+@mixin imageMask {
+  &__mask {
+    overflow: hidden;
+  }
+  &__image {
+    width: 100%;
+    transition-property: transform;
+    transition-duration: 300ms;
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+}
+
+@mixin imageParallax($url) {
+  background-image: url($url);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+@mixin iconBgi($url, $size, $margin) {
+  background-image: url($url);
+  background-repeat: no-repeat;
+  background-size: $size;
+  background-position: 50% $margin;
+}
+
+@mixin iconBgiBefore($url, $size) {
+  position: relative;
   &::before {
     content: "";
     position: absolute;
     display: block;
-    width: 5rem;
-    height: 5rem;
+    width: $size;
+    height: $size;
     background-image: url($url);
     background-repeat: no-repeat;
     background-position: center;
+  }
+}
+
+@mixin iconTextBefore($text, $top, $fs) {
+  position: relative;
+  &::before {
+    content: $text;
+    position: absolute;
+    left: 0;
+    top: $top;
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+      "Lucida Sans", Arial, sans-serif;
+    font-size: $fs;
+    opacity: 0.2;
   }
 }
 
@@ -151,6 +431,6 @@
   scroll-snap-type: x mandatory;
 
   > * {
-      scroll-snap-align: center;
+    scroll-snap-align: center;
   }
 }
