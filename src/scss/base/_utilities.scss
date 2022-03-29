@@ -63,46 +63,7 @@
 
 /** Buttons **/
 .button {
-  display: inline-block;
-  background-color: var.$primary;
-  color: var.$white;
-  padding: 1rem;
-  border-bottom: 0.15rem solid var.$secondary-dark;
-  border-radius: 0.5rem;
-  font-weight: var.$fw-medium;
-  transition: 0.3s;
-
-  &:hover {
-    background-color: var.$primary-dark;
-  }
-
-  &--flex {
-    display: inline-flex;
-    align-items: center;
-  }
-
-  &--small {
-    padding: 0.75rem 1rem;
-  }
-
-  &--link {
-    padding: 0;
-    background-color: transparent;
-    color: var.$link-color;
-    border: none;
-    transition: 0.3s;
-
-    &:hover {
-      background-color: transparent;
-      color: var.$link-hover-color;
-    }
-  }
-
-  &__icon {
-    font-size: 1.25rem;
-    margin-left: 0.5rem;
-    transition: 0.3s;
-  }
+  @include mix.button(var.$primary, var.$white);
 }
 
 /** Scroll **/

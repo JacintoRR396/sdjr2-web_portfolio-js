@@ -39,7 +39,7 @@ body {
 p {
   color: var.$body-pri-color;
   font-size: var.$fs-normal;
-  line-height: 1.25rem;
+  line-height: 1.4rem;
 }
 
 h1,
@@ -92,7 +92,8 @@ img {
 }
 
 /** Classes **/
-.container, *[class*="__container"] {
+.container,
+*[class*="__container"] {
   width: 95%;
   max-width: var.$tablet;
   margin: 0 auto;
