@@ -108,7 +108,7 @@ if( serviceModalButtons ) {
     window.addEventListener('scroll', scrollActive);
 }
 
-/*====================== HEADER - BG : CHANGE ======================*/
+/*====================== HEADER - BG : CHANGE BORDER ======================*/
 const header = document.querySelector('#header');
 
 if( header ) {

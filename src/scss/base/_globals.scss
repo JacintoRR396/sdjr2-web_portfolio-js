@@ -39,7 +39,7 @@ body {
 p {
   color: var.$body-pri-color;
   font-size: var.$fs-normal;
-  line-height: 1.25rem;
+  line-height: 1.4rem;
 }
 
 h1,
@@ -92,7 +92,8 @@ img {
 }
 
 /** Classes **/
-.container, *[class*="__container"] {
+.container,
+*[class*="__container"] {
   width: 95%;
   max-width: var.$tablet;
   margin: 0 auto;
@@ -106,6 +107,10 @@ img {
 .section {
   padding: var.$padding 0 calc(var.$padding * 2);
 }
+.section__title,
+.section__subtitle {
+  text-align: center;
+}
 .section__title {
   @include mix.headingLinearGradient(right, var.$secondary-dark, var.$primary);
   font-size: var.$fs-h1;
@@ -118,7 +123,15 @@ img {
   font-weight: var.$fw-medium;
   margin-bottom: var.$padding;
 }
-.section__title,
-.section__subtitle {
-  text-align: center;
+
+.content__title {
+  margin-bottom: calc(var.$padding / 4);
+  font-size: var.$fs-h3;
+  font-weight: var.$fw-medium;
+  line-height: 1.35rem;
+}
+.content__subtitle {
+  color: var.$gray;
+  font-size: var.$fs-small;
+  line-height: 1.25rem;
 }
