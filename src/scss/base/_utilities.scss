@@ -5,8 +5,9 @@
 /** Material Icons **/
 .material-icons {
   display: inline-block;
+  color: var.$primary;
   font-family: "Material Icons";
-  font-weight: normal;
+  font-weight: var.$fw-normal;
   font-style: normal;
   font-size: var.$icon-size-md;
   line-height: 1;
@@ -15,6 +16,7 @@
   word-wrap: normal;
   white-space: nowrap;
   direction: ltr;
+  transition: 0.3s;
 
   /* Support for all WebKit browsers. */
   -webkit-font-smoothing: antialiased;
@@ -24,6 +26,11 @@
   -moz-osx-font-smoothing: grayscale;
   /* Support for IE. */
   font-feature-settings: "liga";
+
+  &--title {
+    font-size: var.$icon-size-lg;
+  }
+
   @include mix.desktop {
     font-size: var.$icon-size-lg;
   }
@@ -67,6 +74,7 @@
 }
 
 /** Scroll **/
+// Scroll-button
 .scrollup {
   position: fixed;
   right: calc(var.$padding / 2);
@@ -88,11 +96,11 @@
 
   &__icon {
     color: var.$white;
-    font-size: var.$fs-h1;
     padding: 0.5rem 0.25rem;
   }
 }
 
+// Scroll-bar
 ::-webkit-scrollbar {
   width: 0.6rem;
   background-color: var.$scroll-bar-color;

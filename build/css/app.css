@@ -531,8 +531,9 @@ img {
 /** Material Icons **/
 .material-icons {
   display: inline-block;
+  color: #e22331;
   font-family: "Material Icons";
-  font-weight: normal;
+  font-weight: 400;
   font-style: normal;
   font-size: 24px;
   line-height: 1;
@@ -541,6 +542,7 @@ img {
   word-wrap: normal;
   white-space: nowrap;
   direction: ltr;
+  transition: 0.3s;
   /* Support for all WebKit browsers. */
   -webkit-font-smoothing: antialiased;
   /* Support for Safari and Chrome. */
@@ -550,6 +552,9 @@ img {
   /* Support for IE. */
   -webkit-font-feature-settings: "liga";
           font-feature-settings: "liga";
+}
+.material-icons--title {
+  font-size: 36px;
 }
 @media (min-width: 992px) {
   .material-icons {
@@ -605,11 +610,11 @@ img {
   text-decoration: none;
   border-bottom: 0.15rem solid #303f46;
   border-radius: 0.5rem;
+  cursor: pointer;
   transition: background-color 0.3s ease;
 }
 .button:hover {
   background-color: #ba1824;
-  cursor: pointer;
 }
 .button--flex {
   display: inline-flex;
@@ -630,9 +635,9 @@ img {
   color: #ba1824;
 }
 .button__icon {
+  color: #fff;
   font-size: 18px;
   margin-left: 0.5rem;
-  transition: 0.3s;
 }
 @media (min-width: 768px) {
   .button {
@@ -661,7 +666,6 @@ img {
 }
 .scrollup__icon {
   color: #fff;
-  font-size: 1.5rem;
   padding: 0.5rem 0.25rem;
 }
 
@@ -783,10 +787,6 @@ img {
   background-color: #fff;
   border-left-color: #a5a9ab;
   border-right-color: #a5a9ab;
-}
-
-.nav__icon {
-  font-size: 1.5rem;
 }
 
 .nav__close {
@@ -945,12 +945,12 @@ img {
 .skills__header:hover {
   background-color: #f8f8f8;
 }
-.skills__icon, .skills__arrow {
-  color: #e22331;
-  font-size: 2rem;
-}
 .skills__icon {
   margin-right: 0.75rem;
+}
+.skills__icon-arrow {
+  margin-left: auto;
+  margin-right: 0;
 }
 .skills__title {
   margin-bottom: 0.5rem;
@@ -959,10 +959,6 @@ img {
 .skills__subtitle {
   color: #a5a9ab;
   font-size: 0.813rem;
-}
-.skills__arrow {
-  margin-left: auto;
-  transition: 0.4s;
 }
 .skills__list {
   transition: 0.5s;
@@ -1028,7 +1024,7 @@ img {
   margin-bottom: 2rem;
   opacity: 1;
 }
-.skills__open .skills__arrow {
+.skills__open .skills__icon--arrow {
   -webkit-transform: rotate(-180deg);
           transform: rotate(-180deg);
 }
@@ -1065,8 +1061,10 @@ img {
   font-style: italic;
 }
 .qualification__icon {
-  font-size: 1.8rem;
   margin-right: 0.5rem;
+}
+.qualification__icon-calendar {
+  color: #a5a9ab;
 }
 .qualification__content[data-content] {
   display: none;
@@ -1139,8 +1137,6 @@ img {
 }
 .services__icon {
   display: block;
-  color: #e22331;
-  font-size: 2rem;
   margin-bottom: 1rem;
 }
 .services__title {
@@ -1244,10 +1240,6 @@ img {
 .portfolio__description {
   margin-bottom: 0.6666666667rem;
 }
-.portfolio__button:hover .button__icon {
-  -webkit-transform: translateX(0.25rem);
-          transform: translateX(0.25rem);
-}
 
 /*! ============ SKILLS ============ */
 .testimonials__data {
@@ -1288,8 +1280,6 @@ img {
   margin-bottom: 1.5rem;
 }
 .contact__icon {
-  color: #e22331;
-  font-size: 2rem;
   margin-right: 0.6666666667rem;
 }
 .contact__title {
