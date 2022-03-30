@@ -789,6 +789,17 @@ img {
   box-shadow: 0 0 0.5rem rgba(69, 90, 100, 0.4);
 }
 
+.nav__title {
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+  display: block;
+}
+
 /*! ============ HOME ============ */
 .home__container {
   gap: 1rem;

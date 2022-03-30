@@ -86,3 +86,7 @@
     @include mix.shadow(0.4);
   }
 }
+
+.nav__title {
+  @include mix.textAccessible;
+}
