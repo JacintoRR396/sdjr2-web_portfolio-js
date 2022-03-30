@@ -11,7 +11,7 @@ $desktop-lg: 1200px;
 $header-height: 3rem;
 $padding: 2rem;
 @media screen and (min-width: $desktop) {
-  $header-height: 5rem;
+  $header-height: 4rem;
   $padding: 3rem;
 }
 
@@ -96,8 +96,8 @@ $scroll-bar-thumb-hover-color: $primary-dark;
 //accept » 18, 24, 36 or 48px
 $icon-size-sm: 18px;
 $icon-size-md: 24px;
-$icon-size-lg: 36px;
-$icon-size-xl: 48px;
+$icon-size-lg: 32px;
+$icon-size-xl: 42px;
 
 /** Z-Index **/
 $z-tootlip: 10;

@@ -1,24 +1,11 @@
 /*====================== HEADER - MENU : SHOW & HIDDEN ======================*/
 const navMenu = document.querySelector('#nav-menu');
-const navLinks = document.querySelectorAll('.nav__link');
-const navClose = document.querySelector('#nav-close');
-const navToogle = document.querySelector('#nav-toogle');
+const navBtnVisibility = document.querySelector('.nav__visibility');
 
-if( navToogle && navMenu ){
-    navToogle.addEventListener('click', () => {
-        navMenu.classList.add('show-menu');
-    });
-}
-
-if( navLinks && navMenu ){
-    navLinks.forEach( link => link.addEventListener('click', () => {
-        navMenu.classList.remove('show-menu');
-    }));
-}
-
-if( navClose && navMenu ){
-    navClose.addEventListener('click', () => {
-        navMenu.classList.remove('show-menu');
+if( navMenu && navBtnVisibility ){
+    navBtnVisibility.addEventListener('click', () => {
+        navBtnVisibility.innerHTML = (navBtnVisibility.innerHTML === 'visibility_off') ? 'visibility' : 'visibility_off';
+        navMenu.classList.toggle('hidden-menu');
     });
 }
 

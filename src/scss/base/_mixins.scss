@@ -45,6 +45,7 @@
 *       --- OTHERS ---                                                   *
 * 1. scrollHorizontal                                                    *
 * 2. marginBottom($size)                                                 *
+* 3. shadow($opacity: 0.3)                                               *
 *                                                                        *
 \* ===================================================================== */
 
@@ -480,4 +481,8 @@
   @include tablet {
     margin-bottom: 0;
   }
+}
+
+@mixin shadow($opacity: 0.3) {
+  box-shadow: 0 0 0.5rem rgba(69, 90, 100, $opacity);
 }
