@@ -572,11 +572,14 @@ img {
           font-feature-settings: "liga";
 }
 .material-icons--title {
-  font-size: 36px;
+  font-size: 32px;
 }
 @media (min-width: 992px) {
   .material-icons {
-    font-size: 36px;
+    font-size: 32px;
+  }
+  .material-icons--title {
+    font-size: 42px;
   }
 }
 
@@ -724,6 +727,11 @@ img {
   max-width: 1200px;
   height: 3rem;
 }
+@media (min-width: 992px) {
+  .nav {
+    height: 4rem;
+  }
+}
 .nav__logo, .nav__visibility, .nav__theme, .nav__language {
   color: #455a64;
   font-size: 1.25rem;
@@ -734,12 +742,19 @@ img {
 .nav__logo:hover, .nav__visibility:hover, .nav__theme:hover, .nav__language:hover {
   color: #303f46;
 }
+@media (min-width: 992px) {
+  .nav__logo, .nav__visibility, .nav__theme, .nav__language {
+    font-size: 1.4rem;
+  }
+}
 .nav__menu {
   position: fixed;
   left: 0;
   bottom: 1rem;
   right: 0;
   width: 90%;
+  min-width: 350px;
+  max-width: 576px;
   margin: 0 auto;
   padding: 0.75rem;
   background-color: rgba(248, 248, 248, 0.5);
@@ -749,6 +764,12 @@ img {
           backdrop-filter: blur(10px);
   opacity: 1;
   transition: 0.3s;
+}
+@media (min-width: 992px) {
+  .nav__menu {
+    position: static;
+    padding: 0.5rem;
+  }
 }
 .nav__btns {
   display: flex;
@@ -831,7 +852,7 @@ img {
           transform: translateX(0.25rem);
 }
 .home__social-icon img {
-  width: 36px;
+  width: 32px;
 }
 .home__img {
   margin-left: 0.6666666667rem;
