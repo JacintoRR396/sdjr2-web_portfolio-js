@@ -32,10 +32,13 @@
 
   &__button {
     font-size: var.$fs-small;
-    cursor: pointer;
 
     &:hover .button__icon {
       transform: translateX(0.25rem);
+    }
+
+    .button__icon {
+      color: var.$gray-dark;
     }
   }
 

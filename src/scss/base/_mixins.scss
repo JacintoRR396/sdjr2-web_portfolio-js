@@ -424,6 +424,13 @@
     background-color: darken($bgColor, 10);
   }
 
+  &__icon {
+    color: $color;
+    font-size: var.$icon-size-sm;
+    font-weight: var.$fw-normal;
+    margin-left: 0.5rem;
+  }
+
   &--flex {
     display: inline-flex;
     align-items: center;
@@ -444,12 +451,6 @@
       background-color: transparent;
       color: var.$link-hover-color;
     }
-  }
-
-  &__icon {
-    color: $color;
-    font-size: var.$icon-size-sm;
-    margin-left: 0.5rem;
   }
 
   @include tablet {
