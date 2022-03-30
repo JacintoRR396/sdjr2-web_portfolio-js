@@ -12,18 +12,7 @@
     margin-bottom: calc(var.$padding * (3 / 4));
   }
   &__icon {
-    color: var.$primary;
-    font-size: var.$fs-big;
     margin-right: calc(var.$padding / 3);
-  }
-  &__title {
-    font-size: var.$fs-h3;
-    font-weight: var.$fw-medium;
-    margin-bottom: calc(var.$padding / 4);
-  }
-  &__subtitle {
-    color: var.$gray;
-    font-size: var.$fs-small;
   }
 
   &__content {

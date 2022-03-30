@@ -22,22 +22,21 @@
 
   &__icon {
     display: block;
-    color: var.$primary;
-    font-size: var.$fs-big;
     margin-bottom: calc(var.$padding / 2);
   }
   &__title {
-    font-size: var.$fs-h3;
-    font-weight: var.$fw-medium;
     margin-bottom: calc(var.$padding / 2);
   }
 
   &__button {
     font-size: var.$fs-small;
-    cursor: pointer;
 
     &:hover .button__icon {
       transform: translateX(0.25rem);
+    }
+
+    .button__icon {
+      color: var.$gray-dark;
     }
   }
 

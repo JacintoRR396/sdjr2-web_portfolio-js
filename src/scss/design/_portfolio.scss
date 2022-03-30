@@ -15,19 +15,10 @@
   }
   &__img {
     width: 256px;
-    border-radius: .5rem;
+    border-radius: 0.5rem;
     justify-self: center;
-  }
-  &__title {
-    font-size: var.$fs-h3;
-    margin-bottom: calc(var.$padding / 4);
   }
   &__description {
     margin-bottom: calc(var.$padding / 3);
-  }
-  &__button{
-    &:hover .button__icon{
-      transform: translateX(0.25rem);
-    }
   }
 }

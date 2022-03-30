@@ -434,7 +434,7 @@ body {
 p {
   color: #1f1e1e;
   font-size: 0.938rem;
-  line-height: 1.25rem;
+  line-height: 1.4rem;
 }
 
 h1,
@@ -489,7 +489,8 @@ img {
 }
 
 /** Classes **/
-.container, *[class*=__container] {
+.container,
+*[class*=__container] {
   width: 95%;
   max-width: 768px;
   margin: 0 auto;
@@ -502,6 +503,11 @@ img {
 
 .section {
   padding: 2rem 0 4rem;
+}
+
+.section__title,
+.section__subtitle {
+  text-align: center;
 }
 
 .section__title {
@@ -521,17 +527,26 @@ img {
   margin-bottom: 2rem;
 }
 
-.section__title,
-.section__subtitle {
-  text-align: center;
+.content__title {
+  margin-bottom: 0.5rem;
+  font-size: 1.15rem;
+  font-weight: 700;
+  line-height: 1.35rem;
+}
+
+.content__subtitle {
+  color: #a5a9ab;
+  font-size: 0.813rem;
+  line-height: 1.25rem;
 }
 
 /*! ============ UTILITIES ============ */
 /** Material Icons **/
 .material-icons {
   display: inline-block;
+  color: #e22331;
   font-family: "Material Icons";
-  font-weight: normal;
+  font-weight: 400;
   font-style: normal;
   font-size: 24px;
   line-height: 1;
@@ -540,6 +555,7 @@ img {
   word-wrap: normal;
   white-space: nowrap;
   direction: ltr;
+  transition: 0.3s;
   /* Support for all WebKit browsers. */
   -webkit-font-smoothing: antialiased;
   /* Support for Safari and Chrome. */
@@ -549,6 +565,9 @@ img {
   /* Support for IE. */
   -webkit-font-feature-settings: "liga";
           font-feature-settings: "liga";
+}
+.material-icons--title {
+  font-size: 36px;
 }
 @media (min-width: 992px) {
   .material-icons {
@@ -596,16 +615,25 @@ img {
 /** Buttons **/
 .button {
   display: inline-block;
+  padding: 1rem;
   background-color: #e22331;
   color: #fff;
-  padding: 1rem;
+  font-weight: 700;
+  text-align: center;
+  text-decoration: none;
   border-bottom: 0.15rem solid #303f46;
   border-radius: 0.5rem;
-  font-weight: 700;
-  transition: 0.3s;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 .button:hover {
   background-color: #ba1824;
+}
+.button__icon {
+  color: #fff;
+  font-size: 18px;
+  font-weight: 400;
+  margin-left: 0.5rem;
 }
 .button--flex {
   display: inline-flex;
@@ -625,10 +653,11 @@ img {
   background-color: transparent;
   color: #ba1824;
 }
-.button__icon {
-  font-size: 1.25rem;
-  margin-left: 0.5rem;
-  transition: 0.3s;
+@media (min-width: 768px) {
+  .button {
+    width: auto;
+    display: inline-block;
+  }
 }
 
 /** Scroll **/
@@ -651,7 +680,6 @@ img {
 }
 .scrollup__icon {
   color: #fff;
-  font-size: 1.5rem;
   padding: 0.5rem 0.25rem;
 }
 
@@ -775,10 +803,6 @@ img {
   border-right-color: #a5a9ab;
 }
 
-.nav__icon {
-  font-size: 1.5rem;
-}
-
 .nav__close {
   position: absolute;
   right: 1.3rem;
@@ -798,9 +822,6 @@ img {
 }
 
 /*! ============ HOME ============ */
-.home {
-  /** contact me */
-}
 .home__container {
   gap: 1rem;
 }
@@ -852,30 +873,6 @@ img {
 }
 .home__description {
   margin: 2rem 0;
-}
-.home__scroll {
-  display: none;
-  grid-column: 1/3;
-}
-.home__scroll-button {
-  color: #e22331;
-  transition: 0.3s;
-}
-.home__scroll-button:hover {
-  -webkit-transform: translateY(0.25rem);
-          transform: translateY(0.25rem);
-}
-.home__scroll-mouse {
-  font-size: 2rem;
-}
-.home__scroll-name {
-  margin-right: 0.25rem;
-  color: #455a64;
-  font-size: 0.813rem;
-  font-weight: 700;
-}
-.home__scroll-arrow {
-  font-size: 1.25rem;
 }
 
 /*! ============ ABOUT ============ */
@@ -935,24 +932,15 @@ img {
 .skills__header:hover {
   background-color: #f8f8f8;
 }
-.skills__icon, .skills__arrow {
-  color: #e22331;
-  font-size: 2rem;
-}
 .skills__icon {
   margin-right: 0.75rem;
 }
-.skills__title {
-  margin-bottom: 0.5rem;
-  font-size: 1.15rem;
-}
-.skills__subtitle {
-  color: #a5a9ab;
-  font-size: 0.813rem;
-}
-.skills__arrow {
+.skills__icon-arrow {
   margin-left: auto;
-  transition: 0.4s;
+  margin-right: 0;
+}
+.skills__title {
+  font-weight: 900;
 }
 .skills__list {
   transition: 0.5s;
@@ -1018,7 +1006,7 @@ img {
   margin-bottom: 2rem;
   opacity: 1;
 }
-.skills__open .skills__arrow {
+.skills__open .skills__icon-arrow {
   -webkit-transform: rotate(-180deg);
           transform: rotate(-180deg);
 }
@@ -1055,8 +1043,10 @@ img {
   font-style: italic;
 }
 .qualification__icon {
-  font-size: 1.8rem;
   margin-right: 0.5rem;
+}
+.qualification__icon-calendar {
+  color: #a5a9ab;
 }
 .qualification__content[data-content] {
   display: none;
@@ -1074,12 +1064,10 @@ img {
 }
 .qualification__title {
   font-size: 0.938rem;
-  font-weight: 700;
-  margin-bottom: 0.5rem;
 }
 .qualification__subtitle {
   display: inline-block;
-  font-size: 0.813rem;
+  color: #1f1e1e;
   margin-bottom: 1rem;
 }
 .qualification__calendar {
@@ -1129,22 +1117,20 @@ img {
 }
 .services__icon {
   display: block;
-  color: #e22331;
-  font-size: 2rem;
   margin-bottom: 1rem;
 }
 .services__title {
-  font-size: 1.15rem;
-  font-weight: 700;
   margin-bottom: 1rem;
 }
 .services__button {
   font-size: 0.813rem;
-  cursor: pointer;
 }
 .services__button:hover .button__icon {
   -webkit-transform: translateX(0.25rem);
           transform: translateX(0.25rem);
+}
+.services__button .button__icon {
+  color: #3b3b3b;
 }
 .services__modal {
   position: fixed;
@@ -1227,16 +1213,8 @@ img {
   border-radius: 0.5rem;
   justify-self: center;
 }
-.portfolio__title {
-  font-size: 1.15rem;
-  margin-bottom: 0.5rem;
-}
 .portfolio__description {
   margin-bottom: 0.6666666667rem;
-}
-.portfolio__button:hover .button__icon {
-  -webkit-transform: translateX(0.25rem);
-          transform: translateX(0.25rem);
 }
 
 /*! ============ SKILLS ============ */
@@ -1254,14 +1232,6 @@ img {
   border-radius: 50%;
   margin-right: 0.6666666667rem;
 }
-.testimonials__name {
-  font-size: 1.15rem;
-  font-weight: 700;
-}
-.testimonials__type {
-  color: #a5a9ab;
-  font-size: 0.813rem;
-}
 .testimonials__icon-star {
   color: #455a64;
 }
@@ -1278,18 +1248,7 @@ img {
   margin-bottom: 1.5rem;
 }
 .contact__icon {
-  color: #e22331;
-  font-size: 2rem;
   margin-right: 0.6666666667rem;
-}
-.contact__title {
-  font-size: 1.15rem;
-  font-weight: 700;
-  margin-bottom: 0.5rem;
-}
-.contact__subtitle {
-  color: #a5a9ab;
-  font-size: 0.813rem;
 }
 .contact__content {
   background-color: #ee7d85;

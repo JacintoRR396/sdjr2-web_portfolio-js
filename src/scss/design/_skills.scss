@@ -13,30 +13,20 @@
     margin-bottom: calc(var.$padding * (3 / 4));
     padding: 0.25rem;
     cursor: pointer;
-    transition: .3s;
+    transition: 0.3s;
     &:hover {
       background-color: var.$gray-light;
     }
   }
-  &__icon,
-  &__arrow {
-    color: var.$primary;
-    font-size: var.$fs-big;
-  }
   &__icon {
     margin-right: 0.75rem;
+    &-arrow {
+      margin-left: auto;
+      margin-right: 0;
+    }
   }
   &__title {
-    margin-bottom: calc(var.$padding / 4);
-    font-size: var.$fs-h3;
-  }
-  &__subtitle {
-    color: var.$gray;
-    font-size: var.$fs-small;
-  }
-  &__arrow {
-    margin-left: auto;
-    transition: 0.4s;
+    font-weight: var.$fw-bold;
   }
 
   &__list {
@@ -106,12 +96,12 @@
     margin-bottom: var.$padding;
     opacity: 1;
   }
-  .skills__arrow {
+  .skills__icon-arrow {
     transform: rotate(-180deg);
   }
 }
 .skills__close {
- .skills__list {
+  .skills__list {
     height: 0;
     overflow: hidden;
     opacity: 0;
