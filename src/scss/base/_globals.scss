@@ -28,7 +28,6 @@ html {
 }
 
 body {
-  margin: 0 0 var.$header-height;
   min-width: var.$mobile-xs;
   color: var.$body-pri-color;
   background-color: var.$body-pri-bgcolor;
@@ -108,7 +107,16 @@ img {
 }
 
 .section {
-  padding: var.$padding 0 calc(var.$padding * 2);
+  padding: calc(var.$padding * 2.5) 0 calc(var.$padding / 2);
+  &:nth-child(1) {
+    padding-top: var.$padding;
+  }
+  @include mix.desktop {
+    padding: calc(var.$padding * 3) 0 calc(var.$padding / 2);
+    &:nth-child(1) {
+      padding-top: calc(var.$padding * 1.5);
+    }
+  }
 }
 .section__title,
 .section__subtitle {

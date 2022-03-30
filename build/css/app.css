@@ -424,7 +424,6 @@ html {
 }
 
 body {
-  margin: 0 0 3rem;
   min-width: 320px;
   color: #1f1e1e;
   background-color: #fff;
@@ -507,7 +506,18 @@ img {
 }
 
 .section {
-  padding: 2rem 0 4rem;
+  padding: 5rem 0 1rem;
+}
+.section:nth-child(1) {
+  padding-top: 2rem;
+}
+@media (min-width: 992px) {
+  .section {
+    padding: 6rem 0 1rem;
+  }
+  .section:nth-child(1) {
+    padding-top: 3rem;
+  }
 }
 
 .section__title,
