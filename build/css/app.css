@@ -747,6 +747,7 @@ img {
   box-shadow: 0 0 0.5rem rgba(69, 90, 100, 0.3);
   -webkit-backdrop-filter: blur(10px);
           backdrop-filter: blur(10px);
+  opacity: 1;
   transition: 0.3s;
 }
 .nav__btns {
@@ -798,6 +799,10 @@ img {
   clip: rect(0, 0, 0, 0);
   border: 0;
   display: block;
+}
+
+.hidden-menu {
+  opacity: 0;
 }
 
 /*! ============ HOME ============ */

@@ -47,6 +47,7 @@
     border-radius: 4rem;
     @include mix.shadow();
     backdrop-filter: blur(10px);
+    opacity: 1;
     transition: 0.3s;
   }
 
@@ -89,4 +90,9 @@
 
 .nav__title {
   @include mix.textAccessible;
+}
+
+// Utilities
+.hidden-menu {
+  opacity: 0;
 }
