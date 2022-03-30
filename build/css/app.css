@@ -531,11 +531,13 @@ img {
   margin-bottom: 0.5rem;
   font-size: 1.15rem;
   font-weight: 700;
+  line-height: 1.35rem;
 }
 
 .content__subtitle {
   color: #a5a9ab;
   font-size: 0.813rem;
+  line-height: 1.25rem;
 }
 
 /*! ============ UTILITIES ============ */

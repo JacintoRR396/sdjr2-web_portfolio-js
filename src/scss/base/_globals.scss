@@ -128,8 +128,10 @@ img {
   margin-bottom: calc(var.$padding / 4);
   font-size: var.$fs-h3;
   font-weight: var.$fw-medium;
+  line-height: 1.35rem;
 }
 .content__subtitle {
   color: var.$gray;
   font-size: var.$fs-small;
+  line-height: 1.25rem;
 }
