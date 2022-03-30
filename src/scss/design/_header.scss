@@ -4,14 +4,14 @@
 /*! ============ HEADER ============ */
 .header {
   position: fixed;
+  top: 0;
   left: 0;
-  bottom: 0;
   width: 100%;
   background-color: var.$body-sec-bgcolor;
   z-index: var.$z-fixed;
 
   &-scroll {
-    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.15);
+    box-shadow: -2px 0 4px rgba(0, 0, 0, 0.15);
   }
 }
 
@@ -22,7 +22,7 @@
 
   &__logo,
   &__theme,
-  &__toogle {
+  &__language {
     color: var.$title-color;
     font-weight: var.$fw-medium;
     cursor: pointer;
@@ -54,12 +54,10 @@
   &__btns {
     @include mix.flexRow(flex-start, 0);
   }
-  &__theme {
+  &__theme,
+  &__language {
     font-size: var.$fs-h2;
     margin-right: calc(var.$padding / 2);
-  }
-  &__toogle {
-    font-size: 1.1rem;
   }
 }
 
