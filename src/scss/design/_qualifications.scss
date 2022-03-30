@@ -43,12 +43,10 @@
   }
   &__title {
     font-size: var.$fs-normal;
-    font-weight: var.$fw-medium;
-    margin-bottom: 0.5rem;
   }
   &__subtitle {
     display: inline-block;
-    font-size: var.$fs-small;
+    color: var.$black;
     margin-bottom: 1rem;
   }
   &__calendar {

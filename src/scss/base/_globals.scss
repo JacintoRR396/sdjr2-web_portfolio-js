@@ -107,6 +107,10 @@ img {
 .section {
   padding: var.$padding 0 calc(var.$padding * 2);
 }
+.section__title,
+.section__subtitle {
+  text-align: center;
+}
 .section__title {
   @include mix.headingLinearGradient(right, var.$secondary-dark, var.$primary);
   font-size: var.$fs-h1;
@@ -119,7 +123,13 @@ img {
   font-weight: var.$fw-medium;
   margin-bottom: var.$padding;
 }
-.section__title,
-.section__subtitle {
-  text-align: center;
+
+.content__title {
+  margin-bottom: calc(var.$padding / 4);
+  font-size: var.$fs-h3;
+  font-weight: var.$fw-medium;
+}
+.content__subtitle {
+  color: var.$gray;
+  font-size: var.$fs-small;
 }

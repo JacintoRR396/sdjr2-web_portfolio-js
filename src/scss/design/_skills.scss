@@ -26,12 +26,7 @@
     }
   }
   &__title {
-    margin-bottom: calc(var.$padding / 4);
-    font-size: var.$fs-h3;
-  }
-  &__subtitle {
-    color: var.$gray;
-    font-size: var.$fs-small;
+    font-weight: var.$fw-bold;
   }
 
   &__list {

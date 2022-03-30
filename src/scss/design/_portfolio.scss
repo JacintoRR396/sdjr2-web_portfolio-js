@@ -18,10 +18,6 @@
     border-radius: 0.5rem;
     justify-self: center;
   }
-  &__title {
-    font-size: var.$fs-h3;
-    margin-bottom: calc(var.$padding / 4);
-  }
   &__description {
     margin-bottom: calc(var.$padding / 3);
   }

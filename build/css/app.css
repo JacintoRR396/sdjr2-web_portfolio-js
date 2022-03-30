@@ -505,6 +505,11 @@ img {
   padding: 2rem 0 4rem;
 }
 
+.section__title,
+.section__subtitle {
+  text-align: center;
+}
+
 .section__title {
   color: transparent;
   background: linear-gradient(to right, #303f46 20%, #e22331 100%);
@@ -522,9 +527,15 @@ img {
   margin-bottom: 2rem;
 }
 
-.section__title,
-.section__subtitle {
-  text-align: center;
+.content__title {
+  margin-bottom: 0.5rem;
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+
+.content__subtitle {
+  color: #a5a9ab;
+  font-size: 0.813rem;
 }
 
 /*! ============ UTILITIES ============ */
@@ -927,12 +938,7 @@ img {
   margin-right: 0;
 }
 .skills__title {
-  margin-bottom: 0.5rem;
-  font-size: 1.15rem;
-}
-.skills__subtitle {
-  color: #a5a9ab;
-  font-size: 0.813rem;
+  font-weight: 900;
 }
 .skills__list {
   transition: 0.5s;
@@ -1056,12 +1062,10 @@ img {
 }
 .qualification__title {
   font-size: 0.938rem;
-  font-weight: 700;
-  margin-bottom: 0.5rem;
 }
 .qualification__subtitle {
   display: inline-block;
-  font-size: 0.813rem;
+  color: #1f1e1e;
   margin-bottom: 1rem;
 }
 .qualification__calendar {
@@ -1114,8 +1118,6 @@ img {
   margin-bottom: 1rem;
 }
 .services__title {
-  font-size: 1.15rem;
-  font-weight: 700;
   margin-bottom: 1rem;
 }
 .services__button {
@@ -1209,10 +1211,6 @@ img {
   border-radius: 0.5rem;
   justify-self: center;
 }
-.portfolio__title {
-  font-size: 1.15rem;
-  margin-bottom: 0.5rem;
-}
 .portfolio__description {
   margin-bottom: 0.6666666667rem;
 }
@@ -1232,14 +1230,6 @@ img {
   border-radius: 50%;
   margin-right: 0.6666666667rem;
 }
-.testimonials__name {
-  font-size: 1.15rem;
-  font-weight: 700;
-}
-.testimonials__type {
-  color: #a5a9ab;
-  font-size: 0.813rem;
-}
 .testimonials__icon-star {
   color: #455a64;
 }
@@ -1257,15 +1247,6 @@ img {
 }
 .contact__icon {
   margin-right: 0.6666666667rem;
-}
-.contact__title {
-  font-size: 1.15rem;
-  font-weight: 700;
-  margin-bottom: 0.5rem;
-}
-.contact__subtitle {
-  color: #a5a9ab;
-  font-size: 0.813rem;
 }
 .contact__content {
   background-color: #ee7d85;
