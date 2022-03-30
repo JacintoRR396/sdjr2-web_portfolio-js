@@ -92,6 +92,9 @@ img {
 }
 
 /** Classes **/
+.main {
+  overflow: hidden;
+}
 .container,
 *[class*="__container"] {
   width: 95%;

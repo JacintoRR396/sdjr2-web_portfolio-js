@@ -33,6 +33,9 @@
 
   @include mix.desktop {
     font-size: var.$icon-size-lg;
+    &--title {
+      font-size: var.$icon-size-xl;
+    }
   }
 }
 
@@ -91,7 +94,7 @@
   }
 
   &-show {
-    bottom: 5rem;
+    bottom: 7.5rem;
   }
 
   &__icon {
