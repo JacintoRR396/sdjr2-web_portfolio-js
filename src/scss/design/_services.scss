@@ -20,12 +20,15 @@
     }
   }
 
+  &__icon,
+  &__title {
+    margin-bottom: calc(var.$padding-mob / 2);
+    @include mix.desktop {
+      margin-bottom: calc(var.$padding-desk / 2);
+    }
+  }
   &__icon {
     display: block;
-    margin-bottom: calc(var.$padding / 2);
-  }
-  &__title {
-    margin-bottom: calc(var.$padding / 2);
   }
 
   &__button {
@@ -55,7 +58,10 @@
     &-title {
       font-size: var.$fs-h3;
       font-weight: var.$fw-medium;
-      margin-bottom: calc(var.$padding * (3 / 4));
+      margin-bottom: calc(var.$padding-mob * (3 / 4));
+      @include mix.desktop {
+        margin-bottom: calc(var.$padding-desk * (3 / 4));
+      }
     }
     &-close {
       position: absolute;

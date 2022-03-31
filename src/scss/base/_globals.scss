@@ -44,10 +44,13 @@ p {
 h1,
 h2,
 h3 {
-  margin: 0 0 calc(var.$padding / 2) 0;
   color: var.$secondary;
   font-family: var.$font-secondary;
   font-weight: var.$fw-medium;
+  margin: 0 0 calc(var.$padding-mob / 2) 0;
+  @include mix.desktop {
+    margin: 0 0 calc(var.$padding-desk / 2) 0;
+  }
 }
 h1 {
   color: var.$secondary-dark;
@@ -107,14 +110,14 @@ img {
 }
 
 .section {
-  padding: calc(var.$padding * 2.5) 0 calc(var.$padding / 2);
+  padding: calc(var.$padding-mob * 2.5) 0 calc(var.$padding-mob / 2);
   &:nth-child(1) {
-    padding-top: var.$padding;
+    padding-top: var.$padding-mob;
   }
   @include mix.desktop {
-    padding: calc(var.$padding * 3) 0 calc(var.$padding / 2);
+    padding: calc(var.$padding-desk * 2) 0 calc(var.$padding-desk / 2);
     &:nth-child(1) {
-      padding-top: calc(var.$padding * 1.5);
+      padding-top: var.$padding-desk;
     }
   }
 }
@@ -125,21 +128,30 @@ img {
 .section__title {
   @include mix.headingLinearGradient(right, var.$secondary-dark, var.$primary);
   font-size: var.$fs-h1;
-  margin-bottom: calc(var.$padding / 3);
+  margin-bottom: calc(var.$padding-mob / 3);
+  @include mix.desktop {
+    margin-bottom: calc(var.$padding-desk / 3);
+  }
 }
 .section__subtitle {
   display: block;
   color: var.$secondary;
   font-size: var.$fs-normal;
   font-weight: var.$fw-medium;
-  margin-bottom: var.$padding;
+  margin-bottom: var.$padding-mob;
+  @include mix.desktop {
+    margin-bottom: var.$padding-desk;
+  }
 }
 
 .content__title {
-  margin-bottom: calc(var.$padding / 4);
   font-size: var.$fs-h3;
   font-weight: var.$fw-medium;
   line-height: 1.35rem;
+  margin-bottom: calc(var.$padding-mob / 4);
+  @include mix.desktop {
+    margin-bottom: calc(var.$padding-desk / 4);
+  }
 }
 .content__subtitle {
   color: var.$gray;

@@ -4,15 +4,24 @@
 /*! ============ SKILLS ============ */
 .contact {
   &__container {
-    row-gap: var.$padding;
+    row-gap: var.$padding-mob;
+    @include mix.desktop {
+      row-gap: var.$padding-desk;
+    }
   }
 
   &__info {
     display: flex;
-    margin-bottom: calc(var.$padding * (3 / 4));
+    margin-bottom: calc(var.$padding-mob * (3 / 4));
+    @include mix.desktop {
+      margin-bottom: calc(var.$padding-desk * (3 / 4));
+    }
   }
   &__icon {
-    margin-right: calc(var.$padding / 3);
+    margin-right: calc(var.$padding-mob / 3);
+    @include mix.desktop {
+      margin-right: calc(var.$padding-desk / 3);
+    }
   }
 
   &__content {

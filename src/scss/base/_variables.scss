@@ -8,12 +8,10 @@ $desktop: 992px;
 $desktop-lg: 1200px;
 
 /** Sizes **/
-$header-height: 3rem;
-$padding: 2rem;
-@media screen and (min-width: $desktop) {
-  $header-height: 4rem;
-  $padding: 3rem;
-}
+$header-height-mob: 3rem;
+$header-height-desk: 4rem;
+$padding-mob: 2rem;
+$padding-desk: 3rem;
 
 /** Fonts and typographies **/
 $font-primary: "Roboto", sans-serif;

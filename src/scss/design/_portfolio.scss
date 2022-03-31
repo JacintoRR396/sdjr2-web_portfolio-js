@@ -19,6 +19,9 @@
     justify-self: center;
   }
   &__description {
-    margin-bottom: calc(var.$padding / 3);
+    margin-bottom: calc(var.$padding-mob / 3);
+    @include mix.desktop {
+      margin-bottom: calc(var.$padding-desk / 3);
+    }
   }
 }

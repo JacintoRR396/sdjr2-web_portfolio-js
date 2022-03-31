@@ -5,7 +5,10 @@
 .qualification {
   &__tabs {
     @include mix.flexRow(space-evenly, 0);
-    margin-bottom: calc(var.$padding * (3 / 4));
+    margin-bottom: calc(var.$padding-mob * (3 / 4));
+    @include mix.desktop {
+      margin-bottom: calc(var.$padding-desk * (3 / 4));
+    }
   }
   &__button {
     width: 50%;
