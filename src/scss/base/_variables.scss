@@ -1,43 +1,39 @@
 /*! ============ VARIABLES ============ */
 
 /** Media Queries **/
-$mobile-xs: 320px;
+$mobile-xs: 380px;
 $mobile: 576px;
 $tablet: 768px;
 $desktop: 992px;
 $desktop-lg: 1200px;
 
 /** Sizes **/
-$header-height: 3rem;
-$padding: 2rem;
-@media screen and (min-width: $desktop) {
-  $header-height: 4rem;
-  $padding: 3rem;
-}
+$header-height-mob: 3rem;
+$header-height-desk: 4rem;
+$padding-mob: 2rem;
+$padding-desk: 2.5rem;
 
 /** Fonts and typographies **/
 $font-primary: "Roboto", sans-serif;
 $font-secondary: "Poppins", sans-serif;
 $font-italic: "Bona Nova", serif;
 
-$fs-bigger: 2.5rem;
-$fs-big: 2rem;
-$fs-h1: 1.5rem;
-$fs-h2: 1.25rem;
-$fs-h3: 1.15rem;
-$fs-normal: 0.938rem;
-$fs-small: 0.813rem;
-$fs-smaller: 0.75rem;
-@media screen and (min-width: $desktop) {
-  $fs-bigger: 4.5rem;
-  $fs-big: 3rem;
-  $fs-h1: 2.25rem;
-  $fs-h2: 1.5rem;
-  $fs-h3: 1.25rem;
-  $fs-normal: 1rem;
-  $fs-small: 0.875rem;
-  $fs-smaller: 0.813rem;
-}
+$fs-bigger-mob: 2.5rem;
+$fs-bigger-desk: 4rem;
+$fs-big-mob: 2rem;
+$fs-big-desk: 2.75rem;
+$fs-h1-mob: 1.5rem;
+$fs-h1-desk: 2rem;
+$fs-h2-mob: 1.25rem;
+$fs-h2-desk: 1.5rem;
+$fs-h3-mob: 1.15rem;
+$fs-h3-desk: 1.25rem;
+$fs-normal-mob: 0.938rem;
+$fs-normal-desk: 1rem;
+$fs-small-mob: 0.813rem;
+$fs-small-desk: 0.875rem;
+$fs-smaller-mob: 0.75rem;
+$fs-smaller-desk: 0.813rem;
 
 $fw-normal: 400;
 $fw-medium: 700;
@@ -98,6 +94,7 @@ $icon-size-sm: 18px;
 $icon-size-md: 24px;
 $icon-size-lg: 32px;
 $icon-size-xl: 42px;
+$icon-size-xxl: 48px;
 
 /** Z-Index **/
 $z-tootlip: 10;

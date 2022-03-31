@@ -6,7 +6,10 @@
   &__data {
     display: flex;
     justify-content: space-between;
-    margin-bottom: calc(var.$padding / 2);
+    margin-bottom: calc(var.$padding-mob / 2);
+    @include mix.desktop {
+      margin-bottom: calc(var.$padding-desk / 2);
+    }
   }
 
   &__header {
@@ -16,7 +19,10 @@
     width: 4rem;
     height: 4rem;
     border-radius: 50%;
-    margin-right: calc(var.$padding / 3);
+    margin-right: calc(var.$padding-mob / 3);
+    @include mix.desktop {
+      margin-right: calc(var.$padding-desk / 3);
+    }
   }
 
   &__icon-star {
@@ -24,6 +30,9 @@
   }
 
   &__description {
-    margin-bottom: var.$padding;
+    margin-bottom: var.$padding-mob;
+    @include mix.desktop {
+      margin-bottom: var.$padding-desk;
+    }
   }
 }

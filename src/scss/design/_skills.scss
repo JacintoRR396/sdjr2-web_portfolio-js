@@ -10,10 +10,13 @@
   &__header {
     display: flex;
     align-items: center;
-    margin-bottom: calc(var.$padding * (3 / 4));
+    margin-bottom: calc(var.$padding-mob * (3 / 4));
     padding: 0.25rem;
     cursor: pointer;
     transition: 0.3s;
+    @include mix.desktop {
+      margin-bottom: calc(var.$padding-desk * (3 / 4));
+    }
     &:hover {
       background-color: var.$gray-light;
     }
@@ -35,11 +38,17 @@
   &__titles {
     display: flex;
     justify-content: space-between;
-    margin-bottom: calc(var.$padding / 8);
+    margin-bottom: calc(var.$padding-mob / 8);
+    @include mix.desktop {
+      margin-bottom: calc(var.$padding-desk / 8);
+    }
   }
   &__name {
-    font-size: var.$fs-normal;
+    font-size: var.$fs-normal-mob;
     font-weight: var.$fw-normal;
+    @include mix.desktop {
+      font-size: var.$fs-normal-desk;
+    }
   }
 
   &__bar,
@@ -93,8 +102,11 @@
 .skills__open {
   .skills__list {
     height: max-content;
-    margin-bottom: var.$padding;
+    margin-bottom: var.$padding-mob;
     opacity: 1;
+    @include mix.desktop {
+      margin-bottom: var.$padding-desk;
+    }
   }
   .skills__icon-arrow {
     transform: rotate(-180deg);

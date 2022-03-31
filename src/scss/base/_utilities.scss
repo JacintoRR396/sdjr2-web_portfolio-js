@@ -80,7 +80,7 @@
 // Scroll-button
 .scrollup {
   position: fixed;
-  right: calc(var.$padding / 2);
+  right: calc(var.$padding-mob / 2);
   bottom: -20%;
   background-color: var.$link-color;
   padding: 0 0.3rem;
@@ -88,6 +88,9 @@
   opacity: 0.8;
   z-index: var.$z-tootlip;
   transition: 0.4s;
+  @include mix.desktop {
+    right: calc(var.$padding-desk/ 2);
+  }
 
   &:hover {
     background-color: var.$link-hover-color;
@@ -95,6 +98,12 @@
 
   &-show {
     bottom: 7.5rem;
+    @include mix.tablet {
+      bottom: 5rem;
+    }
+    @include mix.desktop {
+      bottom: 2rem;
+    }
   }
 
   &__icon {
