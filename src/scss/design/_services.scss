@@ -32,7 +32,11 @@
   }
 
   &__button {
-    font-size: var.$fs-small;
+    font-size: var.$fs-small-mob;
+
+    @include mix.desktop {
+      font-size: var.$fs-small-desk;
+    }
 
     &:hover .button__icon {
       transform: translateX(0.25rem);
@@ -56,10 +60,11 @@
     }
 
     &-title {
-      font-size: var.$fs-h3;
+      font-size: var.$fs-h3-mob;
       font-weight: var.$fw-medium;
       margin-bottom: calc(var.$padding-mob * (3 / 4));
       @include mix.desktop {
+        font-size: var.$fs-h3-desk;
         margin-bottom: calc(var.$padding-desk * (3 / 4));
       }
     }
@@ -68,9 +73,12 @@
       top: 1rem;
       right: 1rem;
       color: var.$primary;
-      font-size: var.$fs-h2;
+      font-size: var.$fs-h2-mob;
       font-weight: var.$fw-medium;
       cursor: pointer;
+      @include mix.desktop {
+        font-size: var.$fs-h2-desk;
+      }
     }
 
     &-list {

@@ -31,17 +31,23 @@
   }
   &__label {
     color: var.$title-color;
-    font-size: var.$fs-small;
+    font-size: var.$fs-small-mob;
     font-weight: var.$fw-bold;
+    @include mix.desktop {
+      font-size: var.$fs-small-desk;
+    }
   }
   &__input {
     width: 100%;
     background-color: var.$input-color;
     color: var.$body-sec-color;
     font-family: var.$font-primary;
-    font-size: var.$fs-normal;
+    font-size: var.$fs-normal-mob;
     border: none;
     outline: none;
     padding: 0.25rem 0.5rem 0.5rem 0;
+    @include mix.desktop {
+      font-size: var.$fs-normal-desk;
+    }
   }
 }

@@ -24,16 +24,20 @@
   }
 
   &__title {
-    font-size: var.$fs-h1;
+    font-size: var.$fs-h1-mob;
     margin-bottom: calc(var.$padding-mob / 8);
     @include mix.desktop {
+      font-size: var.$fs-h1-desk;
       margin-bottom: calc(var.$padding-desk / 8);
     }
   }
   &__subtitle {
     color: var.$secondary-dark;
-    font-size: var.$fs-small;
+    font-size: var.$fs-small-mob;
     font-weight: var.$fw-medium;
+    @include mix.desktop {
+      font-size: var.$fs-small-desk;
+    }
   }
 
   &__links {
@@ -50,24 +54,28 @@
     @include mix.flexRow(flex-start, 0.5rem);
   }
   &__social {
-    font-size: var.$fs-h3;
+    font-size: var.$fs-h3-mob;
     margin-right: calc(var.$padding-mob * (3 / 4));
     @include mix.desktop {
+      font-size: var.$fs-h3-desk;
       margin-right: calc(var.$padding-desk * (3 / 4));
     }
+
     &:hover {
       color: var.$gray-light;
     }
+
     img {
       width: var.$icon-size-md;
     }
   }
 
   &__copy {
-    font-size: var.$fs-smaller;
+    font-size: var.$fs-smaller-mob;
     text-align: center;
     margin-top: var.$padding-mob;
     @include mix.desktop {
+      font-size: var.$fs-smaller-desk;
       margin-top: var.$padding-desk;
     }
   }

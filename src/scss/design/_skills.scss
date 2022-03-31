@@ -44,8 +44,11 @@
     }
   }
   &__name {
-    font-size: var.$fs-normal;
+    font-size: var.$fs-normal-mob;
     font-weight: var.$fw-normal;
+    @include mix.desktop {
+      font-size: var.$fs-normal-desk;
+    }
   }
 
   &__bar,

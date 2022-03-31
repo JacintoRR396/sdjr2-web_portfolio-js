@@ -18,24 +18,22 @@ $font-primary: "Roboto", sans-serif;
 $font-secondary: "Poppins", sans-serif;
 $font-italic: "Bona Nova", serif;
 
-$fs-bigger: 2.5rem;
-$fs-big: 2rem;
-$fs-h1: 1.5rem;
-$fs-h2: 1.25rem;
-$fs-h3: 1.15rem;
-$fs-normal: 0.938rem;
-$fs-small: 0.813rem;
-$fs-smaller: 0.75rem;
-@media screen and (min-width: $desktop) {
-  $fs-bigger: 4.5rem;
-  $fs-big: 3rem;
-  $fs-h1: 2.25rem;
-  $fs-h2: 1.5rem;
-  $fs-h3: 1.25rem;
-  $fs-normal: 1rem;
-  $fs-small: 0.875rem;
-  $fs-smaller: 0.813rem;
-}
+$fs-bigger-mob: 2.5rem;
+$fs-bigger-desk: 4.5rem;
+$fs-big-mob: 2rem;
+$fs-big-desk: 3rem;
+$fs-h1-mob: 1.5rem;
+$fs-h1-desk: 2.25rem;
+$fs-h2-mob: 1.25rem;
+$fs-h2-desk: 1.5rem;
+$fs-h3-mob: 1.15rem;
+$fs-h3-desk: 1.25rem;
+$fs-normal-mob: 0.938rem;
+$fs-normal-desk: 1rem;
+$fs-small-mob: 0.813rem;
+$fs-small-desk: 0.875rem;
+$fs-smaller-mob: 0.75rem;
+$fs-smaller-desk: 0.813rem;
 
 $fw-normal: 400;
 $fw-medium: 700;

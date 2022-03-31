@@ -30,12 +30,18 @@
 
     &-title {
       color: var.$secondary;
-      font-size: var.$fs-h2;
+      font-size: var.$fs-h2-mob;
       font-weight: var.$fw-medium;
+      @include mix.desktop {
+        font-size: var.$fs-h2-desk;
+      }
     }
 
     &-name {
-      font-size: var.$fs-smaller;
+      font-size: var.$fs-smaller-mob;
+      @include mix.desktop {
+        font-size: var.$fs-smaller-desk;
+      }
     }
   }
 
