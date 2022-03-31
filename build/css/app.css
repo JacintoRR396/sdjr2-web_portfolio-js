@@ -919,7 +919,7 @@ img {
 }
 @media (min-width: 380px) {
   .home__container {
-    grid-template-rows: repeat(2, 2fr);
+    grid-template-rows: 2fr 1.5fr;
     gap: 2rem;
   }
 }
@@ -1095,7 +1095,7 @@ img {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  gap: 0;
+  gap: 0.5rem;
 }
 
 /*! ============ SKILLS ============ */

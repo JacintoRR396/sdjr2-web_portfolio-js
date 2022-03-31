@@ -58,6 +58,6 @@
   }
 
   &__btns {
-    @include mix.flexRow(center, 0);
+    @include mix.flexRow(center, 0.5rem);
   }
 }
