@@ -11,7 +11,10 @@
   }
 
   &__img {
-    @include mix.imageFrame(280px);
+    justify-self: center;
+    align-self: center;
+    width: 80%;
+    max-width: 30rem;
   }
 
   &__info {
@@ -46,9 +49,11 @@
   &__description {
     margin: var.$padding-mob auto;
     max-width: 30rem;
+    text-align: center;
 
     @include mix.desktop {
       margin: var.$padding-desk 0;
+      text-align: left;
     }
   }
 

@@ -1025,13 +1025,10 @@ img {
   }
 }
 .about__img {
-  width: 280px;
   justify-self: center;
   align-self: center;
-  border-left: 0.15rem solid #303f46;
-  border-right: 0.2rem solid #303f46;
-  border-radius: 0.5rem;
-  box-shadow: 2px 0px 5px;
+  width: 80%;
+  max-width: 30rem;
 }
 .about__info {
   display: grid;
@@ -1085,10 +1082,12 @@ img {
 .about__description {
   margin: 2rem auto;
   max-width: 30rem;
+  text-align: center;
 }
 @media (min-width: 992px) {
   .about__description {
     margin: 2.5rem 0;
+    text-align: left;
   }
 }
 .about__btns {
