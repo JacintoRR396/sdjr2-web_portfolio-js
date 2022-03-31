@@ -39,18 +39,16 @@
   }
   &__img {
     &-container {
+      display: flex;
       @include mix.imageObjectFit(100%, 80%);
       max-width: 20rem;
-      justify-self: center;
-      align-self: center;
     }
   }
 
-  &__content-data {
-  }
   &__title,
   &__subtitle,
-  &__description {
+  &__description,
+  &__btns {
     text-align: center;
     @include mix.desktop {
       text-align: left;
@@ -78,8 +76,5 @@
     @include mix.desktop {
       margin: var.$padding-desk auto;
     }
-  }
-  &__btns {
-    text-align: center;
   }
 }

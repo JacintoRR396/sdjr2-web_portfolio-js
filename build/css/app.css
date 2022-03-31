@@ -957,19 +957,18 @@ img {
   width: 42px;
 }
 .home__img-container {
+  display: flex;
   width: 80%;
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
   max-width: 20rem;
-  justify-self: center;
-  align-self: center;
 }
-.home__title, .home__subtitle, .home__description {
+.home__title, .home__subtitle, .home__description, .home__btns {
   text-align: center;
 }
 @media (min-width: 992px) {
-  .home__title, .home__subtitle, .home__description {
+  .home__title, .home__subtitle, .home__description, .home__btns {
     text-align: left;
   }
 }
@@ -1001,9 +1000,6 @@ img {
   .home__description {
     margin: 3rem auto;
   }
-}
-.home__btns {
-  text-align: center;
 }
 
 /*! ============ ABOUT ============ */
