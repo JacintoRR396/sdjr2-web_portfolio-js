@@ -126,14 +126,8 @@ img {
 
 .section {
   padding: calc(var.$padding-mob * 2.5) 0 calc(var.$padding-mob / 2);
-  &:nth-child(1) {
-    padding-top: var.$padding-mob;
-  }
   @include mix.desktop {
     padding: calc(var.$padding-desk * 2) 0 calc(var.$padding-desk / 2);
-    &:nth-child(1) {
-      padding-top: var.$padding-desk;
-    }
   }
 }
 .section__title,
