@@ -4,13 +4,7 @@
 /*! ============ ABOUT ============ */
 .about {
   &__img {
-    width: 280px;
-    justify-self: center;
-    align-self: center;
-    border-left: 0.15rem solid var.$secondary-dark;
-    border-right: 0.2rem solid var.$secondary-dark;
-    border-radius: 0.5rem;
-    box-shadow: 2px 0px 5px;
+    @include mix.imageFrame(280px);
   }
 
   &__description {
@@ -30,12 +24,18 @@
 
     &-title {
       color: var.$secondary;
-      font-size: var.$fs-h2;
+      font-size: var.$fs-h2-mob;
       font-weight: var.$fw-medium;
+      @include mix.desktop {
+        font-size: var.$fs-h2-desk;
+      }
     }
 
     &-name {
-      font-size: var.$fs-smaller;
+      font-size: var.$fs-smaller-mob;
+      @include mix.desktop {
+        font-size: var.$fs-smaller-desk;
+      }
     }
   }
 

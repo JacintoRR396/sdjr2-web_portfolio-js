@@ -4,15 +4,24 @@
 /*! ============ SKILLS ============ */
 .contact {
   &__container {
-    row-gap: var.$padding;
+    row-gap: var.$padding-mob;
+    @include mix.desktop {
+      row-gap: var.$padding-desk;
+    }
   }
 
   &__info {
     display: flex;
-    margin-bottom: calc(var.$padding * (3 / 4));
+    margin-bottom: calc(var.$padding-mob * (3 / 4));
+    @include mix.desktop {
+      margin-bottom: calc(var.$padding-desk * (3 / 4));
+    }
   }
   &__icon {
-    margin-right: calc(var.$padding / 3);
+    margin-right: calc(var.$padding-mob / 3);
+    @include mix.desktop {
+      margin-right: calc(var.$padding-desk / 3);
+    }
   }
 
   &__content {
@@ -22,17 +31,23 @@
   }
   &__label {
     color: var.$title-color;
-    font-size: var.$fs-small;
+    font-size: var.$fs-small-mob;
     font-weight: var.$fw-bold;
+    @include mix.desktop {
+      font-size: var.$fs-small-desk;
+    }
   }
   &__input {
     width: 100%;
     background-color: var.$input-color;
     color: var.$body-sec-color;
     font-family: var.$font-primary;
-    font-size: var.$fs-normal;
+    font-size: var.$fs-normal-mob;
     border: none;
     outline: none;
     padding: 0.25rem 0.5rem 0.5rem 0;
+    @include mix.desktop {
+      font-size: var.$fs-normal-desk;
+    }
   }
 }

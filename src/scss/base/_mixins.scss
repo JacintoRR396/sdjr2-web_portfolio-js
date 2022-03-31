@@ -3,10 +3,11 @@
 /*! ============================== MIXINS ============================== *\
 *                                                                        *
 *       ---  MEDIA QUERIES ---                                           *
-* 1. mobile                                                              *
-* 2. tablet                                                              *
-* 3. desktop                                                             *
-* 4. desktop-lg                                                          *
+* 1. mobile-xs                                                              *
+* 2. mobile                                                              *
+* 3. tablet                                                              *
+* 4. desktop                                                             *
+* 5. desktop-lg                                                          *
 *                                                                        *
 *       --- BLOCKS ---                                                   *
 * 1. modal                                                               *
@@ -33,11 +34,12 @@
 * 2. imageObjectFit($height, $width: 100%)                               *
 * 3. imageBgiHoverLg($url, $colorGradient)                               *
 * 4. imageBgiHoverLgTransp($url, $colorGradient)                         *
-* 5. imageMask                                                           *
-* 6. imageParallax($url)                                                 *
-* 7. iconBgi($url, $size, $margin)                                       *
-* 8. iconBgiBefore($url, $size)                                          *
-* 9. iconTextBefore($text, $top, $fs)                                    *
+* 5. imageParallax($url)                                                 *
+* 6. imageMask                                                           *
+* 7. imageFrame($width)                                                  *
+* 8. iconBgi($url, $size, $margin)                                       *
+* 9. iconBgiBefore($url, $size)                                          *
+* 10. iconTextBefore($text, $top, $fs)                                   *
 *                                                                        *
 *       --- BUTTONS ---                                                  *
 * 1. button($bgColor, $color)                                            *
@@ -50,6 +52,12 @@
 \* ===================================================================== */
 
 /** Media Queries **/
+@mixin mobile-xs {
+  @media (min-width: var.$mobile-xs) {
+    @content;
+  }
+}
+
 @mixin mobile {
   @media (min-width: var.$mobile) {
     @content;
@@ -83,7 +91,7 @@
   bottom: 0;
   @include flexRow(center, 0);
   background-color: rgba(0, 0, 0, 0.5);
-  padding: 0 calc(var.$padding / 2);
+  padding: 0 calc(var.$padding-mob / 2);
   z-index: var.$z-modal;
   transform: 0.3s;
 }
@@ -346,6 +354,14 @@
   background-position: center;
 }
 
+@mixin imageParallax($url) {
+  background-image: url($url);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
 @mixin imageMask {
   &__mask {
     overflow: hidden;
@@ -360,12 +376,14 @@
   }
 }
 
-@mixin imageParallax($url) {
-  background-image: url($url);
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-  background-attachment: fixed;
+@mixin imageFrame($width) {
+  width: $width;
+  justify-self: center;
+  align-self: center;
+  border-left: 0.15rem solid var.$secondary-dark;
+  border-right: 0.2rem solid var.$secondary-dark;
+  border-radius: 0.5rem;
+  box-shadow: 2px 0px 5px;
 }
 
 @mixin iconBgi($url, $size, $margin) {
@@ -405,7 +423,8 @@
 
 /** Buttons **/
 @mixin button($bgColor, $color, $isBlock: false) {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
   padding: 1rem;
   background-color: $bgColor;
   color: $color;
@@ -432,11 +451,6 @@
     margin-left: 0.5rem;
   }
 
-  &--flex {
-    display: inline-flex;
-    align-items: center;
-  }
-
   &--small {
     padding: 0.75rem 1rem;
   }
@@ -452,11 +466,6 @@
       background-color: transparent;
       color: var.$link-hover-color;
     }
-  }
-
-  @include tablet {
-    width: auto;
-    display: inline-block;
   }
 }
 

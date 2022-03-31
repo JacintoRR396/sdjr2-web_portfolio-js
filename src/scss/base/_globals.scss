@@ -28,38 +28,55 @@ html {
 }
 
 body {
-  margin: 0 0 var.$header-height;
   min-width: var.$mobile-xs;
   color: var.$body-pri-color;
   background-color: var.$body-pri-bgcolor;
   font-family: var.$font-primary;
-  font-size: var.$fs-normal;
+  font-size: var.$fs-normal-mob;
+  @include mix.desktop {
+    font-size: var.$fs-normal-desk;
+  }
 }
 
 p {
   color: var.$body-pri-color;
-  font-size: var.$fs-normal;
+  font-size: var.$fs-normal-mob;
   line-height: 1.4rem;
+  @include mix.desktop {
+    font-size: var.$fs-normal-desk;
+  }
 }
 
 h1,
 h2,
 h3 {
-  margin: 0 0 calc(var.$padding / 2) 0;
   color: var.$secondary;
   font-family: var.$font-secondary;
   font-weight: var.$fw-medium;
+  margin: 0 0 calc(var.$padding-mob / 2) 0;
+  @include mix.desktop {
+    margin: 0 0 calc(var.$padding-desk / 2) 0;
+  }
 }
 h1 {
   color: var.$secondary-dark;
-  font-size: var.$fs-h1;
+  font-size: var.$fs-h1-mob;
   font-weight: var.$fw-bold;
+  @include mix.desktop {
+    font-size: var.$fs-h1-desk;
+  }
 }
 h2 {
-  font-size: var.$fs-h2;
+  font-size: var.$fs-h2-mob;
+  @include mix.desktop {
+    font-size: var.$fs-h2-desk;
+  }
 }
 h3 {
-  font-size: var.$fs-h3;
+  font-size: var.$fs-h3-mob;
+  @include mix.desktop {
+    font-size: var.$fs-h3-desk;
+  }
 }
 
 strong {
@@ -100,6 +117,13 @@ img {
   width: 95%;
   max-width: var.$tablet;
   margin: 0 auto;
+  @include mix.desktop {
+    max-width: var.$desktop;
+    width: 90%;
+  }
+  @include mix.desktop-lg {
+    max-width: var.$desktop-lg;
+  }
 }
 
 .grid {
@@ -108,7 +132,10 @@ img {
 }
 
 .section {
-  padding: var.$padding 0 calc(var.$padding * 2);
+  padding: calc(var.$padding-mob * 2.5) 0 calc(var.$padding-mob / 2);
+  @include mix.desktop {
+    padding: calc(var.$padding-desk * 2.5) 0 calc(var.$padding-desk / 2);
+  }
 }
 .section__title,
 .section__subtitle {
@@ -116,25 +143,40 @@ img {
 }
 .section__title {
   @include mix.headingLinearGradient(right, var.$secondary-dark, var.$primary);
-  font-size: var.$fs-h1;
-  margin-bottom: calc(var.$padding / 3);
+  font-size: var.$fs-h1-mob;
+  margin-bottom: calc(var.$padding-mob / 3);
+  @include mix.desktop {
+    font-size: var.$fs-h1-desk;
+    margin-bottom: calc(var.$padding-desk / 3);
+  }
 }
 .section__subtitle {
   display: block;
   color: var.$secondary;
-  font-size: var.$fs-normal;
+  font-size: var.$fs-normal-mob;
   font-weight: var.$fw-medium;
-  margin-bottom: var.$padding;
+  margin-bottom: var.$padding-mob;
+  @include mix.desktop {
+    font-size: var.$fs-normal-desk;
+    margin-bottom: var.$padding-desk;
+  }
 }
 
 .content__title {
-  margin-bottom: calc(var.$padding / 4);
-  font-size: var.$fs-h3;
+  font-size: var.$fs-h3-mob;
   font-weight: var.$fw-medium;
   line-height: 1.35rem;
+  margin-bottom: calc(var.$padding-mob / 4);
+  @include mix.desktop {
+    font-size: var.$fs-h3-desk;
+    margin-bottom: calc(var.$padding-desk / 4);
+  }
 }
 .content__subtitle {
   color: var.$gray;
-  font-size: var.$fs-small;
+  font-size: var.$fs-small-mob;
   line-height: 1.25rem;
+  @include mix.desktop {
+    font-size: var.$fs-small-desk;
+  }
 }
