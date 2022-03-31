@@ -10,15 +10,15 @@
 * 5. desktop-lg                                                          *
 *                                                                        *
 *       --- BLOCKS ---                                                   *
-* 1. modal                                                               *
-* 2. sectionBgOblique($colorFirst, $colorSecond, $size)                  *
-* 3. sectionBgCollapse($size)                                            *
-* 4. sectionGridTextImage($padding, $colorGrad, $url)                    *
-*                                                                        *
-* 2. flexRow($justContent: "flex-start", $gap: 0)                        *
-* 3. flexColumn($justContent: "flex-start", $gap: 0)                     *
-* 4. gridColumns($numColumns: 2, $gap: 0)                                *
-* 5. gridRows($numRows: 2, $gap: 0)                                      *
+* 1. flexRow($justContent: "flex-start", $gap: 0)                        *
+* 2. flexColumn($justContent: "flex-start", $gap: 0)                     *
+* 3. gridColumns($numColumns: 2, $gap: 0)                                *
+* 4. gridRows($numRows: 2, $gap: 0)                                      *
+* 5. modal                                                               *
+* 6. sectionBgOblique($colorFirst, $colorSecond, $size)                  *
+* 7. sectionBgCollapse($size)                                            *
+* 8. sectionGridTextImage($padding, $colorGrad, $url)                    *
+* 9. card($bgColor)                                                      *
 *                                                                        *
 *       --- HEADING / TEXT ---                                           *
 * 1. headingLinearGradient($dir, $fromColor, $toColor)                   *
@@ -83,6 +83,34 @@
 }
 
 /** Blocks **/
+@mixin flexRow($justContent: "flex-start", $gap: 0) {
+  display: flex;
+  flex-direction: row;
+  justify-content: $justContent;
+  align-items: center;
+  gap: $gap;
+}
+
+@mixin flexColumn($justContent: "flex-start", $gap: 0) {
+  display: flex;
+  flex-direction: column;
+  justify-content: $justContent;
+  align-items: center;
+  gap: $gap;
+}
+
+@mixin gridColumns($numColumns: 2, $gap: 0) {
+  display: grid;
+  grid-template-columns: repeat($numColumns, 1fr);
+  gap: $gap;
+}
+
+@mixin gridRows($numRows: 2, $gap: 0) {
+  display: grid;
+  grid-template-rows: repeat($numRows, 1fr);
+  gap: $gap;
+}
+
 @mixin modal {
   position: fixed;
   top: 0;
@@ -170,32 +198,17 @@
   }
 }
 
-@mixin flexRow($justContent: "flex-start", $gap: 0) {
-  display: flex;
-  flex-direction: row;
-  justify-content: $justContent;
-  align-items: center;
-  gap: $gap;
-}
+@mixin card($bgColor) {
+  background-color: $bgColor;
+  padding: 2.5rem 0.5rem 1.25rem 1.5rem;
+  border-radius: 0.25rem;
+  border-bottom: 0.15rem solid var.$primary;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+  transition: 0.3s;
 
-@mixin flexColumn($justContent: "flex-start", $gap: 0) {
-  display: flex;
-  flex-direction: column;
-  justify-content: $justContent;
-  align-items: center;
-  gap: $gap;
-}
-
-@mixin gridColumns($numColumns: 2, $gap: 0) {
-  display: grid;
-  grid-template-columns: repeat($numColumns, 1fr);
-  gap: $gap;
-}
-
-@mixin gridRows($numRows: 2, $gap: 0) {
-  display: grid;
-  grid-template-rows: repeat($numRows, 1fr);
-  gap: $gap;
+  &:hover {
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+  }
 }
 
 /** Heading / Text **/
