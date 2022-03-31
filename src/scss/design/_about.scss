@@ -5,8 +5,10 @@
 .about {
   &__container {
     gap: var.$padding-mob;
+
     @include mix.desktop {
-      gap: var.$padding-desk;
+      grid-template-rows: unset;
+      @include mix.gridColumns(2, var.$padding-desk);
     }
   }
 
@@ -15,6 +17,16 @@
     align-self: center;
     width: 80%;
     max-width: 30rem;
+
+    @include mix.desktop {
+      object-fit: cover;
+      width: 100%;
+      height: 80%;
+      max-width: unset;
+    }
+    @include mix.desktop-lg {
+      height: 100%;
+    }
   }
 
   &__info {
@@ -40,6 +52,7 @@
       font-size: var.$fs-h2-mob;
       font-weight: var.$fw-medium;
       margin: 0;
+
       @include mix.desktop {
         font-size: var.$fs-h2-desk;
       }
@@ -59,5 +72,9 @@
 
   &__btns {
     @include mix.flexRow(center, 0.5rem);
+
+    @include mix.desktop {
+      justify-content: flex-start;
+    }
   }
 }

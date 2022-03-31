@@ -1021,6 +1021,9 @@ img {
 }
 @media (min-width: 992px) {
   .about__container {
+    grid-template-rows: unset;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     gap: 2.5rem;
   }
 }
@@ -1029,6 +1032,20 @@ img {
   align-self: center;
   width: 80%;
   max-width: 30rem;
+}
+@media (min-width: 992px) {
+  .about__img {
+    -o-object-fit: cover;
+       object-fit: cover;
+    width: 100%;
+    height: 80%;
+    max-width: unset;
+  }
+}
+@media (min-width: 1200px) {
+  .about__img {
+    height: 100%;
+  }
 }
 .about__info {
   display: grid;
@@ -1096,6 +1113,11 @@ img {
   justify-content: center;
   align-items: center;
   gap: 0.5rem;
+}
+@media (min-width: 992px) {
+  .about__btns {
+    justify-content: flex-start;
+  }
 }
 
 /*! ============ SKILLS ============ */
