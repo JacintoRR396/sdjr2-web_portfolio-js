@@ -3,6 +3,13 @@
 
 /*! ============ ABOUT ============ */
 .about {
+  &__container {
+    gap: var.$padding-mob;
+    @include mix.desktop {
+      gap: var.$padding-desk;
+    }
+  }
+
   &__img {
     @include mix.imageFrame(280px);
   }
@@ -39,7 +46,7 @@
     }
   }
 
-  &__buttons {
+  &__btns {
     @include mix.flexRow(center, 0);
   }
 }

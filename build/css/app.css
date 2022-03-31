@@ -355,15 +355,15 @@ template {
 * 5. desktop-lg                                                          *
 *                                                                        *
 *       --- BLOCKS ---                                                   *
-* 1. modal                                                               *
-* 2. sectionBgOblique($colorFirst, $colorSecond, $size)                  *
-* 3. sectionBgCollapse($size)                                            *
-* 4. sectionGridTextImage($padding, $colorGrad, $url)                    *
-*                                                                        *
-* 2. flexRow($justContent: "flex-start", $gap: 0)                        *
-* 3. flexColumn($justContent: "flex-start", $gap: 0)                     *
-* 4. gridColumns($numColumns: 2, $gap: 0)                                *
-* 5. gridRows($numRows: 2, $gap: 0)                                      *
+* 1. flexRow($justContent: "flex-start", $gap: 0)                        *
+* 2. flexColumn($justContent: "flex-start", $gap: 0)                     *
+* 3. gridColumns($numColumns: 2, $gap: 0)                                *
+* 4. gridRows($numRows: 2, $gap: 0)                                      *
+* 5. modal                                                               *
+* 6. sectionBgOblique($colorFirst, $colorSecond, $size)                  *
+* 7. sectionBgCollapse($size)                                            *
+* 8. sectionGridTextImage($padding, $colorGrad, $url)                    *
+* 9. card($bgColor)                                                      *
 *                                                                        *
 *       --- HEADING / TEXT ---                                           *
 * 1. headingLinearGradient($dir, $fromColor, $toColor)                   *
@@ -908,7 +908,7 @@ img {
 }
 
 .hidden-menu {
-  opacity: 0;
+  display: none;
 }
 
 /*! ============ HOME ============ */
@@ -1016,6 +1016,14 @@ img {
 }
 
 /*! ============ ABOUT ============ */
+.about__container {
+  gap: 2rem;
+}
+@media (min-width: 992px) {
+  .about__container {
+    gap: 2.5rem;
+  }
+}
 .about__img {
   width: 280px;
   justify-self: center;
@@ -1059,7 +1067,7 @@ img {
     font-size: 0.813rem;
   }
 }
-.about__buttons {
+.about__btns {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -1295,7 +1303,6 @@ img {
   grid-template-columns: repeat(2, 1fr);
 }
 .services__content {
-  position: relative;
   background-color: #f8f8f8;
   padding: 2.5rem 0.5rem 1.25rem 1.5rem;
   border-radius: 0.25rem;
