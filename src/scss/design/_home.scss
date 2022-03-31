@@ -9,7 +9,7 @@
     gap: calc(var.$padding-mob / 2);
 
     @include mix.mobile-xs {
-      grid-template-rows: repeat(2, 2fr);
+      grid-template-rows: 2fr 1.5fr;
       gap: var.$padding-mob;
     }
 

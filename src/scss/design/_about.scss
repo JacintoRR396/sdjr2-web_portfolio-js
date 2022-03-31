@@ -3,22 +3,47 @@
 
 /*! ============ ABOUT ============ */
 .about {
-  &__img {
-    @include mix.imageFrame(280px);
+  &__container {
+    gap: var.$padding-mob;
+
+    @include mix.desktop {
+      grid-template-rows: unset;
+      @include mix.gridColumns(2, var.$padding-desk);
+    }
   }
 
-  &__description {
-    margin-bottom: 2rem;
-    text-align: center;
+  &__img {
+    justify-self: center;
+    align-self: center;
+    width: 80%;
+    max-width: 30rem;
+
+    @include mix.desktop {
+      object-fit: cover;
+      width: 100%;
+      height: 80%;
+      max-width: unset;
+    }
+    @include mix.desktop-lg {
+      height: 100%;
+    }
   }
 
   &__info {
-    @include mix.flexRow(space-evenly, 0);
-    margin-bottom: 2.5rem;
+    @include mix.gridColumns(1, calc(var.$padding-mob / 2));
 
-    &-title,
-    &-name {
-      display: block;
+    @include mix.mobile-xs {
+      @include mix.gridColumns(2, calc(var.$padding-mob / 2));
+    }
+    @include mix.mobile {
+      @include mix.gridColumns(3, calc(var.$padding-mob / 2));
+    }
+
+    &-card {
+      @include mix.flexColumn(center, 0.5rem);
+      @include mix.card(var.$gray-light);
+      max-width: 30rem;
+      padding: 1.5rem;
       text-align: center;
     }
 
@@ -26,20 +51,30 @@
       color: var.$secondary;
       font-size: var.$fs-h2-mob;
       font-weight: var.$fw-medium;
+      margin: 0;
+
       @include mix.desktop {
         font-size: var.$fs-h2-desk;
       }
     }
+  }
 
-    &-name {
-      font-size: var.$fs-smaller-mob;
-      @include mix.desktop {
-        font-size: var.$fs-smaller-desk;
-      }
+  &__description {
+    margin: var.$padding-mob auto;
+    max-width: 30rem;
+    text-align: center;
+
+    @include mix.desktop {
+      margin: var.$padding-desk 0;
+      text-align: left;
     }
   }
 
-  &__buttons {
-    @include mix.flexRow(center, 0);
+  &__btns {
+    @include mix.flexRow(center, 0.5rem);
+
+    @include mix.desktop {
+      justify-content: flex-start;
+    }
   }
 }

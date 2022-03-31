@@ -355,15 +355,15 @@ template {
 * 5. desktop-lg                                                          *
 *                                                                        *
 *       --- BLOCKS ---                                                   *
-* 1. modal                                                               *
-* 2. sectionBgOblique($colorFirst, $colorSecond, $size)                  *
-* 3. sectionBgCollapse($size)                                            *
-* 4. sectionGridTextImage($padding, $colorGrad, $url)                    *
-*                                                                        *
-* 2. flexRow($justContent: "flex-start", $gap: 0)                        *
-* 3. flexColumn($justContent: "flex-start", $gap: 0)                     *
-* 4. gridColumns($numColumns: 2, $gap: 0)                                *
-* 5. gridRows($numRows: 2, $gap: 0)                                      *
+* 1. flexRow($justContent: "flex-start", $gap: 0)                        *
+* 2. flexColumn($justContent: "flex-start", $gap: 0)                     *
+* 3. gridColumns($numColumns: 2, $gap: 0)                                *
+* 4. gridRows($numRows: 2, $gap: 0)                                      *
+* 5. modal                                                               *
+* 6. sectionBgOblique($colorFirst, $colorSecond, $size)                  *
+* 7. sectionBgCollapse($size)                                            *
+* 8. sectionGridTextImage($padding, $colorGrad, $url)                    *
+* 9. card($bgColor)                                                      *
 *                                                                        *
 *       --- HEADING / TEXT ---                                           *
 * 1. headingLinearGradient($dir, $fromColor, $toColor)                   *
@@ -908,7 +908,7 @@ img {
 }
 
 .hidden-menu {
-  opacity: 0;
+  display: none;
 }
 
 /*! ============ HOME ============ */
@@ -919,7 +919,7 @@ img {
 }
 @media (min-width: 380px) {
   .home__container {
-    grid-template-rows: repeat(2, 2fr);
+    grid-template-rows: 2fr 1.5fr;
     gap: 2rem;
   }
 }
@@ -1016,55 +1016,108 @@ img {
 }
 
 /*! ============ ABOUT ============ */
+.about__container {
+  gap: 2rem;
+}
+@media (min-width: 992px) {
+  .about__container {
+    grid-template-rows: unset;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.5rem;
+  }
+}
 .about__img {
-  width: 280px;
   justify-self: center;
   align-self: center;
-  border-left: 0.15rem solid #303f46;
-  border-right: 0.2rem solid #303f46;
-  border-radius: 0.5rem;
-  box-shadow: 2px 0px 5px;
+  width: 80%;
+  max-width: 30rem;
 }
-.about__description {
-  margin-bottom: 2rem;
-  text-align: center;
+@media (min-width: 992px) {
+  .about__img {
+    -o-object-fit: cover;
+       object-fit: cover;
+    width: 100%;
+    height: 80%;
+    max-width: unset;
+  }
+}
+@media (min-width: 1200px) {
+  .about__img {
+    height: 100%;
+  }
 }
 .about__info {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  align-items: center;
-  gap: 0;
-  margin-bottom: 2.5rem;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 1rem;
 }
-.about__info-title, .about__info-name {
-  display: block;
+@media (min-width: 380px) {
+  .about__info {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+}
+@media (min-width: 576px) {
+  .about__info {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+}
+.about__info-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: #f8f8f8;
+  padding: 2.5rem 0.5rem 1.25rem 1.5rem;
+  border-radius: 0.25rem;
+  border-bottom: 0.15rem solid #e22331;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+  transition: 0.3s;
+  max-width: 30rem;
+  padding: 1.5rem;
   text-align: center;
+}
+.about__info-card:hover {
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
 }
 .about__info-title {
   color: #455a64;
   font-size: 1.25rem;
   font-weight: 700;
+  margin: 0;
 }
 @media (min-width: 992px) {
   .about__info-title {
     font-size: 1.5rem;
   }
 }
-.about__info-name {
-  font-size: 0.75rem;
+.about__description {
+  margin: 2rem auto;
+  max-width: 30rem;
+  text-align: center;
 }
 @media (min-width: 992px) {
-  .about__info-name {
-    font-size: 0.813rem;
+  .about__description {
+    margin: 2.5rem 0;
+    text-align: left;
   }
 }
-.about__buttons {
+.about__btns {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  gap: 0;
+  gap: 0.5rem;
+}
+@media (min-width: 992px) {
+  .about__btns {
+    justify-content: flex-start;
+  }
 }
 
 /*! ============ SKILLS ============ */
@@ -1295,10 +1348,10 @@ img {
   grid-template-columns: repeat(2, 1fr);
 }
 .services__content {
-  position: relative;
   background-color: #f8f8f8;
   padding: 2.5rem 0.5rem 1.25rem 1.5rem;
   border-radius: 0.25rem;
+  border-bottom: 0.15rem solid #e22331;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
   transition: 0.3s;
 }
