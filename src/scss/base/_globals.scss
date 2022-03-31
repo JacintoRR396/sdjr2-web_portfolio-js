@@ -117,6 +117,13 @@ img {
   width: 95%;
   max-width: var.$tablet;
   margin: 0 auto;
+  @include mix.desktop {
+    max-width: var.$desktop;
+    width: 90%;
+  }
+  @include mix.desktop-lg {
+    max-width: var.$desktop-lg;
+  }
 }
 
 .grid {
@@ -127,7 +134,7 @@ img {
 .section {
   padding: calc(var.$padding-mob * 2.5) 0 calc(var.$padding-mob / 2);
   @include mix.desktop {
-    padding: calc(var.$padding-desk * 2) 0 calc(var.$padding-desk / 2);
+    padding: calc(var.$padding-desk * 2.5) 0 calc(var.$padding-desk / 2);
   }
 }
 .section__title,

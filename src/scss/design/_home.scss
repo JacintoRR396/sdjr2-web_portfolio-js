@@ -5,8 +5,14 @@
 .home {
   &__container {
     display: grid;
-    grid-template-rows: 2.5fr 2fr;
-    gap: var.$padding-mob;
+    grid-template-rows: 1.5fr 2fr;
+    gap: calc(var.$padding-mob / 2);
+
+    @include mix.mobile-xs {
+      grid-template-rows: repeat(2, 2fr);
+      gap: var.$padding-mob;
+    }
+
     @include mix.desktop {
       grid-template-rows: unset;
       @include mix.gridColumns(2, var.$padding-desk);
@@ -16,8 +22,9 @@
   &__content-socperfil {
     @include mix.flexRow(center, var.$padding-mob);
     align-items: center;
+
     @include mix.desktop {
-      @include mix.flexRow(center, var.$padding-desk);
+      @include mix.flexRow(flex-end, var.$padding-desk);
     }
   }
   &__socials {
@@ -40,8 +47,11 @@
   &__img {
     &-container {
       display: flex;
-      @include mix.imageObjectFit(100%, 80%);
-      max-width: 20rem;
+      max-width: 12rem;
+
+      @include mix.mobile-xs {
+        max-width: 20rem;
+      }
     }
   }
 
@@ -50,21 +60,25 @@
   &__description,
   &__btns {
     text-align: center;
+
     @include mix.desktop {
       text-align: left;
     }
   }
   &__title {
     font-size: var.$fs-big-mob;
+    margin-bottom: calc(var.$padding-mob / 3);
+
     @include mix.desktop {
-      margin-bottom: calc(var.$padding-desk / 3);
       font-size: var.$fs-big-desk;
+      margin-bottom: calc(var.$padding-desk / 3);
     }
   }
   &__subtitle {
     font-size: var.$fs-h3-mob;
     font-weight: var.$fw-medium;
     margin-bottom: calc(var.$padding-mob / 3);
+
     @include mix.desktop {
       font-size: var.$fs-h3-desk;
       margin-bottom: calc(var.$padding-desk / 3);
@@ -73,8 +87,9 @@
   &__description {
     margin: var.$padding-mob auto;
     max-width: 30rem;
+
     @include mix.desktop {
-      margin: var.$padding-desk auto;
+      margin: var.$padding-desk 0;
     }
   }
 }
