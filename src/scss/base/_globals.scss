@@ -162,6 +162,15 @@ img {
   }
 }
 
+.content-center {
+  @include mix.desktop {
+    width: 80%;
+    margin: 0.5rem auto;
+  }
+  @include mix.desktop-lg {
+    width: 75%;
+  }
+}
 .content__title {
   font-size: var.$fs-h3-mob;
   font-weight: var.$fw-medium;

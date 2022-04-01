@@ -595,6 +595,18 @@ img {
   }
 }
 
+@media (min-width: 992px) {
+  .content-center {
+    width: 80%;
+    margin: 0.5rem auto;
+  }
+}
+@media (min-width: 1200px) {
+  .content-center {
+    width: 75%;
+  }
+}
+
 .content__title {
   font-size: 1.15rem;
   font-weight: 700;
@@ -1123,17 +1135,6 @@ img {
 /*! ============ SKILLS ============ */
 .skills__container {
   row-gap: 0.25rem;
-}
-@media (min-width: 992px) {
-  .skills__content {
-    width: 80%;
-    margin: 0.5rem auto;
-  }
-}
-@media (min-width: 1200px) {
-  .skills__content {
-    width: 75%;
-  }
 }
 .skills__header {
   display: flex;

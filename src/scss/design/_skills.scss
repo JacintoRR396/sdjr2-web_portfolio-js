@@ -7,16 +7,6 @@
     row-gap: 0.25rem;
   }
 
-  &__content {
-    @include mix.desktop {
-      width: 80%;
-      margin: 0.5rem auto;
-    }
-    @include mix.desktop-lg {
-      width: 75%;
-    }
-  }
-
   &__header {
     @include mix.flexRow(center, 0.25rem);
     @include mix.card(var.$gray-light);
