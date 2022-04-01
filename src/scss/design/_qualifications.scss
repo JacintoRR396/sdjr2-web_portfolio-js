@@ -56,10 +56,19 @@
   &__active[data-content] {
     display: block;
   }
-  &__data {
+  &__row {
     display: grid;
     grid-template-columns: 1fr max-content 1fr;
     column-gap: 1.5rem;
+
+    &:nth-child(odd) {
+      .qualification__data {
+        text-align: right;    
+      }
+      .qualification__calendar {
+        justify-content: flex-end;    
+      }
+    }
   }
   &__title {
     font-size: var.$fs-normal-mob;

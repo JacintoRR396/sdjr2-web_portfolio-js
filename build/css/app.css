@@ -1328,13 +1328,19 @@ img {
 .qualification__active[data-content] {
   display: block;
 }
-.qualification__data {
+.qualification__row {
   display: grid;
   grid-template-columns: 1fr -webkit-max-content 1fr;
   grid-template-columns: 1fr max-content 1fr;
   -webkit-column-gap: 1.5rem;
      -moz-column-gap: 1.5rem;
           column-gap: 1.5rem;
+}
+.qualification__row:nth-child(odd) .qualification__data {
+  text-align: right;
+}
+.qualification__row:nth-child(odd) .qualification__calendar {
+  justify-content: flex-end;
 }
 .qualification__title {
   font-size: 0.938rem;
