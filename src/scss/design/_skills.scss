@@ -4,25 +4,33 @@
 /*! ============ SKILLS ============ */
 .skills {
   &__container {
-    row-gap: 0;
+    row-gap: 0.25rem;
+  }
+
+  &__content {
+    @include mix.desktop {
+      width: 80%;
+      margin: 0.5rem auto;
+    }
+    @include mix.desktop-lg {
+      width: 75%;
+    }
   }
 
   &__header {
-    display: flex;
-    align-items: center;
+    @include mix.flexRow(center, 0.25rem);
+    @include mix.card(var.$gray-light);
     margin-bottom: calc(var.$padding-mob * (3 / 4));
-    padding: 0.25rem;
+    padding: 0.5rem;
     cursor: pointer;
     transition: 0.3s;
+
     @include mix.desktop {
-      margin-bottom: calc(var.$padding-desk * (3 / 4));
-    }
-    &:hover {
-      background-color: var.$gray-light;
+      padding: 0.75rem;
     }
   }
   &__icon {
-    margin-right: 0.75rem;
+    margin-right: 1rem;
     &-arrow {
       margin-left: auto;
       margin-right: 0;
@@ -36,16 +44,20 @@
     transition: 0.5s;
   }
   &__titles {
-    display: flex;
-    justify-content: space-between;
+    @include mix.flexRow(space-between, 0.25rem);
     margin-bottom: calc(var.$padding-mob / 8);
+    padding: 0.5rem;
+
     @include mix.desktop {
       margin-bottom: calc(var.$padding-desk / 8);
+      padding: 0.75rem;
     }
   }
   &__name {
+    margin: 0 0 0 0.5rem;
     font-size: var.$fs-normal-mob;
     font-weight: var.$fw-normal;
+
     @include mix.desktop {
       font-size: var.$fs-normal-desk;
     }
@@ -63,6 +75,17 @@
     display: block;
     background-color: var.$primary-dark;
   }
+
+  &__figma {
+    width: 10%;
+  }
+  &__gimp {
+    width: 85%;
+  }
+  &__sketch {
+    width: 80%;
+  }
+
   &__html {
     width: 85%;
   }
@@ -75,6 +98,7 @@
   &__ang {
     width: 60%;
   }
+
   &__java {
     width: 75%;
   }
@@ -87,15 +111,6 @@
   &__fibase {
     width: 15%;
   }
-  &__figma {
-    width: 10%;
-  }
-  &__sketch {
-    width: 80%;
-  }
-  &__gimp {
-    width: 85%;
-  }
 }
 
 // Utilities
@@ -103,7 +118,10 @@
   .skills__list {
     height: max-content;
     margin-bottom: var.$padding-mob;
+    box-shadow: 0 3px 1px rgb(0 0 0 / 35%);
+    border-radius: 0.5rem;
     opacity: 1;
+
     @include mix.desktop {
       margin-bottom: var.$padding-desk;
     }

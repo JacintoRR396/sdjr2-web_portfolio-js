@@ -584,13 +584,13 @@ img {
 .section__subtitle {
   display: block;
   color: #455a64;
-  font-size: 0.938rem;
+  font-size: 1.15rem;
   font-weight: 700;
   margin-bottom: 2rem;
 }
 @media (min-width: 992px) {
   .section__subtitle {
-    font-size: 1rem;
+    font-size: 1.25rem;
     margin-bottom: 2.5rem;
   }
 }
@@ -1122,26 +1122,46 @@ img {
 
 /*! ============ SKILLS ============ */
 .skills__container {
-  row-gap: 0;
+  row-gap: 0.25rem;
+}
+@media (min-width: 992px) {
+  .skills__content {
+    width: 80%;
+    margin: 0.5rem auto;
+  }
+}
+@media (min-width: 1200px) {
+  .skills__content {
+    width: 75%;
+  }
 }
 .skills__header {
   display: flex;
+  flex-direction: row;
+  justify-content: center;
   align-items: center;
+  gap: 0.25rem;
+  background-color: #f8f8f8;
+  padding: 2.5rem 0.5rem 1.25rem 1.5rem;
+  border-radius: 0.25rem;
+  border-bottom: 0.15rem solid #e22331;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+  transition: 0.3s;
   margin-bottom: 1.5rem;
-  padding: 0.25rem;
+  padding: 0.5rem;
   cursor: pointer;
   transition: 0.3s;
 }
+.skills__header:hover {
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+}
 @media (min-width: 992px) {
   .skills__header {
-    margin-bottom: 1.875rem;
+    padding: 0.75rem;
   }
 }
-.skills__header:hover {
-  background-color: #f8f8f8;
-}
 .skills__icon {
-  margin-right: 0.75rem;
+  margin-right: 1rem;
 }
 .skills__icon-arrow {
   margin-left: auto;
@@ -1155,15 +1175,21 @@ img {
 }
 .skills__titles {
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
+  align-items: center;
+  gap: 0.25rem;
   margin-bottom: 0.25rem;
+  padding: 0.5rem;
 }
 @media (min-width: 992px) {
   .skills__titles {
     margin-bottom: 0.3125rem;
+    padding: 0.75rem;
   }
 }
 .skills__name {
+  margin: 0 0 0 0.5rem;
   font-size: 0.938rem;
   font-weight: 400;
 }
@@ -1182,6 +1208,15 @@ img {
 .skills__percentage {
   display: block;
   background-color: #ba1824;
+}
+.skills__figma {
+  width: 10%;
+}
+.skills__gimp {
+  width: 85%;
+}
+.skills__sketch {
+  width: 80%;
 }
 .skills__html {
   width: 85%;
@@ -1207,21 +1242,14 @@ img {
 .skills__fibase {
   width: 15%;
 }
-.skills__figma {
-  width: 10%;
-}
-.skills__sketch {
-  width: 80%;
-}
-.skills__gimp {
-  width: 85%;
-}
 
 .skills__open .skills__list {
   height: -webkit-max-content;
   height: -moz-max-content;
   height: max-content;
   margin-bottom: 2rem;
+  box-shadow: 0 3px 1px rgba(0, 0, 0, 0.35);
+  border-radius: 0.5rem;
   opacity: 1;
 }
 @media (min-width: 992px) {
