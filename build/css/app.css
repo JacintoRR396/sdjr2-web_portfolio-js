@@ -1398,8 +1398,10 @@ img {
 }
 
 /*! ============ SKILLS ============ */
-.services__container {
-  grid-template-columns: repeat(2, 1fr);
+@media (min-width: 576px) {
+  .services__container {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 .services__content {
   background-color: #f8f8f8;
@@ -1412,25 +1414,18 @@ img {
 .services__content:hover {
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
 }
-@media (min-width: 576px) {
-  .services__data {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: center;
-    gap: 1rem;
-  }
+.services__data {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1rem;
 }
 .services__icon, .services__title {
   margin-bottom: 1rem;
 }
 .services__icon span, .services__title span {
-  display: block;
-}
-@media (min-width: 768px) {
-  .services__icon span, .services__title span {
-    display: inline-block;
-  }
+  display: inline-block;
 }
 @media (min-width: 992px) {
   .services__icon, .services__title {
@@ -1441,6 +1436,9 @@ img {
   display: block;
 }
 .services__button {
+  display: block;
+  text-align: right;
+  margin-right: 1rem;
   font-size: 0.813rem;
 }
 @media (min-width: 992px) {

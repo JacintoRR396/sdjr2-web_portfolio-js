@@ -4,7 +4,9 @@
 /*! ============ SKILLS ============ */
 .services {
   &__container {
-    grid-template-columns: repeat(2, 1fr);
+    @include mix.mobile {
+      grid-template-columns: repeat(2, 1fr); 
+    }
   }
 
   &__content {
@@ -12,9 +14,7 @@
   }
 
   &__data {
-    @include mix.mobile {
-      @include mix.flexRow(flex-start, 1rem);
-    }
+    @include mix.flexRow(flex-start, 1rem);
   }
 
   &__icon,
@@ -22,11 +22,7 @@
     margin-bottom: calc(var.$padding-mob / 2);
 
     span {
-      display: block;
-
-      @include mix.tablet {
-        display: inline-block;
-      }
+      display: inline-block;
     }
 
     @include mix.desktop {
@@ -38,6 +34,9 @@
   }
 
   &__button {
+    display: block;
+    text-align: right;
+    margin-right: 1rem;
     font-size: var.$fs-small-mob;
 
     @include mix.desktop {
