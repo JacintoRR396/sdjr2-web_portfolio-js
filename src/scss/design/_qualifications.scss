@@ -60,6 +60,7 @@
     display: grid;
     grid-template-columns: 1fr max-content 1fr;
     column-gap: 1.5rem;
+    transition: .3s;
 
     &:nth-child(odd) {
       .qualification__data {
@@ -68,6 +69,12 @@
       .qualification__calendar {
         justify-content: flex-end;    
       }
+    }
+
+    &:hover .qualification__rounder {
+      position: relative;
+      background-color: var.$secondary;
+      z-index: 1;
     }
   }
   &__title {

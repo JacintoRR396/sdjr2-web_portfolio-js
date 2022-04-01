@@ -1336,12 +1336,18 @@ img {
   -webkit-column-gap: 1.5rem;
      -moz-column-gap: 1.5rem;
           column-gap: 1.5rem;
+  transition: 0.3s;
 }
 .qualification__row:nth-child(odd) .qualification__data {
   text-align: right;
 }
 .qualification__row:nth-child(odd) .qualification__calendar {
   justify-content: flex-end;
+}
+.qualification__row:hover .qualification__rounder {
+  position: relative;
+  background-color: #455a64;
+  z-index: 1;
 }
 .qualification__title {
   font-size: 0.938rem;
