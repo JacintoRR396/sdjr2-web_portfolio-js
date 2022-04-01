@@ -35,11 +35,11 @@
     }
 
     &.qualification__active {
-      background-color: var.$white;
+      background-color: var.$body-pri-bgcolor;
       border-top-color: var.$primary;
       border-left-color: var.$gray;
       border-right-color: var.$gray;
-      border-bottom: unset;
+      border-bottom-color: var.$body-pri-bgcolor;
     }
   }
   &__icon {

@@ -1315,7 +1315,7 @@ img {
   border-top-color: #e22331;
   border-left-color: #a5a9ab;
   border-right-color: #a5a9ab;
-  border-bottom: unset;
+  border-bottom-color: #fff;
 }
 .qualification__icon {
   margin-right: 0.5rem;
