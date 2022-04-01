@@ -11,6 +11,12 @@
     @include mix.card(var.$gray-light);
   }
 
+  &__data {
+    @include mix.mobile {
+      @include mix.flexRow(flex-start, 1rem);
+    }
+  }
+
   &__icon,
   &__title {
     margin-bottom: calc(var.$padding-mob / 2);
