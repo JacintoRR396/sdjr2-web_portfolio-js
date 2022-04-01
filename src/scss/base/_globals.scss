@@ -153,11 +153,11 @@ img {
 .section__subtitle {
   display: block;
   color: var.$secondary;
-  font-size: var.$fs-normal-mob;
+  font-size: var.$fs-h3-mob;
   font-weight: var.$fw-medium;
   margin-bottom: var.$padding-mob;
   @include mix.desktop {
-    font-size: var.$fs-normal-desk;
+    font-size: var.$fs-h3-desk;
     margin-bottom: var.$padding-desk;
   }
 }

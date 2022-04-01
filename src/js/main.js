@@ -9,7 +9,7 @@ if( navMenu && navBtnVisibility ){
     });
 }
 
-/*====================== ACCORDION SKILLS : SHOW & HIDDEN ======================*/
+/*====================== SKILLS - ACCORDION : SHOW & HIDDEN ======================*/
 const skillsContent = document.querySelectorAll('.skills__content');
 const skillsHeader = document.querySelectorAll('.skills__header');
 
