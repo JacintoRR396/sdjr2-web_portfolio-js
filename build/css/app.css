@@ -1424,13 +1424,13 @@ img {
 .services__icon, .services__title {
   margin-bottom: 1rem;
 }
-.services__icon span, .services__title span {
-  display: inline-block;
-}
 @media (min-width: 992px) {
   .services__icon, .services__title {
     margin-bottom: 1.25rem;
   }
+}
+.services__icon span, .services__title span {
+  display: inline-block;
 }
 .services__icon {
   display: block;
@@ -1471,15 +1471,22 @@ img {
   padding: 1.5rem;
   border-radius: 0.5rem;
 }
+.services__modal-data {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+.services__modal-data .services__icon {
+  margin: 0;
+}
 .services__modal-title {
   font-size: 1.15rem;
-  font-weight: 700;
-  margin-bottom: 1.5rem;
 }
 @media (min-width: 992px) {
   .services__modal-title {
     font-size: 1.25rem;
-    margin-bottom: 1.875rem;
   }
 }
 .services__modal-close {
@@ -1494,6 +1501,16 @@ img {
 @media (min-width: 992px) {
   .services__modal-close {
     font-size: 1.5rem;
+  }
+}
+.services__modal-desc {
+  margin: 1.5rem auto 2rem;
+  max-width: 30rem;
+  text-align: center;
+}
+@media (min-width: 992px) {
+  .services__modal-desc {
+    max-width: 35rem;
   }
 }
 .services__modal-list {

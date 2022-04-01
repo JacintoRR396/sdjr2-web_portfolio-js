@@ -21,12 +21,12 @@
   &__title {
     margin-bottom: calc(var.$padding-mob / 2);
 
-    span {
-      display: inline-block;
-    }
-
     @include mix.desktop {
       margin-bottom: calc(var.$padding-desk / 2);
+    }
+
+    span {
+      display: inline-block;
     }
   }
   &__icon {
@@ -56,13 +56,18 @@
       border-radius: 0.5rem;
     }
 
+    &-data {
+      @include mix.flexRow(center, 1rem);
+
+      .services__icon {
+        margin: 0;
+      }
+    }
     &-title {
       font-size: var.$fs-h3-mob;
-      font-weight: var.$fw-medium;
-      margin-bottom: calc(var.$padding-mob * (3 / 4));
+
       @include mix.desktop {
         font-size: var.$fs-h3-desk;
-        margin-bottom: calc(var.$padding-desk * (3 / 4));
       }
     }
     &-close {
@@ -73,8 +78,19 @@
       font-size: var.$fs-h2-mob;
       font-weight: var.$fw-medium;
       cursor: pointer;
+
       @include mix.desktop {
         font-size: var.$fs-h2-desk;
+      }
+    }
+
+    &-desc {
+      margin: 1.5rem auto 2rem;
+      max-width: 30rem;
+      text-align: center;
+
+      @include mix.desktop {
+        max-width: 35rem;
       }
     }
 
