@@ -29,7 +29,7 @@ if( skillsContent && skillsHeader ){
     skillsHeader.forEach( header => header.addEventListener('click', toogleSkills));
 }
 
-/*====================== QUALIFICATION TABS : SHOW & HIDDEN ======================*/
+/*====================== QUALIFICATION - TABS : SHOW & HIDDEN ======================*/
 const qualifyTabs = document.querySelectorAll('[data-target]');
 const qualifyTabsContent = document.querySelectorAll('[data-content]');
 
@@ -50,7 +50,7 @@ if( qualifyTabs && qualifyTabsContent ){
     }));
 }
 
-/*====================== SERVICES MODAL : SHOW & HIDDEN ======================*/
+/*====================== SERVICES - MODAL : SHOW & HIDDEN ======================*/
 const serviceModalButtons = document.querySelectorAll('.services__button');
 const serviceModalViews = document.querySelectorAll('.services__modal');
 const serviceModalCloses = document.querySelectorAll('.services__modal-close');
