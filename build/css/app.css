@@ -1085,7 +1085,7 @@ img {
   align-items: center;
   gap: 0.5rem;
   background-color: #f8f8f8;
-  padding: 2.5rem 0.5rem 1.25rem 1.5rem;
+  padding: 1.5rem 0.5rem 1.25rem 1.5rem;
   border-radius: 0.25rem;
   border-bottom: 0.15rem solid #e22331;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
@@ -1143,7 +1143,7 @@ img {
   align-items: center;
   gap: 0.25rem;
   background-color: #f8f8f8;
-  padding: 2.5rem 0.5rem 1.25rem 1.5rem;
+  padding: 1.5rem 0.5rem 1.25rem 1.5rem;
   border-radius: 0.25rem;
   border-bottom: 0.15rem solid #e22331;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
@@ -1403,7 +1403,7 @@ img {
 }
 .services__content {
   background-color: #f8f8f8;
-  padding: 2.5rem 0.5rem 1.25rem 1.5rem;
+  padding: 1.5rem 0.5rem 1.25rem 1.5rem;
   border-radius: 0.25rem;
   border-bottom: 0.15rem solid #e22331;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
@@ -1414,6 +1414,14 @@ img {
 }
 .services__icon, .services__title {
   margin-bottom: 1rem;
+}
+.services__icon span, .services__title span {
+  display: block;
+}
+@media (min-width: 768px) {
+  .services__icon span, .services__title span {
+    display: inline-block;
+  }
 }
 @media (min-width: 992px) {
   .services__icon, .services__title {
@@ -1430,13 +1438,6 @@ img {
   .services__button {
     font-size: 0.875rem;
   }
-}
-.services__button:hover .button__icon {
-  -webkit-transform: translateX(0.25rem);
-          transform: translateX(0.25rem);
-}
-.services__button .button__icon {
-  color: #3b3b3b;
 }
 .services__modal {
   position: fixed;

@@ -200,7 +200,7 @@
 
 @mixin card($bgColor) {
   background-color: $bgColor;
-  padding: 2.5rem 0.5rem 1.25rem 1.5rem;
+  padding: 1.5rem 0.5rem 1.25rem 1.5rem;
   border-radius: 0.25rem;
   border-bottom: 0.15rem solid var.$primary;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
