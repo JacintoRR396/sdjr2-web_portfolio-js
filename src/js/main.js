@@ -18,11 +18,11 @@ if( skillsContent && skillsHeader ){
         let itemClass = this.parentNode.className;
     
         for( content of skillsContent ) {
-            content.className = 'skills__content skills__close';
+            content.className = 'skills__content content-center skills__close';
         }
     
-        if( itemClass === 'skills__content skills__close') {
-            this.parentNode.className = 'skills__content skills__open';
+        if( itemClass === 'skills__content content-center skills__close') {
+            this.parentNode.className = 'skills__content content-center skills__open';
         }
     }
     
