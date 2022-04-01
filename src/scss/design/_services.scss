@@ -58,6 +58,7 @@
 
     &-data {
       @include mix.flexRow(center, 1rem);
+      margin-top: 1rem;
 
       .services__icon {
         margin: 0;
