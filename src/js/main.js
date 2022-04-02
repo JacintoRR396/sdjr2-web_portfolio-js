@@ -57,13 +57,14 @@ const serviceModalCloses = document.querySelectorAll('.services__modal-close');
 
 if( serviceModalButtons && serviceModalViews && serviceModalCloses ){
     function showModal (indexModal) {
-        serviceModalViews[indexModal].classList.add('active-modal');
+        serviceModalViews[indexModal].classList.add('modal-active');
     }
     function hiddenModal (indexModal) {
-        serviceModalViews[indexModal].classList.remove('active-modal');
+        serviceModalViews[indexModal].classList.remove('modal-active');
     }
     serviceModalButtons.forEach( ( btn, index ) => btn.addEventListener('click', () => {
         showModal(index);
+        console.log(index);
     }));
     serviceModalCloses.forEach( ( btn, index ) => btn.addEventListener('click', () => {
         hiddenModal(index);

@@ -360,10 +360,11 @@ template {
 * 3. gridColumns($numColumns: 2, $gap: 0)                                *
 * 4. gridRows($numRows: 2, $gap: 0)                                      *
 * 5. modal                                                               *
-* 6. sectionBgOblique($colorFirst, $colorSecond, $size)                  *
-* 7. sectionBgCollapse($size)                                            *
-* 8. sectionGridTextImage($padding, $colorGrad, $url)                    *
-* 9. card($bgColor)                                                      *
+* 6. modalContent                                                               *
+* 7. sectionBgOblique($colorFirst, $colorSecond, $size)                  *
+* 8. sectionBgCollapse($size)                                            *
+* 9. sectionGridTextImage($padding, $colorGrad, $url)                    *
+* 10. card($bgColor)                                                      *
 *                                                                        *
 *       --- HEADING / TEXT ---                                           *
 * 1. headingLinearGradient($dir, $fromColor, $toColor)                   *
@@ -743,6 +744,12 @@ img {
 .button--link:hover {
   background-color: transparent;
   color: #ba1824;
+}
+
+/** Modal **/
+.modal-active {
+  visibility: visible !important;
+  opacity: 1 !important;
 }
 
 /** Scroll **/
@@ -1466,10 +1473,18 @@ img {
   opacity: 0;
 }
 .services__modal-content {
+  background-color: #fff;
+  padding: 1.5rem 0.5rem 1.25rem 1.5rem;
+  border-radius: 0.25rem;
+  border-bottom: 0.15rem solid #e22331;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+  transition: 0.3s;
   position: relative;
-  background-color: #f8f8f8;
-  padding: 1.5rem;
   border-radius: 0.5rem;
+  padding: 0;
+}
+.services__modal-content:hover {
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
 }
 .services__modal-data {
   display: flex;
@@ -1477,8 +1492,17 @@ img {
   justify-content: center;
   align-items: center;
   gap: 1rem;
+  background-color: #f8f8f8;
+  padding: 1rem 0;
+  border-bottom: 2px solid #e22331;
+  border-radius: 0.5rem 0.5rem 0 0;
 }
-.services__modal-data .services__icon {
+@media (min-width: 992px) {
+  .services__modal-data {
+    padding: 1.25rem;
+  }
+}
+.services__modal-data span {
   margin: 0;
 }
 .services__modal-title {
@@ -1504,7 +1528,7 @@ img {
   }
 }
 .services__modal-desc {
-  margin: 1.5rem auto 2rem;
+  margin: 1.5rem 1rem 2rem;
   max-width: 30rem;
   text-align: center;
 }
@@ -1515,6 +1539,7 @@ img {
 }
 .services__modal-list {
   row-gap: 1rem;
+  margin: 0 1rem 2rem;
 }
 .services__modal-item {
   display: flex;
@@ -1526,10 +1551,6 @@ img {
 .services__modal-icon {
   color: #00833e;
   margin-right: 0.5rem;
-}
-.services .active-modal {
-  visibility: visible;
-  opacity: 1;
 }
 
 /*! ============ SKILLS ============ */
