@@ -1572,6 +1572,11 @@ img {
   margin: 0 1rem 2rem;
   max-width: 35rem;
 }
+@media (min-width: 768px) {
+  .services__modal-list {
+    margin: 0 2.5rem 2.5rem;
+  }
+}
 @media (min-width: 992px) {
   .services__modal-list {
     max-width: 40rem;

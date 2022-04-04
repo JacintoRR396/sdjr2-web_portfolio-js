@@ -193,6 +193,9 @@
     margin: 0 1rem 2rem;
     max-width: 35rem;
 
+    @include tablet {
+      margin: 0 2.5rem 2.5rem;
+    }
     @include desktop {
       max-width: 40rem;
     }
