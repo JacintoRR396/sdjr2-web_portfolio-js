@@ -1,3 +1,6 @@
+(function () {
+    'use strict'
+
 /*====================== HEADER - MENU : SHOW & HIDDEN ======================*/
 const navMenu = document.querySelector('#nav-menu');
 const navBtnVisibility = document.querySelector('.nav__visibility');
@@ -138,3 +141,5 @@ window.addEventListener('scroll', () => {
         imagen.style.backgroundPositionY = `${scroll}px`;
     })
 }); */
+
+})();
