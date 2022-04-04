@@ -38,6 +38,9 @@
     @include mix.mobile {
       @include mix.gridColumns(3, calc(var.$padding-mob / 2));
     }
+    @include mix.desktop {
+      gap: 0;
+    }
 
     &-card {
       @include mix.flexColumn(center, 0.5rem);
@@ -45,6 +48,18 @@
       max-width: 30rem;
       padding: 1.5rem;
       text-align: center;
+
+      @include mix.desktop {
+        &:nth-child(1) {
+          transform: scaleX(1.1) scaleY(1.2);
+        }
+        &:nth-child(2) {
+          order: 0;
+        }
+        &:nth-child(1), &:nth-child(3) {
+          order: 1;
+        }
+      }
     }
 
     &-title {
@@ -60,14 +75,7 @@
   }
 
   &__description {
-    margin: var.$padding-mob auto;
-    max-width: 30rem;
-    text-align: center;
-
-    @include mix.desktop {
-      margin: var.$padding-desk 0;
-      text-align: left;
-    }
+    text-align: left;
   }
 
   &__btns {

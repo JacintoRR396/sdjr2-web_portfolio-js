@@ -3,22 +3,23 @@
 /*! ============================== MIXINS ============================== *\
 *                                                                        *
 *       ---  MEDIA QUERIES ---                                           *
-* 1. mobile-xs                                                              *
+* 1. mobile-xs                                                           *
 * 2. mobile                                                              *
 * 3. tablet                                                              *
 * 4. desktop                                                             *
 * 5. desktop-lg                                                          *
 *                                                                        *
 *       --- BLOCKS ---                                                   *
-* 1. flexRow($justContent: "flex-start", $gap: 0)                        *
-* 2. flexColumn($justContent: "flex-start", $gap: 0)                     *
+* 1. flexRow($justContent: flex-start, $gap: 0)                          *
+* 2. flexColumn($justContent: flex-start, $gap: 0)                       *
 * 3. gridColumns($numColumns: 2, $gap: 0)                                *
 * 4. gridRows($numRows: 2, $gap: 0)                                      *
 * 5. modal                                                               *
-* 6. sectionBgOblique($colorFirst, $colorSecond, $size)                  *
-* 7. sectionBgCollapse($size)                                            *
-* 8. sectionGridTextImage($padding, $colorGrad, $url)                    *
-* 9. card($bgColor)                                                      *
+* 6. modalContent                                                        *
+* 7. sectionBgOblique($colorFirst, $colorSecond, $size)                  *
+* 8. sectionBgCollapse($size)                                            *
+* 9. sectionGridTextImage($padding, $colorGrad, $url)                    *
+* 10. card($bgColor)                                                     *
 *                                                                        *
 *       --- HEADING / TEXT ---                                           *
 * 1. headingLinearGradient($dir, $fromColor, $toColor)                   *
@@ -83,7 +84,7 @@
 }
 
 /** Blocks **/
-@mixin flexRow($justContent: "flex-start", $gap: 0) {
+@mixin flexRow($justContent: flex-start, $gap: 0) {
   display: flex;
   flex-direction: row;
   justify-content: $justContent;
@@ -91,7 +92,7 @@
   gap: $gap;
 }
 
-@mixin flexColumn($justContent: "flex-start", $gap: 0) {
+@mixin flexColumn($justContent: flex-start, $gap: 0) {
   display: flex;
   flex-direction: column;
   justify-content: $justContent;
@@ -122,6 +123,90 @@
   padding: 0 calc(var.$padding-mob / 2);
   z-index: var.$z-modal;
   transform: 0.3s;
+}
+
+@mixin modalContent {
+  visibility: hidden;
+  opacity: 0;
+
+  &-content {
+    @include card(var.$white);
+    position: relative;
+    border-radius: 0.5rem;
+    padding: 0;
+  }
+
+  &-data {
+    @include flexRow(center, 1rem);
+    background-color: var.$gray-light;
+    padding: calc(var.$padding-mob / 2) 0;
+    border-bottom: 2px solid var.$primary;
+    border-radius: 0.5rem 0.5rem 0 0;
+
+    @include desktop {
+      padding: calc(var.$padding-desk / 2);
+    }
+
+    span {
+      margin: 0;
+    }
+  }
+  &-title {
+    font-size: var.$fs-h3-mob;
+
+    @include desktop {
+      font-size: var.$fs-h3-desk;
+    }
+  }
+  &-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    color: var.$primary;
+    font-size: var.$fs-h2-mob;
+    font-weight: var.$fw-medium;
+    cursor: pointer;
+
+    @include desktop {
+      font-size: var.$fs-h2-desk;
+    }
+  }
+
+  &-desc {
+    margin: 1.5rem 1rem 2rem;
+    max-width: 40rem;
+    text-align: left;
+    text-indent: 3rem;
+
+    @include tablet {
+      margin: 1.5rem 1.5rem 2rem;
+    }
+
+    @include desktop {
+      margin: 1.5rem 2rem 2rem;
+      max-width: 45rem;
+    }
+  }
+
+  &-list {
+    row-gap: 1rem;
+    margin: 0 1rem 2rem;
+    max-width: 35rem;
+
+    @include tablet {
+      margin: 0 2.5rem 2.5rem;
+    }
+    @include desktop {
+      max-width: 40rem;
+    }
+  }
+  &-item {
+    @include flexRow(flex-start, 0);
+  }
+  &-icon {
+    color: var.$green;
+    margin-right: 0.5rem;
+  }
 }
 
 @mixin sectionBgOblique($colorFirst, $colorSecond, $size) {
@@ -200,7 +285,7 @@
 
 @mixin card($bgColor) {
   background-color: $bgColor;
-  padding: 2.5rem 0.5rem 1.25rem 1.5rem;
+  padding: 1.5rem 0.5rem 1.25rem 1.5rem;
   border-radius: 0.25rem;
   border-bottom: 0.15rem solid var.$primary;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);

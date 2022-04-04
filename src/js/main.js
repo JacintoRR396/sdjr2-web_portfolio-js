@@ -29,7 +29,7 @@ if( skillsContent && skillsHeader ){
     skillsHeader.forEach( header => header.addEventListener('click', toogleSkills));
 }
 
-/*====================== QUALIFICATION TABS : SHOW & HIDDEN ======================*/
+/*====================== QUALIFICATION - TABS : SHOW & HIDDEN ======================*/
 const qualifyTabs = document.querySelectorAll('[data-target]');
 const qualifyTabsContent = document.querySelectorAll('[data-content]');
 
@@ -50,20 +50,21 @@ if( qualifyTabs && qualifyTabsContent ){
     }));
 }
 
-/*====================== SERVICES MODAL : SHOW & HIDDEN ======================*/
+/*====================== SERVICES - MODAL : SHOW & HIDDEN ======================*/
 const serviceModalButtons = document.querySelectorAll('.services__button');
 const serviceModalViews = document.querySelectorAll('.services__modal');
 const serviceModalCloses = document.querySelectorAll('.services__modal-close');
 
 if( serviceModalButtons && serviceModalViews && serviceModalCloses ){
     function showModal (indexModal) {
-        serviceModalViews[indexModal].classList.add('active-modal');
+        serviceModalViews[indexModal].classList.add('modal-active');
     }
     function hiddenModal (indexModal) {
-        serviceModalViews[indexModal].classList.remove('active-modal');
+        serviceModalViews[indexModal].classList.remove('modal-active');
     }
     serviceModalButtons.forEach( ( btn, index ) => btn.addEventListener('click', () => {
         showModal(index);
+        console.log(index);
     }));
     serviceModalCloses.forEach( ( btn, index ) => btn.addEventListener('click', () => {
         hiddenModal(index);
