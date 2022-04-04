@@ -496,7 +496,7 @@ h3 {
 }
 
 strong {
-  color: #303f46;
+  color: #1b2428;
   font-family: "Poppins", sans-serif;
   font-weight: 700;
 }
@@ -629,6 +629,24 @@ img {
 @media (min-width: 992px) {
   .content__subtitle {
     font-size: 0.875rem;
+  }
+}
+
+.content__description {
+  margin: 2rem auto;
+  max-width: 30rem;
+  text-align: center;
+}
+@media (min-width: 576px) {
+  .content__description {
+    max-width: 40rem;
+  }
+}
+@media (min-width: 992px) {
+  .content__description {
+    max-width: 35rem;
+    margin: 2.5rem 0;
+    text-align: left;
   }
 }
 
@@ -995,11 +1013,11 @@ img {
     max-width: 20rem;
   }
 }
-.home__title, .home__subtitle, .home__description, .home__btns {
+.home__title, .home__subtitle, .home__btns {
   text-align: center;
 }
 @media (min-width: 992px) {
-  .home__title, .home__subtitle, .home__description, .home__btns {
+  .home__title, .home__subtitle, .home__btns {
     text-align: left;
   }
 }
@@ -1009,7 +1027,7 @@ img {
 }
 @media (min-width: 992px) {
   .home__title {
-    font-size: 2.75rem;
+    font-size: 2.5rem;
     margin-bottom: 0.8333333333rem;
   }
 }
@@ -1024,13 +1042,9 @@ img {
     margin-bottom: 0.8333333333rem;
   }
 }
-.home__description {
-  margin: 2rem auto;
-  max-width: 30rem;
-}
 @media (min-width: 992px) {
   .home__description {
-    margin: 2.5rem 0;
+    max-width: 30rem;
   }
 }
 
@@ -1116,15 +1130,7 @@ img {
   }
 }
 .about__description {
-  margin: 2rem auto;
-  max-width: 30rem;
-  text-align: center;
-}
-@media (min-width: 992px) {
-  .about__description {
-    margin: 2.5rem 0;
-    text-align: left;
-  }
+  text-align: left;
 }
 .about__btns {
   display: flex;

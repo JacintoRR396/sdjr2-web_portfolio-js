@@ -57,7 +57,6 @@
 
   &__title,
   &__subtitle,
-  &__description,
   &__btns {
     text-align: center;
 
@@ -85,11 +84,8 @@
     }
   }
   &__description {
-    margin: var.$padding-mob auto;
-    max-width: 30rem;
-
     @include mix.desktop {
-      margin: var.$padding-desk 0;
+      max-width: 30rem;
     }
   }
 }

@@ -60,14 +60,7 @@
   }
 
   &__description {
-    margin: var.$padding-mob auto;
-    max-width: 30rem;
-    text-align: center;
-
-    @include mix.desktop {
-      margin: var.$padding-desk 0;
-      text-align: left;
-    }
+    text-align: left;
   }
 
   &__btns {
