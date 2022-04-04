@@ -76,6 +76,12 @@
   @include mix.button(var.$primary, var.$white);
 }
 
+/** Modal **/
+.modal-active {
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
 /** Scroll **/
 // Scroll-button
 .scrollup {

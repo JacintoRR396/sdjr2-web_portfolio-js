@@ -42,6 +42,7 @@ p {
   color: var.$body-pri-color;
   font-size: var.$fs-normal-mob;
   line-height: 1.4rem;
+
   @include mix.desktop {
     font-size: var.$fs-normal-desk;
   }
@@ -80,7 +81,7 @@ h3 {
 }
 
 strong {
-  color: var.$secondary-dark;
+  color: var.$secondary-darker;
   font-family: var.$font-secondary;
   font-weight: var.$fw-medium;
 }
@@ -162,6 +163,7 @@ img {
   }
 }
 
+// In skills and qualification tabs
 .content-center {
   @include mix.desktop {
     width: 80%;
@@ -187,5 +189,20 @@ img {
   line-height: 1.25rem;
   @include mix.desktop {
     font-size: var.$fs-small-desk;
+  }
+}
+.content__description {
+  margin: var.$padding-mob auto;
+  max-width: 30rem;
+  text-align: center;
+
+  @include mix.mobile {
+    max-width: 40rem;
+  }
+
+  @include mix.desktop {
+    max-width: 35rem;
+    margin: var.$padding-desk 0;
+    text-align: left;
   }
 }
