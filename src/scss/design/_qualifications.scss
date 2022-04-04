@@ -73,7 +73,12 @@
 
     &:hover .qualification__rounder {
       position: relative;
-      background-color: var.$secondary;
+      background: radial-gradient(
+        circle,
+        var.$secondary 0%,
+        var.$secondary 50%,
+        var.$primary 100%
+      );
       z-index: 1;
     }
   }
@@ -103,7 +108,12 @@
     display: inline-block;
     width: 1rem;
     height: 1rem;
-    background-color: var.$primary;
+    background: radial-gradient(
+      circle,
+      var.$primary 0%,
+      var.$primary 50%,
+      var.$secondary 100%
+    );
     border-radius: 50%;
   }
   &__line {
@@ -117,7 +127,7 @@
       display: block;
       width: 2px;
       height: 50%;
-      background-color: var.$secondary;
+      background-color: var.$primary;
       transform: translate(7px, -4px);
     }
   }

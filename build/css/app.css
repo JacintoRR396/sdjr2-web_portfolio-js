@@ -348,23 +348,23 @@ template {
 /*! ============================== MIXINS ============================== *\
 *                                                                        *
 *       ---  MEDIA QUERIES ---                                           *
-* 1. mobile-xs                                                              *
+* 1. mobile-xs                                                           *
 * 2. mobile                                                              *
 * 3. tablet                                                              *
 * 4. desktop                                                             *
 * 5. desktop-lg                                                          *
 *                                                                        *
 *       --- BLOCKS ---                                                   *
-* 1. flexRow($justContent: "flex-start", $gap: 0)                        *
-* 2. flexColumn($justContent: "flex-start", $gap: 0)                     *
+* 1. flexRow($justContent: flex-start, $gap: 0)                          *
+* 2. flexColumn($justContent: flex-start, $gap: 0)                       *
 * 3. gridColumns($numColumns: 2, $gap: 0)                                *
 * 4. gridRows($numRows: 2, $gap: 0)                                      *
 * 5. modal                                                               *
-* 6. modalContent                                                               *
+* 6. modalContent                                                        *
 * 7. sectionBgOblique($colorFirst, $colorSecond, $size)                  *
 * 8. sectionBgCollapse($size)                                            *
 * 9. sectionGridTextImage($padding, $colorGrad, $url)                    *
-* 10. card($bgColor)                                                      *
+* 10. card($bgColor)                                                     *
 *                                                                        *
 *       --- HEADING / TEXT ---                                           *
 * 1. headingLinearGradient($dir, $fromColor, $toColor)                   *
@@ -907,7 +907,7 @@ img {
 .nav__link {
   display: flex;
   flex-direction: row;
-  justify-content: "flex-start";
+  justify-content: flex-start;
   align-items: center;
   gap: 0;
   color: #e22331;
@@ -1376,7 +1376,7 @@ img {
 }
 .qualification__row:hover .qualification__rounder {
   position: relative;
-  background-color: #455a64;
+  background: radial-gradient(circle, #455a64 0%, #455a64 50%, #e22331 100%);
   z-index: 1;
 }
 .qualification__title {
@@ -1407,7 +1407,7 @@ img {
   display: inline-block;
   width: 1rem;
   height: 1rem;
-  background-color: #e22331;
+  background: radial-gradient(circle, #e22331 0%, #e22331 50%, #455a64 100%);
   border-radius: 50%;
 }
 .qualification__line {
@@ -1422,7 +1422,7 @@ img {
   display: block;
   width: 2px;
   height: 50%;
-  background-color: #455a64;
+  background-color: #e22331;
   -webkit-transform: translate(7px, -4px);
           transform: translate(7px, -4px);
 }
@@ -1552,17 +1552,30 @@ img {
 }
 .services__modal-desc {
   margin: 1.5rem 1rem 2rem;
-  max-width: 30rem;
-  text-align: center;
+  max-width: 40rem;
+  text-align: left;
+  text-indent: 3rem;
+}
+@media (min-width: 768px) {
+  .services__modal-desc {
+    margin: 1.5rem 1.5rem 2rem;
+  }
 }
 @media (min-width: 992px) {
   .services__modal-desc {
-    max-width: 35rem;
+    margin: 1.5rem 2rem 2rem;
+    max-width: 45rem;
   }
 }
 .services__modal-list {
   row-gap: 1rem;
   margin: 0 1rem 2rem;
+  max-width: 35rem;
+}
+@media (min-width: 992px) {
+  .services__modal-list {
+    max-width: 40rem;
+  }
 }
 .services__modal-item {
   display: flex;
