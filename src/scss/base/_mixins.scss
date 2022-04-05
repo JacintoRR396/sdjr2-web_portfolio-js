@@ -44,6 +44,7 @@
 *                                                                        *
 *       --- BUTTONS ---                                                  *
 * 1. button($bgColor, $color)                                            *
+* 2. buttonIcon($color)                                                   *
 *                                                                        *
 *       --- OTHERS ---                                                   *
 * 1. scrollHorizontal                                                    *
@@ -461,13 +462,17 @@
 }
 
 @mixin imageMask {
-  &__mask {
+  //__img-container
+  &-container {
     overflow: hidden;
   }
-  &__image {
+  //&__img-image
+  &-image {
     width: 100%;
+    transform: scale(1.01);
     transition-property: transform;
     transition-duration: 300ms;
+
     &:hover {
       transform: scale(1.2);
     }
@@ -564,6 +569,22 @@
       background-color: transparent;
       color: var.$link-hover-color;
     }
+  }
+}
+
+@mixin buttonIcon($color) {
+  color: $color;
+  font-size: var.$fs-h2-mob;
+  font-weight: var.$fw-medium;
+  cursor: pointer;
+  transition: 0.3s;
+
+  @include desktop {
+    font-size: var.$fs-h2-desk;
+  }
+
+  &:hover {
+    color: darken($color, 10%);
   }
 }
 

@@ -28,19 +28,7 @@
   &__visibility,
   &__theme,
   &__language {
-    color: var.$title-color;
-    font-size: var.$fs-h2-mob;
-    font-weight: var.$fw-medium;
-    cursor: pointer;
-    transition: 0.3s;
-
-    @include mix.desktop {
-      font-size: var.$fs-h2-desk;
-    }
-
-    &:hover {
-      color: var.$title-hover-color;
-    }
+    @include mix.buttonIcon(var.$secondary);
   }
 
   &__menu {
