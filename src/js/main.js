@@ -20,7 +20,7 @@ if( skillsContent && skillsHeader ){
     function toogleSkills() {
         let itemClass = this.parentNode.className;
     
-        for( content of skillsContent ) {
+        for( let content of skillsContent ) {
             content.className = 'skills__content content-center skills__close';
         }
     
@@ -67,7 +67,6 @@ if( serviceModalButtons && serviceModalViews && serviceModalCloses ){
     }
     serviceModalButtons.forEach( ( btn, index ) => btn.addEventListener('click', () => {
         showModal(index);
-        console.log(index);
     }));
     serviceModalCloses.forEach( ( btn, index ) => btn.addEventListener('click', () => {
         hiddenModal(index);
