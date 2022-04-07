@@ -15,9 +15,6 @@
     padding: var.$padding-mob 0 0;
     text-align: center;
 
-    @include mix.mobile {
-      text-align: left;
-    }
     @include mix.desktop {
       margin-bottom: 0;
       padding: var.$padding-desk 0 0;
@@ -28,6 +25,10 @@
     row-gap: var.$padding-mob;
     margin-bottom: var.$padding-mob;
 
+    @include mix.tablet {
+      grid-template-columns: repeat(3, 1fr);
+      align-items: center;
+    }
     @include mix.desktop {
       row-gap: var.$padding-desk;
       margin-bottom: var.$padding-desk;
@@ -56,10 +57,6 @@
 
   &__links {
     @include mix.flexColumn(center, 1.5rem);
-
-    @include mix.mobile {
-      align-items: flex-start;
-    }
   }
   &__link {
     &:hover {
@@ -76,6 +73,9 @@
 
     @include mix.mobile {
       align-items: flex-start;
+    }
+    @include mix.tablet {
+      max-height: 2.25rem;
     }
   }
   &__social {
