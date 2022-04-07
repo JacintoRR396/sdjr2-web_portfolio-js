@@ -11,9 +11,15 @@
 
   &__bg {
     background-color: var.$body-third-bgcolor;
+    margin-bottom: 5rem;
     padding: var.$padding-mob 0 0;
+    text-align: center;
 
+    @include mix.mobile {
+      text-align: left;
+    }
     @include mix.desktop {
+      margin-bottom: 0;
       padding: var.$padding-desk 0 0;
     }
   }
@@ -49,29 +55,40 @@
   }
 
   &__links {
-    @include mix.flexColumn(flex-start, 1.5rem);
-    align-items: flex-start;
+    @include mix.flexColumn(center, 1.5rem);
+
+    @include mix.mobile {
+      align-items: flex-start;
+    }
   }
   &__link {
     &:hover {
-      color: var.$gray-light;
+      color: var.$secondary-light;
     }
   }
 
   &__socials {
-    @include mix.flexRow(flex-start, 0.5rem);
+    @include mix.flexRow(center, 0.5rem);
+    background-color: var.$body-pri-bgcolor;
+    margin: 0 auto;
+    padding: 0.35rem;
+    border-radius: 1rem;
+
+    @include mix.mobile {
+      align-items: flex-start;
+    }
   }
   &__social {
     font-size: var.$fs-h3-mob;
-    margin-right: calc(var.$padding-mob * (3 / 4));
+    margin: 0 calc(var.$padding-mob / 2);
 
     @include mix.desktop {
       font-size: var.$fs-h3-desk;
-      margin-right: calc(var.$padding-desk * (3 / 4));
+      margin: 0 calc(var.$padding-desk / 2);
     }
 
     &:hover {
-      color: var.$gray-light;
+      color: var.$secondary-light;
     }
 
     img {
