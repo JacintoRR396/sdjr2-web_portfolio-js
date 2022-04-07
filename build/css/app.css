@@ -1910,19 +1910,21 @@ img {
 }
 .footer__bg {
   background-color: #303f46;
-  padding: 2rem 0;
+  padding: 2rem 0 0;
 }
 @media (min-width: 992px) {
   .footer__bg {
-    padding: 2.5rem 0;
+    padding: 2.5rem 0 0;
   }
 }
 .footer__container {
   row-gap: 2rem;
+  margin-bottom: 2rem;
 }
 @media (min-width: 992px) {
   .footer__container {
     row-gap: 2.5rem;
+    margin-bottom: 2.5rem;
   }
 }
 .footer__title {

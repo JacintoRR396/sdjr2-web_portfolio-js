@@ -11,18 +11,20 @@
 
   &__bg {
     background-color: var.$body-third-bgcolor;
-    padding: var.$padding-mob 0;
+    padding: var.$padding-mob 0 0;
 
     @include mix.desktop {
-      padding: var.$padding-desk 0;
+      padding: var.$padding-desk 0 0;
     }
   }
 
   &__container {
     row-gap: var.$padding-mob;
+    margin-bottom: var.$padding-mob;
 
     @include mix.desktop {
       row-gap: var.$padding-desk;
+      margin-bottom: var.$padding-desk;
     }
   }
 
