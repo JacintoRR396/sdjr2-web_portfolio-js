@@ -1735,16 +1735,23 @@ img {
 /*! ============ SKILLS ============ */
 .testimonials__data {
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
-  margin-bottom: 1rem;
+  align-items: center;
+  gap: 0;
+  margin: 0.5rem 0.6666666667rem 1rem;
 }
 @media (min-width: 992px) {
   .testimonials__data {
-    margin-bottom: 1.25rem;
+    margin: 0.625rem 0.8333333333rem 1.25rem;
   }
 }
 .testimonials__header {
   display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1rem;
 }
 .testimonials__img-container {
   background-color: #fff;

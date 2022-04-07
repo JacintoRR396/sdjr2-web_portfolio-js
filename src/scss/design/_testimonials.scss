@@ -4,18 +4,18 @@
 /*! ============ SKILLS ============ */
 .testimonials {
   &__data {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: calc(var.$padding-mob / 2);
+    @include mix.flexRow(space-between);
+    margin: calc(var.$padding-mob / 4) calc(var.$padding-mob / 3) calc(var.$padding-mob / 2);
 
     @include mix.desktop {
-      margin-bottom: calc(var.$padding-desk / 2);
+      margin: calc(var.$padding-desk / 4) calc(var.$padding-desk / 3) calc(var.$padding-desk / 2);
     }
   }
 
   &__header {
-    display: flex;
+    @include mix.flexRow(flex-start, 1rem);
   }
+  
   &__img {
     &-container {
       background-color: var.$body-pri-bgcolor;
