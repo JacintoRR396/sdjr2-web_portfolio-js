@@ -1746,16 +1746,16 @@ img {
 .testimonials__header {
   display: flex;
 }
-.testimonials__img {
-  width: 4rem;
-  height: 4rem;
+.testimonials__img-container {
+  background-color: #fff;
+  overflow: hidden;
   border-radius: 50%;
-  margin-right: 0.6666666667rem;
 }
-@media (min-width: 992px) {
-  .testimonials__img {
-    margin-right: 0.8333333333rem;
-  }
+.testimonials__img-image {
+  width: 100%;
+  height: 4rem;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .testimonials__icon-star {
   color: #455a64;
