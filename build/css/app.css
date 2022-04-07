@@ -1768,11 +1768,11 @@ img {
   color: #455a64;
 }
 .testimonials__description {
-  margin-bottom: 2rem;
+  margin: 0.6666666667rem 0;
 }
 @media (min-width: 992px) {
   .testimonials__description {
-    margin-bottom: 2.5rem;
+    margin: 0.8333333333rem 0;
   }
 }
 

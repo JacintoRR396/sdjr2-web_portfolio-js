@@ -32,9 +32,10 @@
   }
 
   &__description {
-    margin-bottom: var.$padding-mob;
+    margin: calc(var.$padding-mob / 3) 0;
+
     @include mix.desktop {
-      margin-bottom: var.$padding-desk;
+      margin: calc(var.$padding-desk / 3) 0;
     }
   }
 }
