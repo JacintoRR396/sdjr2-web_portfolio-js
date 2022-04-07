@@ -95,14 +95,7 @@
     margin-bottom: 1rem;
   }
   &__calendar {
-    display: flex;
-    align-items: center;
-    color: var.$gray;
-    font-size: var.$fs-smaller-mob;
-
-    @include mix.desktop {
-      font-size: var.$fs-smaller-desk;
-    }
+    @include mix.flexRow;
   }
   &__rounder {
     display: inline-block;

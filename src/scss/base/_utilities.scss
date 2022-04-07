@@ -70,6 +70,12 @@
 .text-center {
   text-align: center;
 }
+.text-access {
+  color: var.$green;
+}
+.text-error {
+  color: var.$red;
+}
 
 /** Buttons **/
 .button {
