@@ -3,25 +3,35 @@
 
 /*! ============ SKILLS ============ */
 .testimonials {
+  &__container {
+    @include mix.gridColumns(1, 0.5rem);
+
+    @include mix.tablet {
+      @include mix.gridColumns(2, 1rem);
+    }
+  }
+
   &__data {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: calc(var.$padding-mob / 2);
+    @include mix.flexRow(space-between);
+    margin: calc(var.$padding-mob / 4) calc(var.$padding-mob / 3) calc(var.$padding-mob / 2);
+
     @include mix.desktop {
-      margin-bottom: calc(var.$padding-desk / 2);
+      margin: calc(var.$padding-desk / 4) calc(var.$padding-desk / 3) calc(var.$padding-desk / 2);
     }
   }
 
   &__header {
-    display: flex;
+    @include mix.flexRow(flex-start, 1rem);
   }
+  
   &__img {
-    width: 4rem;
-    height: 4rem;
-    border-radius: 50%;
-    margin-right: calc(var.$padding-mob / 3);
-    @include mix.desktop {
-      margin-right: calc(var.$padding-desk / 3);
+    &-container {
+      background-color: var.$body-pri-bgcolor;
+      overflow: hidden;
+      border-radius: 50%;
+    }
+    &-image {
+      @include mix.imageObjectFit(4rem);
     }
   }
 
@@ -30,9 +40,10 @@
   }
 
   &__description {
-    margin-bottom: var.$padding-mob;
+    margin: calc(var.$padding-mob / 3) 0;
+
     @include mix.desktop {
-      margin-bottom: var.$padding-desk;
+      margin: calc(var.$padding-desk / 3) 0;
     }
   }
 }

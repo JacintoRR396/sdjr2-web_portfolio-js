@@ -1733,39 +1733,58 @@ img {
 }
 
 /*! ============ SKILLS ============ */
+.testimonials__container {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 0.5rem;
+}
+@media (min-width: 768px) {
+  .testimonials__container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+}
 .testimonials__data {
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
-  margin-bottom: 1rem;
+  align-items: center;
+  gap: 0;
+  margin: 0.5rem 0.6666666667rem 1rem;
 }
 @media (min-width: 992px) {
   .testimonials__data {
-    margin-bottom: 1.25rem;
+    margin: 0.625rem 0.8333333333rem 1.25rem;
   }
 }
 .testimonials__header {
   display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1rem;
 }
-.testimonials__img {
-  width: 4rem;
-  height: 4rem;
+.testimonials__img-container {
+  background-color: #fff;
+  overflow: hidden;
   border-radius: 50%;
-  margin-right: 0.6666666667rem;
 }
-@media (min-width: 992px) {
-  .testimonials__img {
-    margin-right: 0.8333333333rem;
-  }
+.testimonials__img-image {
+  width: 100%;
+  height: 4rem;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .testimonials__icon-star {
   color: #455a64;
 }
 .testimonials__description {
-  margin-bottom: 2rem;
+  margin: 0.6666666667rem 0;
 }
 @media (min-width: 992px) {
   .testimonials__description {
-    margin-bottom: 2.5rem;
+    margin: 0.8333333333rem 0;
   }
 }
 
