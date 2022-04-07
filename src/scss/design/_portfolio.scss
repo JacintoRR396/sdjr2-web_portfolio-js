@@ -14,7 +14,7 @@
     @include mix.card(var.$gray-light);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.45);
     padding: 0;
-    margin: 0 1rem 1.5rem;
+    margin: 0.25rem 1rem 1.5rem;
 
     &:hover {
       .portfolio__img-image {
