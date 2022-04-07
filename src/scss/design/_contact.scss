@@ -41,28 +41,48 @@
     margin: 0;
   }
 
+  &__form {
+    @include mix.mobile {
+      margin: 0 auto;
+      min-width: 30rem;
+    }
+    @include mix.tablet {
+      min-width: 42rem;
+    }
+    @include mix.desktop {
+      margin: unset;
+      min-width: unset;
+    }
+  }
   &__content {
-    background-color: var.$input-color;
+    position: relative;
+    background-color: var.$input-bgcolor;
     border-radius: 0.5rem;
     padding: 0.75rem 1rem 0.25rem;
   }
   &__label {
-    color: var.$title-color;
+    position: absolute;
+    top: -0.4rem;
+    left: 2rem;
+    color: var.$label-color;
     font-size: var.$fs-small-mob;
     font-weight: var.$fw-bold;
+    letter-spacing: 0.1rem;
+
     @include mix.desktop {
       font-size: var.$fs-small-desk;
     }
   }
   &__input {
     width: 100%;
-    background-color: var.$input-color;
-    color: var.$body-sec-color;
+    background-color: var.$input-bgcolor;
+    color: var.$input-color;
     font-family: var.$font-primary;
     font-size: var.$fs-normal-mob;
     border: none;
     outline: none;
     padding: 0.25rem 0.5rem 0.5rem 0;
+
     @include mix.desktop {
       font-size: var.$fs-normal-desk;
     }

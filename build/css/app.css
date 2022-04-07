@@ -1846,15 +1846,37 @@ img {
 .contact__title {
   margin: 0;
 }
+@media (min-width: 576px) {
+  .contact__form {
+    margin: 0 auto;
+    min-width: 30rem;
+  }
+}
+@media (min-width: 768px) {
+  .contact__form {
+    min-width: 42rem;
+  }
+}
+@media (min-width: 992px) {
+  .contact__form {
+    margin: unset;
+    min-width: unset;
+  }
+}
 .contact__content {
-  background-color: #ee7d85;
+  position: relative;
+  background-color: #f8f8f8;
   border-radius: 0.5rem;
   padding: 0.75rem 1rem 0.25rem;
 }
 .contact__label {
-  color: #455a64;
+  position: absolute;
+  top: -0.4rem;
+  left: 2rem;
+  color: #e22331;
   font-size: 0.813rem;
   font-weight: 900;
+  letter-spacing: 0.1rem;
 }
 @media (min-width: 992px) {
   .contact__label {
@@ -1863,8 +1885,8 @@ img {
 }
 .contact__input {
   width: 100%;
-  background-color: #ee7d85;
-  color: #5a7582;
+  background-color: #f8f8f8;
+  color: #455a64;
   font-family: "Roboto", sans-serif;
   font-size: 0.938rem;
   border: none;
