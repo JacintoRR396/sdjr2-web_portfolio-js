@@ -187,6 +187,7 @@ img {
   color: var.$gray;
   font-size: var.$fs-small-mob;
   line-height: 1.25rem;
+  
   @include mix.desktop {
     font-size: var.$fs-small-desk;
   }

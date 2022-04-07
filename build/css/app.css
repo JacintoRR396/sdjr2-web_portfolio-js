@@ -1403,14 +1403,10 @@ img {
 }
 .qualification__calendar {
   display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
   align-items: center;
-  color: #a5a9ab;
-  font-size: 0.75rem;
-}
-@media (min-width: 992px) {
-  .qualification__calendar {
-    font-size: 0.813rem;
-  }
+  gap: 0;
 }
 .qualification__rounder {
   display: inline-block;
@@ -1716,6 +1712,10 @@ img {
   color: #fff;
   padding: 0.5rem;
   border-radius: 0.25rem;
+}
+.portfolio__date {
+  display: inline-block;
+  margin: 0.5rem 0;
 }
 .portfolio__description {
   margin: 0.6666666667rem 0;
