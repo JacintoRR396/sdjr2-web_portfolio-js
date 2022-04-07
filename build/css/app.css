@@ -1130,7 +1130,7 @@ img {
   text-align: center;
 }
 .about__info-card:hover {
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.4);
 }
 @media (min-width: 992px) {
   .about__info-card:nth-child(1) {
@@ -1193,7 +1193,7 @@ img {
   transition: 0.3s;
 }
 .skills__header:hover {
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.4);
 }
 @media (min-width: 992px) {
   .skills__header {
@@ -1447,7 +1447,7 @@ img {
   transition: 0.3s;
 }
 .services__content:hover {
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.4);
 }
 .services__data {
   display: flex;
@@ -1512,7 +1512,7 @@ img {
   padding: 0;
 }
 .services__modal-content:hover {
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.4);
 }
 .services__modal-data {
   display: flex;
@@ -1621,11 +1621,12 @@ img {
   border-bottom: 0.15rem solid #e22331;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
   transition: 0.3s;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.45);
   padding: 0;
   margin: 0 1rem 1.5rem;
 }
 .portfolio__content:hover {
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.4);
 }
 .portfolio__content:hover .portfolio__img-image {
   -webkit-transform: scale(1.2);
@@ -1639,6 +1640,7 @@ img {
   opacity: 0;
 }
 .portfolio__img-container {
+  background-color: #fff;
   overflow: hidden;
   border-radius: 0.5rem 0.5rem 0 0;
 }
@@ -1680,6 +1682,9 @@ img {
   margin: 0;
 }
 .portfolio__status {
+  display: inline-block;
+  margin: 0.5rem 0;
+  font-size: 0.813rem;
   text-transform: uppercase;
 }
 .portfolio__button {
@@ -1710,12 +1715,13 @@ img {
 .portfolio__tech-item {
   background-color: #303f46;
   color: #fff;
-  padding: 0.5rem;
+  padding: 0.35rem;
   border-radius: 0.25rem;
+  font-size: 0.813rem;
 }
 .portfolio__date {
   display: inline-block;
-  margin: 0.5rem 0;
+  margin: 0.5rem 0 0.25rem;
 }
 .portfolio__description {
   margin: 0.6666666667rem 0;

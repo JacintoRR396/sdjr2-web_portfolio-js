@@ -12,8 +12,9 @@
 
   &__content {
     @include mix.card(var.$gray-light);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.45);
     padding: 0;
-    margin: 0 1rem 1.5rem;;
+    margin: 0 1rem 1.5rem;
 
     &:hover {
       .portfolio__img-image {
@@ -31,6 +32,7 @@
 
   &__img {
     &-container {
+      background-color: var.$body-pri-bgcolor;
       overflow: hidden;
       border-radius: 0.5rem 0.5rem 0 0;
     }
@@ -69,12 +71,16 @@
     margin: 0;
   }
   &__status {
+    display: inline-block;
+    margin: 0.5rem 0;
+    font-size: var.$fs-small-mob;
     text-transform: uppercase;
   }
   &__button {
     display: flex;
     @include mix.buttonIcon(var.$primary);
   }
+
   &__tech-list {
     @include mix.flexRow(flex-start, 0.5rem);
     flex-wrap: wrap;
@@ -83,8 +89,13 @@
   &__tech-item {
     background-color: var.$body-third-bgcolor;
     color: var.$body-third-color;
-    padding: 0.5rem;
+    padding: 0.35rem;
     border-radius: 0.25rem;
+    font-size: var.$fs-small-mob;
+  }
+  &__date {
+    display: inline-block;
+    margin: 0.5rem 0 0.25rem;
   }
   &__description {
     margin: calc(var.$padding-mob / 3) 0;
