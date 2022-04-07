@@ -12,18 +12,33 @@
     }
   }
 
-  &__info {
-    display: flex;
-    margin-bottom: calc(var.$padding-mob * (3 / 4));
+  &__infos {
+    @include mix.gridColumns(1, calc(var.$padding-mob / 2));
+    margin: 0 auto;
+
+    @include mix.mobile-xs {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @include mix.tablet {
+      grid-template-columns: repeat(3, 1fr);
+    }
     @include mix.desktop {
-      margin-bottom: calc(var.$padding-desk * (3 / 4));
+      grid-template-columns: repeat(1, 1fr);
+      margin: auto 1rem;
+      margin-top: 0;
     }
   }
-  &__icon {
-    margin-right: calc(var.$padding-mob / 3);
+  &__info {
+    @include mix.flexColumn(space-evenly, 0.5rem);
+    @include mix.card(var.$gray-light);
+    padding: calc(var.$padding-mob / 3);
+
     @include mix.desktop {
-      margin-right: calc(var.$padding-desk / 3);
+      padding: calc(var.$padding-desk / 3);
     }
+  }
+  &__title {
+    margin: 0;
   }
 
   &__content {
