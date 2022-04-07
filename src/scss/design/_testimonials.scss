@@ -3,6 +3,14 @@
 
 /*! ============ SKILLS ============ */
 .testimonials {
+  &__container {
+    @include mix.gridColumns(1, 0.5rem);
+
+    @include mix.tablet {
+      @include mix.gridColumns(2, 1rem);
+    }
+  }
+
   &__data {
     @include mix.flexRow(space-between);
     margin: calc(var.$padding-mob / 4) calc(var.$padding-mob / 3) calc(var.$padding-mob / 2);
