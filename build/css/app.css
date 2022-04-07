@@ -1981,14 +1981,16 @@ img {
   width: 24px;
 }
 .footer__copy {
+  background-color: #e8505b;
+  color: #fff;
   font-size: 0.75rem;
   text-align: center;
-  margin-top: 2rem;
+  padding: 1rem 0;
 }
 @media (min-width: 992px) {
   .footer__copy {
     font-size: 0.813rem;
-    margin-top: 2.5rem;
+    padding: 1.25rem 0;
   }
 }
 .footer__title, .footer__link, .footer__social {

@@ -78,13 +78,15 @@
   }
 
   &__copy {
+    background-color: var.$primary-light;
+    color: var.$white;
     font-size: var.$fs-smaller-mob;
     text-align: center;
-    margin-top: var.$padding-mob;
+    padding: calc(var.$padding-mob / 2 ) 0;
 
     @include mix.desktop {
       font-size: var.$fs-smaller-desk;
-      margin-top: var.$padding-desk;
+      padding: calc(var.$padding-desk / 2 ) 0;
     }
   }
 
