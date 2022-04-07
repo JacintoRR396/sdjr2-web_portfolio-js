@@ -1909,8 +1909,8 @@ img {
   }
 }
 .footer__bg {
-  padding: 2rem 0;
   background-color: #303f46;
+  padding: 2rem 0;
 }
 @media (min-width: 992px) {
   .footer__bg {
@@ -1936,9 +1936,10 @@ img {
   }
 }
 .footer__subtitle {
-  color: #303f46;
+  color: #728f9d;
   font-size: 0.813rem;
   font-weight: 700;
+  letter-spacing: 0.1rem;
 }
 @media (min-width: 992px) {
   .footer__subtitle {
@@ -1991,6 +1992,6 @@ img {
   }
 }
 .footer__title, .footer__link, .footer__social {
-  color: #5a7582;
+  color: #fff;
 }
 /*# sourceMappingURL=app.css.map */

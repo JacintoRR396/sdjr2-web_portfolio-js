@@ -4,13 +4,15 @@
 /*! ============ SKILLS ============ */
 .footer {
   margin-top: var.$padding-mob;
+
   @include mix.desktop {
     margin-top: var.$padding-desk;
   }
 
   &__bg {
-    padding: var.$padding-mob 0;
     background-color: var.$body-third-bgcolor;
+    padding: var.$padding-mob 0;
+
     @include mix.desktop {
       padding: var.$padding-desk 0;
     }
@@ -18,6 +20,7 @@
 
   &__container {
     row-gap: var.$padding-mob;
+
     @include mix.desktop {
       row-gap: var.$padding-desk;
     }
@@ -26,15 +29,18 @@
   &__title {
     font-size: var.$fs-h1-mob;
     margin-bottom: calc(var.$padding-mob / 8);
+
     @include mix.desktop {
       font-size: var.$fs-h1-desk;
       margin-bottom: calc(var.$padding-desk / 8);
     }
   }
   &__subtitle {
-    color: var.$secondary-dark;
+    color: var.$secondary-lighter;
     font-size: var.$fs-small-mob;
     font-weight: var.$fw-medium;
+    letter-spacing: 0.1rem;
+
     @include mix.desktop {
       font-size: var.$fs-small-desk;
     }
@@ -56,6 +62,7 @@
   &__social {
     font-size: var.$fs-h3-mob;
     margin-right: calc(var.$padding-mob * (3 / 4));
+
     @include mix.desktop {
       font-size: var.$fs-h3-desk;
       margin-right: calc(var.$padding-desk * (3 / 4));
@@ -74,6 +81,7 @@
     font-size: var.$fs-smaller-mob;
     text-align: center;
     margin-top: var.$padding-mob;
+
     @include mix.desktop {
       font-size: var.$fs-smaller-desk;
       margin-top: var.$padding-desk;
@@ -83,6 +91,6 @@
   &__title,
   &__link,
   &__social {
-    color: var.$body-sec-color;
+    color: var.$body-third-color;
   }
 }
