@@ -1790,11 +1790,13 @@ img {
 
 /*! ============ SKILLS ============ */
 .contact__container {
-  row-gap: 2rem;
+  gap: 2rem;
 }
 @media (min-width: 992px) {
   .contact__container {
-    row-gap: 2.5rem;
+    grid-template-columns: unset;
+    grid-template-rows: 1fr 2fr;
+    gap: 2.5rem;
   }
 }
 .contact__info {

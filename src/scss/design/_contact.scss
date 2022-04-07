@@ -4,9 +4,11 @@
 /*! ============ SKILLS ============ */
 .contact {
   &__container {
-    row-gap: var.$padding-mob;
+    gap: var.$padding-mob;
+
     @include mix.desktop {
-      row-gap: var.$padding-desk;
+      grid-template-columns: 1fr 2fr;
+      gap: var.$padding-desk;
     }
   }
 
