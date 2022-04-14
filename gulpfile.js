@@ -1,11 +1,18 @@
 const { src, dest, watch, series } = require('gulp');
 
+// Generic
+const rename = require('gulp-rename');
+
 // CSS y SASS
 const sass = require('gulp-sass')(require('sass'));
 const postcss = require('gulp-postcss');
 const autoprefixer = require('autoprefixer');
 const sourcemaps = require('gulp-sourcemaps');
 const cssnano = require('cssnano');
+
+// Javascript
+const babel = require('gulp-babel');
+const uglify = require('gulp-uglify');
 
 // Imagenes
 const imagemin = require('gulp-imagemin');
@@ -16,9 +23,13 @@ const avif = require('gulp-avif');
 const pathOriginCSS = 'src/scss/app.scss';
 const pathTagetCSS = 'build/css';
 
+const pathOriginJS = 'src/js/**/*.js';
+const pathTagetJS = 'build/js';
+
 const pathOriginImages = 'src/images/**/*';
 const pathTargetImages = 'build/img';
 
+// Functions
 function css( done ) {
     src(pathOriginCSS)
         .pipe( sourcemaps.init() )
@@ -31,12 +42,22 @@ function css( done ) {
     done();
 }
 
-function imagenes() {
+function js( done ) {
+    src(pathOriginJS)
+        .pipe( babel() )
+        .pipe( dest(pathTagetJS) )
+        .pipe( uglify() )
+        .pipe( rename({ extname: '.min.js' }) )
+        .pipe( dest(pathTagetJS) );
+    done();
+}
+
+function images() {
     return src(pathOriginImages)
         .pipe( imagemin({ optimizationLevel: 3 }) )
         .pipe( dest(pathTargetImages) )
 }
-function versionWebp() {
+function imgVersionWebp() {
     const opciones = {
         quality: 50
     }
@@ -44,7 +65,7 @@ function versionWebp() {
         .pipe( webp( opciones ) )
         .pipe( dest(pathTargetImages) )
 }
-function versionAvif() {
+function imgVersionAvif() {
     const opciones = {
         quality: 50
     }
@@ -54,17 +75,20 @@ function versionAvif() {
 }
 
 function dev() {
-    watch( 'src/images/**/*', imagenes );
+    watch( 'src/images/**/*', images );
     watch( 'src/scss/base/*.scss', css );
     watch( 'src/scss/design/*.scss', css );
+    watch( 'src/js/**/*.js', js );
 }
 
-
+// Exports
 exports.css = css;
+exports.js = js;
+exports.images = images;
+exports.vWebp = imgVersionWebp;
+exports.vAvif = imgVersionAvif;
 exports.dev = dev;
-exports.imagenes = imagenes;
-exports.versionWebp = versionWebp;
-exports.versionAvif = versionAvif;
 
-/* exports.default = series( imagenes, versionWebp, css, dev ); */
-exports.default = series( css );
+/* exports.default = series( images, imgVersionWebp, css, js, dev ); */
+exports.default = series( css, js, dev );
+/* exports.default = series( css ); */
