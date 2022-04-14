@@ -856,7 +856,7 @@ img {
 }
 @media (min-width: 992px) {
   .nav {
-    height: 4rem;
+    height: 3.5rem;
   }
 }
 .nav__logo, .nav__visibility, .nav__theme, .nav__language {
