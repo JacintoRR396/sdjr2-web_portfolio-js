@@ -3,21 +3,23 @@
 /*! ============================== MIXINS ============================== *\
 *                                                                        *
 *       ---  MEDIA QUERIES ---                                           *
-* 1. mobile                                                              *
-* 2. tablet                                                              *
-* 3. desktop                                                             *
-* 4. desktop-lg                                                          *
+* 1. mobile-xs                                                           *
+* 2. mobile                                                              *
+* 3. tablet                                                              *
+* 4. desktop                                                             *
+* 5. desktop-lg                                                          *
 *                                                                        *
 *       --- BLOCKS ---                                                   *
-* 1. modal                                                               *
-* 2. sectionBgOblique($colorFirst, $colorSecond, $size)                  *
-* 3. sectionBgCollapse($size)                                            *
-* 4. sectionGridTextImage($padding, $colorGrad, $url)                    *
-*                                                                        *
-* 2. flexRow($justContent: "flex-start", $gap: 0)                        *
-* 3. flexColumn($justContent: "flex-start", $gap: 0)                     *
-* 4. gridColumns($numColumns: 2, $gap: 0)                                *
-* 5. gridRows($numRows: 2, $gap: 0)                                      *
+* 1. flexRow($justContent: flex-start, $gap: 0)                          *
+* 2. flexColumn($justContent: flex-start, $gap: 0)                       *
+* 3. gridColumns($numColumns: 2, $gap: 0)                                *
+* 4. gridRows($numRows: 2, $gap: 0)                                      *
+* 5. modal                                                               *
+* 6. modalContent                                                        *
+* 7. sectionBgOblique($colorFirst, $colorSecond, $size)                  *
+* 8. sectionBgCollapse($size)                                            *
+* 9. sectionGridTextImage($padding, $colorGrad, $url)                    *
+* 10. card($bgColor)                                                     *
 *                                                                        *
 *       --- HEADING / TEXT ---                                           *
 * 1. headingLinearGradient($dir, $fromColor, $toColor)                   *
@@ -33,22 +35,31 @@
 * 2. imageObjectFit($height, $width: 100%)                               *
 * 3. imageBgiHoverLg($url, $colorGradient)                               *
 * 4. imageBgiHoverLgTransp($url, $colorGradient)                         *
-* 5. imageMask                                                           *
-* 6. imageParallax($url)                                                 *
-* 7. iconBgi($url, $size, $margin)                                       *
-* 8. iconBgiBefore($url, $size)                                          *
-* 9. iconTextBefore($text, $top, $fs)                                    *
+* 5. imageParallax($url)                                                 *
+* 6. imageMask                                                           *
+* 7. imageFrame($width)                                                  *
+* 8. iconBgi($url, $size, $margin)                                       *
+* 9. iconBgiBefore($url, $size)                                          *
+* 10. iconTextBefore($text, $top, $fs)                                   *
 *                                                                        *
 *       --- BUTTONS ---                                                  *
 * 1. button($bgColor, $color)                                            *
+* 2. buttonIcon($color)                                                   *
 *                                                                        *
 *       --- OTHERS ---                                                   *
 * 1. scrollHorizontal                                                    *
 * 2. marginBottom($size)                                                 *
+* 3. shadow($opacity: 0.3)                                               *
 *                                                                        *
 \* ===================================================================== */
 
 /** Media Queries **/
+@mixin mobile-xs {
+  @media (min-width: var.$mobile-xs) {
+    @content;
+  }
+}
+
 @mixin mobile {
   @media (min-width: var.$mobile) {
     @content;
@@ -74,6 +85,34 @@
 }
 
 /** Blocks **/
+@mixin flexRow($justContent: flex-start, $gap: 0) {
+  display: flex;
+  flex-direction: row;
+  justify-content: $justContent;
+  align-items: center;
+  gap: $gap;
+}
+
+@mixin flexColumn($justContent: flex-start, $gap: 0) {
+  display: flex;
+  flex-direction: column;
+  justify-content: $justContent;
+  align-items: center;
+  gap: $gap;
+}
+
+@mixin gridColumns($numColumns: 2, $gap: 0) {
+  display: grid;
+  grid-template-columns: repeat($numColumns, 1fr);
+  gap: $gap;
+}
+
+@mixin gridRows($numRows: 2, $gap: 0) {
+  display: grid;
+  grid-template-rows: repeat($numRows, 1fr);
+  gap: $gap;
+}
+
 @mixin modal {
   position: fixed;
   top: 0;
@@ -82,9 +121,93 @@
   bottom: 0;
   @include flexRow(center, 0);
   background-color: rgba(0, 0, 0, 0.5);
-  padding: 0 calc(var.$padding / 2);
+  padding: 0 calc(var.$padding-mob / 2);
   z-index: var.$z-modal;
   transform: 0.3s;
+}
+
+@mixin modalContent {
+  visibility: hidden;
+  opacity: 0;
+
+  &-content {
+    @include card(var.$white);
+    position: relative;
+    border-radius: 0.5rem;
+    padding: 0;
+  }
+
+  &-data {
+    @include flexRow(center, 1rem);
+    background-color: var.$gray-light;
+    padding: calc(var.$padding-mob / 2) 0;
+    border-bottom: 2px solid var.$primary;
+    border-radius: 0.5rem 0.5rem 0 0;
+
+    @include desktop {
+      padding: calc(var.$padding-desk / 2);
+    }
+
+    span {
+      margin: 0;
+    }
+  }
+  &-title {
+    font-size: var.$fs-h3-mob;
+
+    @include desktop {
+      font-size: var.$fs-h3-desk;
+    }
+  }
+  &-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    color: var.$primary;
+    font-size: var.$fs-h2-mob;
+    font-weight: var.$fw-medium;
+    cursor: pointer;
+
+    @include desktop {
+      font-size: var.$fs-h2-desk;
+    }
+  }
+
+  &-desc {
+    margin: 1.5rem 1rem 2rem;
+    max-width: 40rem;
+    text-align: left;
+    text-indent: 3rem;
+
+    @include tablet {
+      margin: 1.5rem 1.5rem 2rem;
+    }
+
+    @include desktop {
+      margin: 1.5rem 2rem 2rem;
+      max-width: 45rem;
+    }
+  }
+
+  &-list {
+    row-gap: 1rem;
+    margin: 0 1rem 2rem;
+    max-width: 35rem;
+
+    @include tablet {
+      margin: 0 2.5rem 2.5rem;
+    }
+    @include desktop {
+      max-width: 40rem;
+    }
+  }
+  &-item {
+    @include flexRow(flex-start, 0);
+  }
+  &-icon {
+    color: var.$green;
+    margin-right: 0.5rem;
+  }
 }
 
 @mixin sectionBgOblique($colorFirst, $colorSecond, $size) {
@@ -161,32 +284,17 @@
   }
 }
 
-@mixin flexRow($justContent: "flex-start", $gap: 0) {
-  display: flex;
-  flex-direction: row;
-  justify-content: $justContent;
-  align-items: center;
-  gap: $gap;
-}
+@mixin card($bgColor) {
+  background-color: $bgColor;
+  padding: 1.5rem 0.5rem 1.25rem 1.5rem;
+  border-radius: 0.25rem;
+  border-bottom: 0.15rem solid var.$primary;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+  transition: 0.3s;
 
-@mixin flexColumn($justContent: "flex-start", $gap: 0) {
-  display: flex;
-  flex-direction: column;
-  justify-content: $justContent;
-  align-items: center;
-  gap: $gap;
-}
-
-@mixin gridColumns($numColumns: 2, $gap: 0) {
-  display: grid;
-  grid-template-columns: repeat($numColumns, 1fr);
-  gap: $gap;
-}
-
-@mixin gridRows($numRows: 2, $gap: 0) {
-  display: grid;
-  grid-template-rows: repeat($numRows, 1fr);
-  gap: $gap;
+  &:hover {
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.4);
+  }
 }
 
 /** Heading / Text **/
@@ -345,26 +453,40 @@
   background-position: center;
 }
 
-@mixin imageMask {
-  &__mask {
-    overflow: hidden;
-  }
-  &__image {
-    width: 100%;
-    transition-property: transform;
-    transition-duration: 300ms;
-    &:hover {
-      transform: scale(1.2);
-    }
-  }
-}
-
 @mixin imageParallax($url) {
   background-image: url($url);
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
   background-attachment: fixed;
+}
+
+@mixin imageMask {
+  //__img-container
+  &-container {
+    overflow: hidden;
+  }
+  //&__img-image
+  &-image {
+    width: 100%;
+    transform: scale(1.01);
+    transition-property: transform;
+    transition-duration: 300ms;
+
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+}
+
+@mixin imageFrame($width) {
+  width: $width;
+  justify-self: center;
+  align-self: center;
+  border-left: 0.15rem solid var.$secondary-dark;
+  border-right: 0.2rem solid var.$secondary-dark;
+  border-radius: 0.5rem;
+  box-shadow: 2px 0px 5px;
 }
 
 @mixin iconBgi($url, $size, $margin) {
@@ -404,7 +526,8 @@
 
 /** Buttons **/
 @mixin button($bgColor, $color, $isBlock: false) {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
   padding: 1rem;
   background-color: $bgColor;
   color: $color;
@@ -431,11 +554,6 @@
     margin-left: 0.5rem;
   }
 
-  &--flex {
-    display: inline-flex;
-    align-items: center;
-  }
-
   &--small {
     padding: 0.75rem 1rem;
   }
@@ -452,10 +570,21 @@
       color: var.$link-hover-color;
     }
   }
+}
 
-  @include tablet {
-    width: auto;
-    display: inline-block;
+@mixin buttonIcon($color) {
+  color: $color;
+  font-size: var.$fs-h2-mob;
+  font-weight: var.$fw-medium;
+  cursor: pointer;
+  transition: 0.3s;
+
+  @include desktop {
+    font-size: var.$fs-h2-desk;
+  }
+
+  &:hover {
+    color: darken($color, 10%);
   }
 }
 
@@ -480,4 +609,8 @@
   @include tablet {
     margin-bottom: 0;
   }
+}
+
+@mixin shadow($opacity: 0.3) {
+  box-shadow: 0 0 0.5rem rgba(69, 90, 100, $opacity);
 }

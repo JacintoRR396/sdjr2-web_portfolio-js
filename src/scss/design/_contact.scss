@@ -4,35 +4,87 @@
 /*! ============ SKILLS ============ */
 .contact {
   &__container {
-    row-gap: var.$padding;
+    gap: var.$padding-mob;
+
+    @include mix.desktop {
+      grid-template-columns: 1fr 2fr;
+      gap: var.$padding-desk;
+    }
   }
 
+  &__infos {
+    @include mix.gridColumns(1, calc(var.$padding-mob / 2));
+    margin: 0 auto;
+
+    @include mix.mobile-xs {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @include mix.tablet {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    @include mix.desktop {
+      grid-template-columns: repeat(1, 1fr);
+      margin: auto 1rem;
+      margin-top: 0;
+    }
+  }
   &__info {
-    display: flex;
-    margin-bottom: calc(var.$padding * (3 / 4));
+    @include mix.flexColumn(space-evenly, 0.5rem);
+    @include mix.card(var.$gray-light);
+    padding: calc(var.$padding-mob / 3);
+
+    @include mix.desktop {
+      padding: calc(var.$padding-desk / 3);
+    }
   }
-  &__icon {
-    margin-right: calc(var.$padding / 3);
+  &__title {
+    margin: 0;
   }
 
+  &__form {
+    @include mix.mobile {
+      margin: 0 auto;
+      min-width: 30rem;
+    }
+    @include mix.tablet {
+      min-width: 42rem;
+    }
+    @include mix.desktop {
+      margin: unset;
+      min-width: unset;
+    }
+  }
   &__content {
-    background-color: var.$input-color;
+    position: relative;
+    background-color: var.$input-bgcolor;
     border-radius: 0.5rem;
     padding: 0.75rem 1rem 0.25rem;
   }
   &__label {
-    color: var.$title-color;
-    font-size: var.$fs-small;
+    position: absolute;
+    top: -0.4rem;
+    left: 2rem;
+    color: var.$label-color;
+    font-size: var.$fs-small-mob;
     font-weight: var.$fw-bold;
+    letter-spacing: 0.1rem;
+
+    @include mix.desktop {
+      font-size: var.$fs-small-desk;
+    }
   }
   &__input {
     width: 100%;
-    background-color: var.$input-color;
-    color: var.$body-sec-color;
+    background-color: var.$input-bgcolor;
+    color: var.$input-color;
     font-family: var.$font-primary;
-    font-size: var.$fs-normal;
+    font-size: var.$fs-normal-mob;
     border: none;
     outline: none;
     padding: 0.25rem 0.5rem 0.5rem 0;
+
+    @include mix.desktop {
+      font-size: var.$fs-normal-desk;
+    }
   }
 }

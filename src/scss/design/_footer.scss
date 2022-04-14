@@ -3,60 +3,115 @@
 
 /*! ============ SKILLS ============ */
 .footer {
-  margin-top: var.$padding;
+  margin-top: var.$padding-mob;
+
+  @include mix.desktop {
+    margin-top: var.$padding-desk;
+  }
 
   &__bg {
-    padding: var.$padding 0;
     background-color: var.$body-third-bgcolor;
+    margin-bottom: 5rem;
+    padding: var.$padding-mob 0 0;
+    text-align: center;
+
+    @include mix.desktop {
+      margin-bottom: 0;
+      padding: var.$padding-desk 0 0;
+    }
   }
 
   &__container {
-    row-gap: var.$padding;
+    row-gap: var.$padding-mob;
+    margin-bottom: var.$padding-mob;
+
+    @include mix.tablet {
+      grid-template-columns: repeat(3, 1fr);
+      align-items: center;
+    }
+    @include mix.desktop {
+      row-gap: var.$padding-desk;
+      margin-bottom: var.$padding-desk;
+    }
   }
 
   &__title {
-    font-size: var.$fs-h1;
-    margin-bottom: calc(var.$padding / 8);
+    font-size: var.$fs-h1-mob;
+    margin-bottom: calc(var.$padding-mob / 8);
+
+    @include mix.desktop {
+      font-size: var.$fs-h1-desk;
+      margin-bottom: calc(var.$padding-desk / 8);
+    }
   }
   &__subtitle {
-    color: var.$secondary-dark;
-    font-size: var.$fs-small;
+    color: var.$secondary-lighter;
+    font-size: var.$fs-small-mob;
     font-weight: var.$fw-medium;
+    letter-spacing: 0.1rem;
+
+    @include mix.desktop {
+      font-size: var.$fs-small-desk;
+    }
   }
 
   &__links {
-    @include mix.flexColumn(flex-start, 1.5rem);
-    align-items: flex-start;
+    @include mix.flexColumn(center, 1.5rem);
   }
   &__link {
     &:hover {
-      color: var.$gray-light;
+      color: var.$secondary-light;
     }
   }
 
   &__socials {
-    @include mix.flexRow(flex-start, 0.5rem);
+    @include mix.flexRow(center, 0.5rem);
+    background-color: var.$body-pri-bgcolor;
+    margin: 0 auto;
+    padding: 0.35rem;
+    border-radius: 1rem;
+
+    @include mix.mobile {
+      align-items: flex-start;
+    }
+    @include mix.tablet {
+      max-height: 2.25rem;
+    }
   }
   &__social {
-    font-size: var.$fs-h3;
-    margin-right: calc(var.$padding * (3 / 4));
-    &:hover {
-      color: var.$gray-light;
+    font-size: var.$fs-h3-mob;
+    margin: 0 calc(var.$padding-mob / 2);
+
+    @include mix.desktop {
+      font-size: var.$fs-h3-desk;
+      margin: 0 calc(var.$padding-desk / 2);
     }
+
+    &:hover {
+      color: var.$secondary-light;
+    }
+
     img {
       width: var.$icon-size-md;
     }
   }
 
   &__copy {
-    font-size: var.$fs-smaller;
+    background-color: var.$primary-light;
+    color: var.$white;
+    font-size: var.$fs-smaller-mob;
     text-align: center;
-    margin-top: var.$padding;
+    padding: calc(var.$padding-mob / 2 ) 0;
+
+    @include mix.desktop {
+      font-size: var.$fs-smaller-desk;
+      padding: calc(var.$padding-desk / 2 ) 0;
+    }
   }
 
   &__title,
   &__link,
   &__social {
-    color: var.$body-sec-color;
+    color: var.$body-third-color;
   }
 }

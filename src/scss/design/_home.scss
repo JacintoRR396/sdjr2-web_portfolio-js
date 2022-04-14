@@ -4,56 +4,88 @@
 /*! ============ HOME ============ */
 .home {
   &__container {
-    gap: 1rem;
+    display: grid;
+    grid-template-rows: 1.5fr 2fr;
+    gap: calc(var.$padding-mob / 2);
+
+    @include mix.mobile-xs {
+      grid-template-rows: 2fr 1.5fr;
+      gap: var.$padding-mob;
+    }
+
+    @include mix.desktop {
+      grid-template-rows: unset;
+      @include mix.gridColumns(2, var.$padding-desk);
+    }
   }
 
-  &__content {
-    grid-template-columns: 0.5fr 3fr;
-    padding-top: 3.5rem;
+  &__content-socperfil {
+    @include mix.flexRow(center, var.$padding-mob);
     align-items: center;
-  }
 
-  &__social {
+    @include mix.desktop {
+      @include mix.flexRow(flex-end, var.$padding-desk);
+    }
+  }
+  &__socials {
     @include mix.flexColumn(center, 1rem);
+
     &-icon {
-      font-size: 1.25rem;
       color: var.$secondary;
+      font-size: 1.25rem;
       transition: 0.3s;
 
       &:hover {
         transform: translateX(0.25rem);
       }
+    }
 
-      img {
-        width: var.$icon-size-lg;
+    &-link {
+      width: var.$icon-size-xl;
+    }
+  }
+  &__img {
+    &-container {
+      display: flex;
+      max-width: 12rem;
+
+      @include mix.mobile-xs {
+        max-width: 20rem;
       }
     }
   }
 
-  &__img {
-    margin-left: calc(var.$padding / 3);
-  }
-  &__blob {
-    width: 200px;
-    fill: var.$primary-light;
-    &-img {
-      width: 170px;
+  &__title,
+  &__subtitle,
+  &__btns {
+    text-align: center;
+
+    @include mix.desktop {
+      text-align: left;
     }
   }
-
-  &__data {
-    grid-column: 1 / 3;
-  }
   &__title {
-    margin-bottom: calc(var.$padding * (3 / 4));
-    font-size: var.$fs-big;
+    font-size: var.$fs-big-mob;
+    margin-bottom: calc(var.$padding-mob / 3);
+
+    @include mix.desktop {
+      font-size: var.$fs-big-desk;
+      margin-bottom: calc(var.$padding-desk / 3);
+    }
   }
   &__subtitle {
-    font-size: var.$fs-h3;
+    font-size: var.$fs-h3-mob;
     font-weight: var.$fw-medium;
-    margin-bottom: calc(var.$padding / 3);
+    margin-bottom: calc(var.$padding-mob / 3);
+
+    @include mix.desktop {
+      font-size: var.$fs-h3-desk;
+      margin-bottom: calc(var.$padding-desk / 3);
+    }
   }
   &__description {
-    margin: 2rem 0;
+    @include mix.desktop {
+      max-width: 30rem;
+    }
   }
 }

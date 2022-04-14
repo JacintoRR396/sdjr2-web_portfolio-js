@@ -33,6 +33,9 @@
 
   @include mix.desktop {
     font-size: var.$icon-size-lg;
+    &--title {
+      font-size: var.$icon-size-xl;
+    }
   }
 }
 
@@ -67,17 +70,29 @@
 .text-center {
   text-align: center;
 }
+.text-access {
+  color: var.$green;
+}
+.text-error {
+  color: var.$red;
+}
 
 /** Buttons **/
 .button {
   @include mix.button(var.$primary, var.$white);
 }
 
+/** Modal **/
+.modal-active {
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
 /** Scroll **/
 // Scroll-button
 .scrollup {
   position: fixed;
-  right: calc(var.$padding / 2);
+  right: calc(var.$padding-mob / 2);
   bottom: -20%;
   background-color: var.$link-color;
   padding: 0 0.3rem;
@@ -85,13 +100,22 @@
   opacity: 0.8;
   z-index: var.$z-tootlip;
   transition: 0.4s;
+  @include mix.desktop {
+    right: calc(var.$padding-desk/ 2);
+  }
 
   &:hover {
     background-color: var.$link-hover-color;
   }
 
   &-show {
-    bottom: 5rem;
+    bottom: 7.5rem;
+    @include mix.tablet {
+      bottom: 5rem;
+    }
+    @include mix.desktop {
+      bottom: 2rem;
+    }
   }
 
   &__icon {
