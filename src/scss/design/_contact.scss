@@ -29,7 +29,7 @@
     }
   }
   &__info {
-    @include mix.flexColumn(space-evenly, 0.5rem);
+    @include mix.flexColumns(space-evenly, 0.5rem);
     @include mix.card(var.$gray-light);
     padding: calc(var.$padding-mob / 3);
 

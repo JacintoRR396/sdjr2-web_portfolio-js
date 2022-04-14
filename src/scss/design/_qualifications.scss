@@ -4,7 +4,7 @@
 /*! ============ SKILLS ============ */
 .qualification {
   &__tabs {
-    @include mix.flexRow(space-evenly, 0);
+    @include mix.flexRows(space-evenly, 0);
     margin-bottom: var.$padding-mob;
 
     @include mix.desktop {
@@ -12,7 +12,7 @@
     }
   }
   &__button {
-    @include mix.flexColumn(center, 0.25rem);
+    @include mix.flexColumns(center, 0.25rem);
     width: 50%;
     padding: 0.5rem;
     background-color: var.$gray-light;
@@ -95,7 +95,7 @@
     margin-bottom: 1rem;
   }
   &__calendar {
-    @include mix.flexRow;
+    @include mix.flexRows;
   }
   &__rounder {
     display: inline-block;

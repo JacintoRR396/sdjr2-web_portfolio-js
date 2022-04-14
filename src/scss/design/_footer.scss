@@ -56,7 +56,7 @@
   }
 
   &__links {
-    @include mix.flexColumn(center, 1.5rem);
+    @include mix.flexColumns(center, 1.5rem);
   }
   &__link {
     &:hover {
@@ -65,7 +65,7 @@
   }
 
   &__socials {
-    @include mix.flexRow(center, 0.5rem);
+    @include mix.flexRows(center, 0.5rem);
     background-color: var.$body-pri-bgcolor;
     margin: 0 auto;
     padding: 0.35rem;

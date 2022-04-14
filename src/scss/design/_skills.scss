@@ -8,7 +8,7 @@
   }
 
   &__header {
-    @include mix.flexRow(center, 0.25rem);
+    @include mix.flexRows(center, 0.25rem);
     @include mix.card(var.$gray-light);
     margin-bottom: calc(var.$padding-mob * (3 / 4));
     padding: 0.5rem;
@@ -34,7 +34,7 @@
     transition: 0.5s;
   }
   &__titles {
-    @include mix.flexRow(space-between, 0.25rem);
+    @include mix.flexRows(space-between, 0.25rem);
     margin-bottom: calc(var.$padding-mob / 8);
     padding: 0.5rem;
 

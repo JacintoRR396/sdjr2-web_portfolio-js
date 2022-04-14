@@ -14,7 +14,7 @@
   }
 
   &__data {
-    @include mix.flexRow(flex-start, 1rem);
+    @include mix.flexRows(flex-start, 1rem);
   }
 
   &__icon,

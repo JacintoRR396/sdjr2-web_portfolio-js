@@ -12,7 +12,7 @@
   }
 
   &__data {
-    @include mix.flexRow(space-between);
+    @include mix.flexRows(space-between);
     margin: calc(var.$padding-mob / 4) calc(var.$padding-mob / 3) calc(var.$padding-mob / 2);
 
     @include mix.desktop {
@@ -21,7 +21,7 @@
   }
 
   &__header {
-    @include mix.flexRow(flex-start, 1rem);
+    @include mix.flexRows(flex-start, 1rem);
   }
   
   &__img {

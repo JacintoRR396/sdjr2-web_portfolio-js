@@ -63,7 +63,7 @@
     }
 
     &-header {
-      @include mix.flexRow(space-between, 1rem);
+      @include mix.flexRows(space-between, 1rem);
     }
   }
 
@@ -82,7 +82,7 @@
   }
 
   &__tech-list {
-    @include mix.flexRow(flex-start, 0.5rem);
+    @include mix.flexRows(flex-start, 0.5rem);
     flex-wrap: wrap;
     margin: 0.75rem 0 0;
   }

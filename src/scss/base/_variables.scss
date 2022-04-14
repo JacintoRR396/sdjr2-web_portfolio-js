@@ -11,7 +11,7 @@ $desktop-lg: 1200px;
 $header-height-mob: 3rem;
 $header-height-desk: 3.5rem;
 $padding-mob: 2rem;
-$padding-desk: 2.5rem;
+$padding-desk: 2.35rem;
 
 /** Fonts and typographies **/
 $font-primary: "Roboto", sans-serif;
@@ -21,11 +21,11 @@ $font-italic: "Bona Nova", serif;
 $fs-bigger-mob: 2.5rem;
 $fs-bigger-desk: 3rem;
 $fs-big-mob: 2rem;
-$fs-big-desk: 2.5rem;
+$fs-big-desk: 2.35rem;
 $fs-h1-mob: 1.5rem;
-$fs-h1-desk: 2rem;
+$fs-h1-desk: 1.8rem;
 $fs-h2-mob: 1.25rem;
-$fs-h2-desk: 1.5rem;
+$fs-h2-desk: 1.35rem;
 $fs-h3-mob: 1.15rem;
 $fs-h3-desk: 1.25rem;
 $fs-normal-mob: 0.938rem;
@@ -45,6 +45,7 @@ $white: #fff;
 $gray-light: #f8f8f8;
 $gray: #a5a9ab;
 $gray-dark: #3b3b3b;
+
 $red: #e22331;
 $green: #00833e;
 $greenish: #068d9d;
@@ -52,10 +53,6 @@ $greenish-gray: #455a64;
 $blue: #197acb;
 $blue-nay: #3b4862;
 $yellow: #fccb00;
-$mustard: #c7c57d;
-$orange: #ff8015;
-$orange-metalic: #e99401;
-$salmon: #f46669;
 
 $primary: $red;
 $primary-lighter: lighten($primary, 20%);
@@ -71,10 +68,12 @@ $secondary-darker: darken($secondary, 20%);
 $body-pri-color: $black;
 $body-sec-color: $secondary-light;
 $body-third-color: $white;
+$body-fourth-color: $white;
 
 $body-pri-bgcolor: $white;
 $body-sec-bgcolor: $gray-light;
 $body-third-bgcolor: $secondary-dark;
+$body-fourth-bgcolor: $primary-light;
 
 $title-color: $secondary;
 $title-hover-color: $secondary-dark;
@@ -83,8 +82,8 @@ $link-color: $primary;
 $link-hover-color: $primary-dark;
 
 $label-color: $primary;
-$input-color: $secondary;
-$input-bgcolor: $gray-light;
+$input-color: $body-sec-color;
+$input-bgcolor: $body-sec-bgcolor;
 
 $scroll-bar-color: $primary-lighter;
 $scroll-bar-thumb-color: $primary;
