@@ -20,15 +20,15 @@
   }
 
   &__content-socperfil {
-    @include mix.flexRow(center, var.$padding-mob);
+    @include mix.flexRows(center, var.$padding-mob);
     align-items: center;
 
     @include mix.desktop {
-      @include mix.flexRow(flex-end, var.$padding-desk);
+      @include mix.flexRows(flex-end, var.$padding-desk);
     }
   }
   &__socials {
-    @include mix.flexColumn(center, 1rem);
+    @include mix.flexColumns(center, 1rem);
 
     &-icon {
       color: var.$secondary;
@@ -57,7 +57,6 @@
 
   &__title,
   &__subtitle,
-  &__description,
   &__btns {
     text-align: center;
 
@@ -85,11 +84,8 @@
     }
   }
   &__description {
-    margin: var.$padding-mob auto;
-    max-width: 30rem;
-
     @include mix.desktop {
-      margin: var.$padding-desk 0;
+      max-width: 30rem;
     }
   }
 }

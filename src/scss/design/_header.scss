@@ -16,7 +16,7 @@
 }
 
 .nav {
-  @include mix.flexRow(space-between, 0);
+  @include mix.flexRows(space-between, 0);
   max-width: var.$desktop-lg;
   height: var.$header-height-mob;
 
@@ -28,19 +28,7 @@
   &__visibility,
   &__theme,
   &__language {
-    color: var.$title-color;
-    font-size: var.$fs-h2-mob;
-    font-weight: var.$fw-medium;
-    cursor: pointer;
-    transition: 0.3s;
-
-    @include mix.desktop {
-      font-size: var.$fs-h2-desk;
-    }
-
-    &:hover {
-      color: var.$title-hover-color;
-    }
+    @include mix.buttonIcon(var.$secondary);
   }
 
   &__menu {
@@ -67,17 +55,17 @@
   }
 
   &__btns {
-    @include mix.flexRow(space-evenly, 1.5rem);
+    @include mix.flexRows(space-evenly, 1.5rem);
   }
 }
 
 //* Nav menu */
 .nav__list {
-  @include mix.flexRow(space-between, 0.5rem);
+  @include mix.flexRows(space-between, 0.5rem);
 }
 
 .nav__link {
-  @include mix.flexRow();
+  @include mix.flexRows();
   color: var.$link-color;
   font-size: var.$fs-normal-mob;
   font-weight: var.$fw-medium;

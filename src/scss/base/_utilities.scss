@@ -70,10 +70,29 @@
 .text-center {
   text-align: center;
 }
+.text-access {
+  color: var.$green;
+}
+.text-error {
+  color: var.$red;
+}
+.text-noselect {
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
 
 /** Buttons **/
 .button {
   @include mix.button(var.$primary, var.$white);
+}
+
+/** Modal **/
+.modal-active {
+  visibility: visible !important;
+  opacity: 1 !important;
 }
 
 /** Scroll **/

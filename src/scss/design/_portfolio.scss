@@ -6,22 +6,102 @@
   &__container {
     display: grid;
     grid-template-columns: repeat(3, 25rem);
-    column-gap: 2rem;
+    column-gap: 0rem;
     @include mix.scrollHorizontal;
   }
 
   &__content {
-    padding: 0 1.5rem 1rem;
+    @include mix.card(var.$gray-light, var.$primary);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.45);
+    padding: 0;
+    margin: 0.25rem 1rem 1.5rem;
+
+    &:hover {
+      .portfolio__img-image {
+        transform: scale(1.2);
+      }
+      .portfolio__data-hover {
+        opacity: 1;
+      }
+      .portfolio__data-normal {
+        top: -15rem;
+        opacity: 0;
+      }
+    }
   }
+
   &__img {
-    width: 256px;
-    border-radius: 0.5rem;
-    justify-self: center;
+    &-container {
+      background-color: var.$body-pri-bgcolor;
+      overflow: hidden;
+      border-radius: 0.5rem 0.5rem 0 0;
+    }
+    &-image {
+      @include mix.imageObjectFit(15rem);
+      transform: scale(1.01);
+      transition: .3s;
+    }
+  }
+
+  &__data {
+    position: relative;
+    height: 10rem;
+    margin: 1.25rem 1rem 0.75rem;
+    overflow: hidden;
+
+    &-hover, &-normal {
+      position: absolute;
+      width: 100%;
+      transition: 1s;
+    }
+    &-hover {
+      opacity: 0;
+    }
+    &-normal {
+      top: 0.5rem;
+      opacity: 1;
+    }
+
+    &-header {
+      @include mix.flexRows(space-between, 1rem);
+    }
+  }
+
+  &__title {
+    margin: 0;
+  }
+  &__status {
+    display: inline-block;
+    margin: 0.5rem 0;
+    font-size: var.$fs-small-mob;
+    text-transform: uppercase;
+  }
+  &__button {
+    display: flex;
+    @include mix.buttonIcon(var.$primary);
+  }
+
+  &__tech-list {
+    @include mix.flexRows(flex-start, 0.5rem);
+    flex-wrap: wrap;
+    margin: 0.75rem 0 0;
+  }
+  &__tech-item {
+    background-color: var.$body-third-bgcolor;
+    color: var.$body-third-color;
+    padding: 0.35rem;
+    border-radius: 0.25rem;
+    font-size: var.$fs-small-mob;
+  }
+  &__date {
+    display: inline-block;
+    margin: 0.5rem 0 0.25rem;
   }
   &__description {
-    margin-bottom: calc(var.$padding-mob / 3);
+    margin: calc(var.$padding-mob / 3) 0;
+
     @include mix.desktop {
-      margin-bottom: calc(var.$padding-desk / 3);
+      margin: calc(var.$padding-desk / 3) 0;
     }
   }
 }
