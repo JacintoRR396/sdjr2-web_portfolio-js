@@ -349,22 +349,23 @@ template {
 *                                                                        *
 *       ---  MEDIA QUERIES ---                                           *
 * 1. mobile-xs                                                           *
-* 2. mobile                                                              *
-* 3. tablet                                                              *
-* 4. desktop                                                             *
-* 5. desktop-lg                                                          *
+* 2. mobile-md                                                           *
+* 3. mobile                                                              *
+* 4. tablet                                                              *
+* 5. desktop                                                             *
+* 6. desktop-lg                                                          *
 *                                                                        *
 *       --- BLOCKS ---                                                   *
-* 1. flexRows($justContent: flex-start, $gap: 0)                          *
-* 2. flexColumns($justContent: flex-start, $gap: 0)                       *
+* 1. flexRows($justContent: flex-start, $gap: 0)                         *
+* 2. flexColumns($justContent: flex-start, $gap: 0)                      *
 * 3. gridColumns($numColumns: 2, $gap: 0)                                *
 * 4. gridRows($numRows: 2, $gap: 0)                                      *
 * 5. modal                                                               *
-* 6. modalContent                                                        *
+* 6. modalContent($bgColorHeader, $bgColorBody, $borderColor)            *
 * 7. sectionBgOblique($colorFirst, $colorSecond, $size)                  *
 * 8. sectionBgCollapse($size)                                            *
 * 9. sectionGridTextImage($padding, $colorGrad, $url)                    *
-* 10. card($bgColor)                                                     *
+* 10. card($bgColor, $borderColor)                                       *
 *                                                                        *
 *       --- HEADING / TEXT ---                                           *
 * 1. headingLinearGradient($dir, $fromColor, $toColor)                   *
@@ -484,7 +485,7 @@ h2 {
 }
 @media (min-width: 992px) {
   h2 {
-    font-size: 1.35rem;
+    font-size: 1.4rem;
   }
 }
 
@@ -868,7 +869,7 @@ img {
 }
 @media (min-width: 992px) {
   .nav__logo, .nav__visibility, .nav__theme, .nav__language {
-    font-size: 1.35rem;
+    font-size: 1.4rem;
   }
 }
 .nav__logo:hover, .nav__visibility:hover, .nav__theme:hover, .nav__language:hover {
@@ -964,7 +965,7 @@ img {
   grid-template-rows: 1.5fr 2fr;
   gap: 1rem;
 }
-@media (min-width: 380px) {
+@media (min-width: 320px) {
   .home__container {
     grid-template-rows: 2fr 1.5fr;
     gap: 2rem;
@@ -1018,7 +1019,7 @@ img {
   display: flex;
   max-width: 12rem;
 }
-@media (min-width: 380px) {
+@media (min-width: 320px) {
   .home__img-container {
     max-width: 20rem;
   }
@@ -1095,7 +1096,7 @@ img {
   grid-template-columns: repeat(1, 1fr);
   gap: 1rem;
 }
-@media (min-width: 380px) {
+@media (min-width: 320px) {
   .about__info {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -1153,7 +1154,7 @@ img {
 }
 @media (min-width: 992px) {
   .about__info-title {
-    font-size: 1.35rem;
+    font-size: 1.4rem;
   }
 }
 .about__description {
@@ -1495,6 +1496,7 @@ img {
   gap: 0;
   background-color: rgba(0, 0, 0, 0.5);
   padding: 0 1rem;
+  min-width: 320px;
   z-index: 1000;
   -webkit-transform: 0.3s;
           transform: 0.3s;
@@ -1553,7 +1555,9 @@ img {
 }
 @media (min-width: 992px) {
   .services__modal-close {
-    font-size: 1.35rem;
+    top: 1.25rem;
+    right: 1.25rem;
+    font-size: 1.4rem;
   }
 }
 .services__modal-desc {
@@ -1698,7 +1702,7 @@ img {
 }
 @media (min-width: 992px) {
   .portfolio__button {
-    font-size: 1.35rem;
+    font-size: 1.4rem;
   }
 }
 .portfolio__button:hover {
@@ -1805,7 +1809,7 @@ img {
   gap: 1rem;
   margin: 0 auto;
 }
-@media (min-width: 380px) {
+@media (min-width: 320px) {
   .contact__infos {
     grid-template-columns: repeat(2, 1fr);
   }

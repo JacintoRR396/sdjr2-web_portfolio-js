@@ -44,7 +44,7 @@
 
     &-card {
       @include mix.flexColumns(center, 0.5rem);
-      @include mix.card(var.$gray-light);
+      @include mix.card(var.$gray-light, var.$primary);
       max-width: 30rem;
       padding: 1.5rem;
       text-align: center;

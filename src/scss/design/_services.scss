@@ -10,7 +10,7 @@
   }
 
   &__content {
-    @include mix.card(var.$gray-light);
+    @include mix.card(var.$gray-light, var.$primary);
   }
 
   &__data {
@@ -46,6 +46,6 @@
 
   &__modal {
     @include mix.modal;
-    @include mix.modalContent;
+    @include mix.modalContent( var.$gray-light, var.$white, var.$primary );
   }
 }

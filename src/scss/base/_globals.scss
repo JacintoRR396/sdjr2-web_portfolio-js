@@ -29,7 +29,7 @@ html {
 }
 
 body {
-  min-width: var.$mobile-xs;
+  min-width: var.$mobile-md;
   color: var.$body-pri-color;
   background-color: var.$body-pri-bgcolor;
   font-family: var.$font-primary;
@@ -144,9 +144,10 @@ img {
   text-align: center;
 }
 .section__title {
-  @include mix.headingLinearGradient(right, var.$secondary-dark, var.$primary);
+  @include mix.headingLinearGradient( right, var.$secondary-dark, var.$primary );
   font-size: var.$fs-h1-mob;
-  margin-bottom: calc(var.$padding-mob / 3);
+  margin-bottom: calc( var.$padding-mob / 3 );
+
   @include mix.desktop {
     font-size: var.$fs-h1-desk;
     margin-bottom: calc(var.$padding-desk / 3);

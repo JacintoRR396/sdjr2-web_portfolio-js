@@ -11,7 +11,7 @@
   }
 
   &__content {
-    @include mix.card(var.$gray-light);
+    @include mix.card(var.$gray-light, var.$primary);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.45);
     padding: 0;
     margin: 0.25rem 1rem 1.5rem;
