@@ -30,6 +30,7 @@
 * 4. textWrapImage($url)                                                 *
 * 5. textAccessible                                                      *
 * 6. textEllipsis($lines, $fs)                                           *
+* 7. textNoSelect                                                        *
 *                                                                        *
 *       --- IMAGES ---                                                   *
 * 1. imagesGallery()                                                     *
@@ -403,6 +404,14 @@
   font-size: $fs;
 }
 
+@mixin textNoSelect {
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
 /** Images **/
 @mixin imagesGallery() {
   @include gridColumns( 2, 2rem );
@@ -555,6 +564,7 @@
   font-weight: var.$fw-medium;
   text-align: center;
   text-decoration: none;
+  @include textNoSelect;
   border-bottom: 0.15rem solid var.$secondary-dark;
   border-radius: 0.5rem;
   cursor: pointer;

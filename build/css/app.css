@@ -375,6 +375,7 @@ template {
 * 4. textWrapImage($url)                                                 *
 * 5. textAccessible                                                      *
 * 6. textEllipsis($lines, $fs)                                           *
+* 7. textNoSelect                                                        *
 *                                                                        *
 *       --- IMAGES ---                                                   *
 * 1. imagesGallery()                                                     *
@@ -736,6 +737,13 @@ img {
   color: #e22331;
 }
 
+.text-noselect {
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
 /** Buttons **/
 .button {
   display: inline-flex;
@@ -746,6 +754,10 @@ img {
   font-weight: 700;
   text-align: center;
   text-decoration: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
   border-bottom: 0.15rem solid #303f46;
   border-radius: 0.5rem;
   cursor: pointer;
