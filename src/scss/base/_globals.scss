@@ -34,6 +34,7 @@ body {
   background-color: var.$body-pri-bgcolor;
   font-family: var.$font-primary;
   font-size: var.$fs-normal-mob;
+
   @include mix.desktop {
     font-size: var.$fs-normal-desk;
   }
@@ -55,27 +56,31 @@ h3 {
   color: var.$secondary;
   font-family: var.$font-secondary;
   font-weight: var.$fw-medium;
-  margin: 0 0 calc(var.$padding-mob / 2) 0;
+  margin: 0 0 calc( var.$padding-mob / 2 ) 0;
+  
   @include mix.desktop {
-    margin: 0 0 calc(var.$padding-desk / 2) 0;
+    margin: 0 0 calc( var.$padding-desk / 2 ) 0;
   }
 }
 h1 {
   color: var.$secondary-dark;
   font-size: var.$fs-h1-mob;
   font-weight: var.$fw-bold;
+
   @include mix.desktop {
     font-size: var.$fs-h1-desk;
   }
 }
 h2 {
   font-size: var.$fs-h2-mob;
+
   @include mix.desktop {
     font-size: var.$fs-h2-desk;
   }
 }
 h3 {
   font-size: var.$fs-h3-mob;
+
   @include mix.desktop {
     font-size: var.$fs-h3-desk;
   }
@@ -119,6 +124,7 @@ img {
   width: 95%;
   max-width: var.$tablet;
   margin: 0 auto;
+
   @include mix.desktop {
     max-width: var.$desktop;
     width: 90%;
@@ -134,9 +140,9 @@ img {
 }
 
 .section {
-  padding: calc(var.$padding-mob * 2.5) 0 calc(var.$padding-mob / 2);
+  padding: calc( var.$padding-mob * 2.5 ) 0 calc( var.$padding-mob / 2 );
   @include mix.desktop {
-    padding: calc(var.$padding-desk * 2.5) 0 calc(var.$padding-desk / 2);
+    padding: calc( var.$padding-desk * 2.5 ) 0 calc( var.$padding-desk / 2 );
   }
 }
 .section__title,
@@ -159,6 +165,7 @@ img {
   font-size: var.$fs-h3-mob;
   font-weight: var.$fw-medium;
   margin-bottom: var.$padding-mob;
+
   @include mix.desktop {
     font-size: var.$fs-h3-desk;
     margin-bottom: var.$padding-desk;
@@ -179,10 +186,11 @@ img {
   font-size: var.$fs-h3-mob;
   font-weight: var.$fw-medium;
   line-height: 1.35rem;
-  margin-bottom: calc(var.$padding-mob / 4);
+  margin-bottom: calc( var.$padding-mob / 4 );
+
   @include mix.desktop {
     font-size: var.$fs-h3-desk;
-    margin-bottom: calc(var.$padding-desk / 4);
+    margin-bottom: calc( var.$padding-desk / 4 );
   }
 }
 .content__subtitle {
@@ -202,7 +210,6 @@ img {
   @include mix.mobile {
     max-width: 40rem;
   }
-
   @include mix.desktop {
     max-width: 35rem;
     margin: var.$padding-desk 0;
